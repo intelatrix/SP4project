@@ -42,3 +42,14 @@ Network Trash Folder
 Temporary Items
 .apdisk
 SP4/Library/
+SP4/Temp/
+SP4/obj/
+*.svd
+*.userprefs
+SP4/*.csproj
+*.pidb
+*.suo
+SP4/*.sln
+*.user
+*.unityproj
+*.booproj
