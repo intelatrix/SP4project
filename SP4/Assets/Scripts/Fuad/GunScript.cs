@@ -21,6 +21,7 @@ public class GunScript : MonoBehaviour {
 	public float waitTillFire;
 	public GameObject bullet;
 	public GameObject spawnBullet;
+	public GameObject bulletHole;
 	public GameObject cameraObject;	
 	
 	// Use this for initialization
@@ -36,7 +37,14 @@ public class GunScript : MonoBehaviour {
 			if(waitTillFire <= 0)
 			{
 				if(bullet){
-					Instantiate(bullet, spawnBullet.transform.position, spawnBullet.transform.rotation);
+					//Instantiate(bullet, spawnBullet.transform.position, spawnBullet.transform.rotation);
+
+					RaycastHit hit;
+					Ray ray = new Ray(transform.position, transform.forward);
+					if (Physics.Raycast(ray, out hit, 100.0f))
+					{
+						Instantiate(bulletHole, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+					}
 				}
 				waitTillFire = 1;
 			}
