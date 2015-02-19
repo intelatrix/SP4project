@@ -5,6 +5,7 @@ public class Gantry : MonoBehaviour {
 
 	Vector3 CenterPosition;
 	bool InfectedDetected;
+	bool Activated = true;
 	// Use this for initialization
 	void Start () 
 	{
@@ -19,8 +20,15 @@ public class Gantry : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () 
-	{
-		if(InfectedDetected)
+	{	
+		if(!Activated)
+		{
+			foreach (Transform child in this.transform) 
+			{
+				child.renderer.material.color = Color.black;
+			}
+		}
+		else if(InfectedDetected)
 		{
 			foreach (Transform child in this.transform) 
 			{
@@ -45,6 +53,13 @@ public class Gantry : MonoBehaviour {
 	
 	public void FoundInfected()
 	{
-		InfectedDetected = true;
+		if(Activated)
+			InfectedDetected = true;
+	}
+	
+	public void Activation(bool Active)
+	{
+		Activated = Active;
+		transform.Find("GantryDoor").gameObject.SetActive(!Activated);
 	}
 }

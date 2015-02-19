@@ -55,13 +55,27 @@ public class CitizenBehaviour : MonoBehaviour {
 		Infected = IfInfected;
 	}
 	
+	public bool IfInfected()
+	{
+		return Infected;
+	}
+	
 	void OnBecameInvisible() 
 	{
+		GameObject Controls = GameObject.Find("Controls");
+		if(Controls != null && Infected)
+			Controls.GetComponent<Controls>().DestroyInfected();
 		Destroy(gameObject);
 	}
 	
 	public bool IfOverGantry()
 	{
 		return PassGantry;
+	}
+	
+	public void DestroyCitizen()
+	{
+	
+	
 	}
 }

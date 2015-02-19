@@ -1,13 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class SarsLoader : MonoBehaviour {
 
 	public GameObject TypeCitizen;
+	
 	// Use this for initialization
 	void Start () 
 	{
+		List<GameObject> ListOfCitizen = new List<GameObject>();
 		int NumberOfInfected = 3;
+		GameObject.Find("Controls").GetComponent<Controls>().SetNoInfected(NumberOfInfected);
 		for(int i = 0; i < 10; i ++)
 		{
 			GameObject ChildCitizen;
@@ -16,8 +20,10 @@ public class SarsLoader : MonoBehaviour {
 			{
 				--NumberOfInfected;
 				ChildCitizen.GetComponent<CitizenBehaviour>().SetInfected(true);
+				ListOfCitizen.Add(ChildCitizen);
 			}
 		}
+		GameObject.Find("Controls").GetComponent<Controls>().StartUpList(ListOfCitizen);
 	}
 	
 	// Update is called once per frame
