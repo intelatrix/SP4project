@@ -12,10 +12,12 @@ public class Controls : MonoBehaviour
 	Vector3 offset;
 	List<GameObject> ListOfCitizen = new List<GameObject>();
 	int NumberOfInfected;
+	float TimeCountDown;
 	// Use this for initialization
 	void Start () 
 	{
 		Dragging = false;
+		TimeCountDown = 20f;
 	}
 
 	
@@ -104,12 +106,9 @@ public class Controls : MonoBehaviour
 			target.transform.gameObject.GetComponent<Gantry>().Activation(true);
 		}
 		
-		if(Input.GetButtonDown("LockG1") || Input.GetButtonDown("LockG2") || Input.GetButtonDown("LockG3") || Input.GetButtonUp("LockG1") || Input.GetButtonUp("LockG2") || Input.GetButtonUp("LockG3"))
-		{
-		
-		}
-		
+		TimeCountDown = Mathf.MoveTowards(TimeCountDown, 0, Time.deltaTime);
 		GameObject.Find("NoOfInfected").GetComponent<Text>().text = NumberOfInfected + " Infected Left";
+		GameObject.Find("CountDown").GetComponent<Text>().text = "Time Left: " + TimeCountDown.ToString("n2");
 	}
 	
 	public void StartUpList(List<GameObject> NewList)
@@ -125,11 +124,5 @@ public class Controls : MonoBehaviour
 	public void DestroyInfected()
 	{
 		--NumberOfInfected;
-	}
-	
-	void RearrangeCitizen()
-	{
-	
-	
 	}
 }

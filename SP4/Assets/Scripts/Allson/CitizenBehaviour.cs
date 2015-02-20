@@ -26,7 +26,7 @@ public class CitizenBehaviour : MonoBehaviour {
 			{
 				transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.transform.position.x , 1.5f , target.transform.position.z) , Time.deltaTime*5);
 				
-				if(transform.position.x == target.transform.position.x && transform.position.z == target.transform.position.z)
+				if(transform.position.z >= target.transform.position.z)
 				{
 					PassGantry = true;
 					Direction = new Vector3(Random.Range(-1f,2f),0,Random.Range(0.5f,1f)).normalized;
@@ -71,11 +71,5 @@ public class CitizenBehaviour : MonoBehaviour {
 	public bool IfOverGantry()
 	{
 		return PassGantry;
-	}
-	
-	public void DestroyCitizen()
-	{
-	
-	
 	}
 }

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Gantry : MonoBehaviour {
@@ -61,5 +61,10 @@ public class Gantry : MonoBehaviour {
 	{
 		Activated = Active;
 		transform.Find("GantryDoor").gameObject.SetActive(!Activated);
+	}
+	
+	public bool IfActive()
+	{
+		return Activated;
 	}
 }

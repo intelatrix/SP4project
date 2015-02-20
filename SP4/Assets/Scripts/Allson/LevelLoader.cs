@@ -5,7 +5,7 @@ public class LevelLoader : MonoBehaviour
 {
 	private enum Games
 	{
-		
+		GAME_SARSGANTRY,
 		GAME_TOTAL
 	} ;
 	
@@ -15,16 +15,17 @@ public class LevelLoader : MonoBehaviour
 	static int Round;
 	static Games[] ListOfGames = new Games[(int)Games.GAME_TOTAL];
 
-	static void WinLevel()
+	static public void WinLevel()
 	{
 		NextLevel();
 	}
 
-	static void LoseLevel()
+	static public void LoseLevel()
 	{
 		--Lives;
 		if(Lives == 0)
 		{
+			//Lose Game - Load Lose Level
 			
 		}
 		else
@@ -33,11 +34,17 @@ public class LevelLoader : MonoBehaviour
 		}
 	}
 	
-	static void NewGame()
+	static public void NewGame()
 	{
 		Lives = 3;
 		Round = 1;
-		Level = 0;
+		Level = -1;
+		for( int i = 0; i < (int)Games.GAME_TOTAL; i++)
+		{
+			ListOfGames[i] = (Games)i;
+		}
+		RandomLinkedList();
+		//New Round
 	}
 	
 	static void RandomLinkedList()
@@ -45,7 +52,7 @@ public class LevelLoader : MonoBehaviour
 		ReShuffleList();
 	}
 	
-	public static void ReShuffleList()  
+	static void ReShuffleList()  
 	{  
 		System.Random rng = new System.Random();  
 		int n = (int)Games.GAME_TOTAL;  
@@ -59,9 +66,23 @@ public class LevelLoader : MonoBehaviour
 		}  
 	}
 	
-	static void NextLevel()
+	static public void NextLevel()
 	{
 		++Level;
+		if(Level == (int)Games.GAME_TOTAL)
+		{
+			++Round; 
+			Level = -1;
+			//New Round Screen
+		}
+		switch(ListOfGames[Level])
+		{	
+		case Games.GAME_SARSGANTRY:
+			
+			break;
+		default:
+			break;
+		}
 	}
 	
 	// Use this for initialization
