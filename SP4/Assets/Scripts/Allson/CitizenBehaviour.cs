@@ -6,6 +6,7 @@ public class CitizenBehaviour : MonoBehaviour {
 	bool ThisDragged;
 	bool PassGantry;
 	bool Infected= false;
+	bool DeathType = false;
 	int TargetGantry;	
 	Vector3 Direction;
 
@@ -54,6 +55,12 @@ public class CitizenBehaviour : MonoBehaviour {
 	{
 		Infected = IfInfected;
 	}
+
+	public void SetDeath(bool Death)
+	{
+		DeathType = Death;
+	}
+	
 	
 	public bool IfInfected()
 	{
@@ -63,13 +70,24 @@ public class CitizenBehaviour : MonoBehaviour {
 	void OnBecameInvisible() 
 	{
 		GameObject Controls = GameObject.Find("Controls");
-		if(Controls != null && Infected)
-			Controls.GetComponent<Controls>().DestroyInfected();
+		if(Controls != null && Infected && !ThisDragged && !DeathType)
+		{
+			Controls.GetComponent<Controls>().MinusOneLife();
+		}
 		Destroy(gameObject);
 	}
 	
 	public bool IfOverGantry()
 	{
 		return PassGantry;
+	}
+	
+	void OnDestroy()
+	{
+		GameObject Controls = GameObject.Find("Controls");
+		if(Controls != null  && Infected )
+		{
+			Controls.GetComponent<Controls>().DestroyInfected();
+		}
 	}
 }

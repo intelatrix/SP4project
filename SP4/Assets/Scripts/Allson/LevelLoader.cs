@@ -44,7 +44,8 @@ public class LevelLoader : MonoBehaviour
 			ListOfGames[i] = (Games)i;
 		}
 		RandomLinkedList();
-		//New Round
+		//Screen Round 
+		Application.LoadLevel("NewRound");
 	}
 	
 	static void RandomLinkedList()
@@ -74,11 +75,13 @@ public class LevelLoader : MonoBehaviour
 			++Round; 
 			Level = -1;
 			//New Round Screen
+			Application.LoadLevel("NewRound");
+			return;
 		}
 		switch(ListOfGames[Level])
 		{	
 		case Games.GAME_SARSGANTRY:
-			
+			Application.LoadLevel("Sars");
 			break;
 		default:
 			break;
@@ -95,4 +98,8 @@ public class LevelLoader : MonoBehaviour
 	
 	}
 	
+	static public int GetRound()
+	{
+		return Round;
+	}
 }

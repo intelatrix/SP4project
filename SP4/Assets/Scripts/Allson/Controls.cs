@@ -13,11 +13,13 @@ public class Controls : MonoBehaviour
 	List<GameObject> ListOfCitizen = new List<GameObject>();
 	int NumberOfInfected;
 	float TimeCountDown;
+	int Lives;
 	// Use this for initialization
 	void Start () 
 	{
 		Dragging = false;
 		TimeCountDown = 20f;
+		Lives = 3;
 	}
 
 	
@@ -57,9 +59,10 @@ public class Controls : MonoBehaviour
 				{
 					if(hit.transform.gameObject.name == "GZ")
 					{
+						if(!Dragged.GetComponent<CitizenBehaviour>().IfInfected())
+							MinusOneLife();
+						Dragged.GetComponent<CitizenBehaviour>().SetDragged(true);
 						Destroy(Dragged);
-//						if(Dragged.GetComponent<CitizenBehaviour>().IfInfected())
-//							DestroyInfected();
 					}
 				}
 				Dragged = null;
@@ -107,8 +110,13 @@ public class Controls : MonoBehaviour
 		}
 		
 		TimeCountDown = Mathf.MoveTowards(TimeCountDown, 0, Time.deltaTime);
+		if(TimeCountDown <= 0 || Lives <= 0)
+		{
+			LevelLoader.LoseLevel();
+		}
 		GameObject.Find("NoOfInfected").GetComponent<Text>().text = NumberOfInfected + " Infected Left";
 		GameObject.Find("CountDown").GetComponent<Text>().text = "Time Left: " + TimeCountDown.ToString("n2");
+		GameObject.Find("Lives").GetComponent<Text>().text = "Lives: " + Lives;
 	}
 	
 	public void StartUpList(List<GameObject> NewList)
@@ -124,5 +132,10 @@ public class Controls : MonoBehaviour
 	public void DestroyInfected()
 	{
 		--NumberOfInfected;
+	}
+	
+	public void MinusOneLife()
+	{
+		--Lives;
 	}
 }
