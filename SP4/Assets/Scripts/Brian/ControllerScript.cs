@@ -14,7 +14,6 @@ public class ControllerScript : MonoBehaviour {
 	public LayerMask whatIsGround;
 	public float jumpForce = 700; 
 	public float forwardMovementSpeed = 3.0f;
-	public GameObject targetObject;
 	float groundRadius = 0.2f;
 
 	bool doubleJump = false;
@@ -40,13 +39,8 @@ public class ControllerScript : MonoBehaviour {
 		//if (!grounded)return; /*for disabling areal turn*/
 
 		//Camera tracking
-		float targetObjectX = targetObject.transform.position.x;
-		
-		Vector3 newCameraPosition = transform.position;
-		newCameraPosition.x = targetObjectX;
-		transform.position = newCameraPosition;
 
-		float move = Input.GetAxis (forwardMovementSpeed);
+		float move = Input.GetAxis ("Horizontal");
 		anim.SetFloat ("Speed", Mathf.Abs(move));
 		rigidbody2D.velocity = new Vector2 (move * maxSpeed, rigidbody2D.velocity.y); 
 		if (move > 0 && !facingRight)
