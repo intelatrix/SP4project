@@ -37,15 +37,14 @@ public class ControllerScript : MonoBehaviour {
 		rigidbody2D.velocity = newVelocity;
 
 		//if (!grounded)return; /*for disabling areal turn*/
+	
 
-		//Camera tracking
-
-		float move = Input.GetAxis ("Horizontal");
-		anim.SetFloat ("Speed", Mathf.Abs(move));
-		rigidbody2D.velocity = new Vector2 (move * maxSpeed, rigidbody2D.velocity.y); 
-		if (move > 0 && !facingRight)
+		//float move = Input.GetAxis ("Horizontal");
+		anim.SetFloat ("Speed", Mathf.Abs(forwardMovementSpeed));
+		rigidbody2D.velocity = new Vector2 (forwardMovementSpeed * maxSpeed, rigidbody2D.velocity.y); 
+		if (forwardMovementSpeed > 0 && !facingRight)
 			Flip ();
-		else if (move < 0 && facingRight)
+		else if (forwardMovementSpeed < 0 && facingRight)
 			Flip (); 
 	}
 
