@@ -23,6 +23,7 @@ public class GunScript : MonoBehaviour {
 	public GameObject spawnBullet;
 	public GameObject bulletHole;
 	public GameObject cameraObject;	
+	public AudioClip bang;
 	
 	// Use this for initialization
 	void Start () {
@@ -38,6 +39,8 @@ public class GunScript : MonoBehaviour {
 			{
 				if(bullet){
 					//Instantiate(bullet, spawnBullet.transform.position, spawnBullet.transform.rotation);
+
+					audio.PlayOneShot(bang);
 
 					RaycastHit hit;
 					Ray ray = new Ray(transform.position, transform.forward);
