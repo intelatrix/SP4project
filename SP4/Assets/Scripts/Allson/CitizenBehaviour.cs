@@ -9,6 +9,7 @@ public class CitizenBehaviour : MonoBehaviour {
 	bool DeathType = false;
 	int TargetGantry;	
 	Vector3 Direction;
+	bool ActiveOr = false;
 
 	void Start () {
 		ThisDragged = false;
@@ -19,30 +20,33 @@ public class CitizenBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		GameObject target =  GameObject.Find("Gantry" + TargetGantry);
-		if(!ThisDragged)
+		if(ActiveOr)
 		{
-			transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
-			if(!PassGantry)
+			GameObject target =  GameObject.Find("Gantry" + TargetGantry);
+			if(!ThisDragged)
 			{
-				transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.transform.position.x , 1.5f , target.transform.position.z) , Time.deltaTime*5);
-				
-				if(transform.position.z >= target.transform.position.z)
+				transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
+				if(!PassGantry)
 				{
-					PassGantry = true;
-					Direction = new Vector3(Random.Range(-1f,2f),0,Random.Range(0.5f,1f)).normalized;
+					transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.transform.position.x , 1.5f , target.transform.position.z) , Time.deltaTime*(5+ LevelLoader.GetRound()));
+					
+					if(transform.position.z >= target.transform.position.z)
+					{
+						PassGantry = true;
+						Direction = new Vector3(Random.Range(-1f,2f),0,Random.Range(0.5f,1f)).normalized;
+					}
+				}
+				else
+				{
+					transform.position += Time.deltaTime*Direction*(10+ LevelLoader.GetRound());
 				}
 			}
-			else
+			if(Vector3.Distance(new Vector3(transform.position.x, 1.5f, transform.position.z), new Vector3(target.transform.position.x , 1.5f , target.transform.position.z)) <= 1) 
 			{
-				transform.position += Time.deltaTime*Direction*10;
+				if(Infected)
+					target.GetComponent<Gantry>().FoundInfected();
+	
 			}
-		}
-		if(Vector3.Distance(new Vector3(transform.position.x, 1.5f, transform.position.z), new Vector3(target.transform.position.x , 1.5f , target.transform.position.z)) <= 1) 
-		{
-			if(Infected)
-				target.GetComponent<Gantry>().FoundInfected();
-
 		}
 	}
 		
@@ -54,6 +58,13 @@ public class CitizenBehaviour : MonoBehaviour {
 	public void SetInfected(bool IfInfected)
 	{
 		Infected = IfInfected;
+		if(Infected)
+		{
+			foreach (Transform child in this.transform) 
+			{
+				child.renderer.material.color = Color.red;
+			}
+		}
 	}
 
 	public void SetDeath(bool Death)
@@ -80,6 +91,18 @@ public class CitizenBehaviour : MonoBehaviour {
 	public bool IfOverGantry()
 	{
 		return PassGantry;
+	}
+	
+	public void StartCitizen(bool Startup)
+	{
+		ActiveOr = Startup;
+		if(Startup)
+		{
+			foreach (Transform child in this.transform) 
+			{
+				child.renderer.material.color = Color.white;
+			}
+		}
 	}
 	
 	void OnDestroy()
