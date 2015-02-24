@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GunScript : MonoBehaviour {
 	
-
+	
 	public float targetXRot;
 	public float targetYRot;
 	public float targetXRotV;
@@ -23,6 +23,16 @@ public class GunScript : MonoBehaviour {
 	public GameObject spawnBullet;
 	public GameObject bulletHole;
 	public GameObject cameraObject;	
+	public AudioClip bang;
+	public AudioClip death;
+
+	
+	int enemyMask;
+	
+	void Awake(){
+		enemyMask = LayerMask.GetMask ("Enemy");
+
+	}
 	
 	// Use this for initialization
 	void Start () {
@@ -36,23 +46,31 @@ public class GunScript : MonoBehaviour {
 			
 			if(waitTillFire <= 0)
 			{
-				if(bullet){
-					//Instantiate(bullet, spawnBullet.transform.position, spawnBullet.transform.rotation);
 
+					
+					audio.PlayOneShot(bang);
+					
 					RaycastHit hit;
 					Ray ray = new Ray(transform.position, transform.forward);
-					if (Physics.Raycast(ray, out hit, 100.0f))
-					{
-						Instantiate(bulletHole, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
-					}
-				}
+				if (Physics.Raycast(ray, out hit, 100.0f, enemyMask))
+										{
+											Enemy enemyHealth = hit.collider.GetComponent<Enemy>();
+					
+											if(enemyHealth != null){
+												enemyHealth.TakeDamage(1, hit.point);
+													audio.PlayOneShot(death);
+						EnemyManager.TCheck--;
+											
+											}
+										}
+
 				waitTillFire = 1;
 			}
 			
 		}
 		
 		waitTillFire -= Time.deltaTime * fireRate;
-
+		
 		MouseLook.targetCamera = zoomAngle;
 		
 		if(Input.GetButton("Fire2"))
@@ -69,11 +87,9 @@ public class GunScript : MonoBehaviour {
 		transform.position = cameraObject.transform.position + (Quaternion.Euler (0, targetYRot, 0) * new Vector3 (holdDown * holdX, holdDown * holdY, holdDown * holdZ));
 		targetXRot = Mathf.SmoothDamp (targetXRot, MouseLook.xRot, ref targetXRotV, rotSpeed);	
 		targetYRot = Mathf.SmoothDamp (targetYRot, MouseLook.yRot, ref targetYRotV, rotSpeed);
-
+		
 		transform.rotation = Quaternion.Euler (targetXRot, targetYRot, 0);
-
-		//float rotation = Input.GetAxis("Mouse X") * rotSpeed;
-
-		//transform.RotateAround (cameraObject.transform.position, Vector3.up, rotation);//rotation * Time.deltaTime);
+		
+		
 	}
 }

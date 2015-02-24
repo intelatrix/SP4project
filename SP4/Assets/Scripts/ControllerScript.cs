@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ControllerScript : MonoBehaviour {
+public class BrianControllerScript : MonoBehaviour {
 	
 	
 	public float maxSpeed = 10;
@@ -12,7 +12,8 @@ public class ControllerScript : MonoBehaviour {
 	bool grounded = false;
 	public Transform groundCheck;
 	public LayerMask whatIsGround;
-	public float jumpForce = 700; 
+	public float jumpForce = 100; 
+	public float forwardMovementSpeed = 3.0f;
 	float groundRadius = 0.2f;
 
 	bool doubleJump = false;
@@ -30,6 +31,12 @@ public class ControllerScript : MonoBehaviour {
 			doubleJump = false;
 
 		anim.SetFloat ("vSpeed", rigidbody2D.velocity.y);
+
+		Vector2 newVelocity = rigidbody2D.velocity;
+		newVelocity.x = forwardMovementSpeed;
+		rigidbody2D.velocity = newVelocity;
+
+		//CharacterController.Move (1, false);
 
 		//if (!grounded)return; /*for disabling areal turn*/
 

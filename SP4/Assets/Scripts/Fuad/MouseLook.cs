@@ -11,14 +11,17 @@ public class MouseLook : MonoBehaviour {
 	float xRotV;
 	float yRotV;
 	float lookSmoothness = 0.1f;
-
-	float heightRatio = 0.9f;
+	
 	public static float aimTrue = 1;
 	float cameraDefault = 60;
 	public static float targetCamera = 60;
 	float cameraZoom = 1;
 	float cameraZoomV;
 	float cameraZoomSpeed;
+
+	void Start(){
+		Screen.showCursor = false;
+	}
 
 	void Update ()
 	{
