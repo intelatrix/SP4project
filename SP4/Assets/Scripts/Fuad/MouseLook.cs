@@ -19,6 +19,10 @@ public class MouseLook : MonoBehaviour {
 	float cameraZoomV;
 	float cameraZoomSpeed;
 
+	void Start(){
+		Screen.showCursor = false;
+	}
+
 	void Update ()
 	{
 		if (aimTrue == 1) 

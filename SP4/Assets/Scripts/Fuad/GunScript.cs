@@ -24,6 +24,8 @@ public class GunScript : MonoBehaviour {
 	public GameObject bulletHole;
 	public GameObject cameraObject;	
 	public AudioClip bang;
+	public AudioClip death;
+
 	
 	int enemyMask;
 	
@@ -56,6 +58,9 @@ public class GunScript : MonoBehaviour {
 					
 											if(enemyHealth != null){
 												enemyHealth.TakeDamage(1, hit.point);
+													audio.PlayOneShot(death);
+						EnemyManager.TCheck--;
+											
 											}
 										}
 
