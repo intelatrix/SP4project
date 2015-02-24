@@ -7,11 +7,18 @@ public class CheckOutOfBound : MonoBehaviour {
     public GameObject leftPlank;
     
     private GameObject obj = null;
+    private int numOfCorrect = 2;
+
+	private bool gameover = false;
+
+	void Start() {
+		numOfCorrect = GameObject.Find ("Spawner").GetComponent<Spawner> ().setCorrectNo;
+	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0) && GameObject.Find("Spawner").GetComponent<Spawner>().control == true) {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
@@ -22,28 +29,46 @@ public class CheckOutOfBound : MonoBehaviour {
             }
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && GameObject.Find("Spawner").GetComponent<Spawner>().control == true)
         {
-            if (obj != null)
+            if (numOfCorrect > 0)
             {
-                Vector3 newVector = rightPlank.transform.position - obj.transform.position;
-
-                float dotproduct = Vector3.Dot(newVector, rightPlank.transform.position);
-
-                Vector3 newVector2 = leftPlank.transform.position - obj.transform.position;
-
-                float dotproduct2 = Vector3.Dot(newVector2, leftPlank.transform.position);
-
-                if ((dotproduct < 0 || dotproduct2 < 0) && obj.GetComponent<ObjSettings>().getActive())
+                if (obj != null)
                 {
-                    Debug.Log("Hi");
-                }
-            }
-            obj = null;
-        }
+                    Vector3 newVector = rightPlank.transform.position - obj.transform.position;
 
-        //if (Vector3.Magnitude(rightPlank.transform.position - obj.transform.position) > Vector3.Dot(obj.transform.position, rightPlank.transform.position)) {
-        //    Debug.Log("Hi");
-        //}
+                    float dotproduct = Vector3.Dot(newVector, rightPlank.transform.position);
+
+                    Vector3 newVector2 = leftPlank.transform.position - obj.transform.position;
+
+                    float dotproduct2 = Vector3.Dot(newVector2, leftPlank.transform.position);
+
+                    if ((dotproduct < 0 || dotproduct2 < 0) && obj.GetComponent<ObjSettings>().getActive())
+                    {
+                        if (dotproduct < 0 && obj.GetComponent<ObjSettings>().getLeftOrRight() == 1)
+                        {
+                            Debug.Log("Right");
+                        }
+                        else if (dotproduct2 < 0 && obj.GetComponent<ObjSettings>().getLeftOrRight() == 2)
+                        {
+                            Debug.Log("Left");
+                        }
+                        else if (dotproduct < 0 && obj.GetComponent<ObjSettings>().getLeftOrRight() == 2)
+                        {
+                            Debug.Log("It's suppose to be left, you dumb ass");
+                        }
+                        else if (dotproduct2 < 0 && obj.GetComponent<ObjSettings>().getLeftOrRight() == 1)
+                        {
+                            Debug.Log("It's suppose to be right, you dumb ass");
+                        }
+                        --numOfCorrect;
+					} else {
+						Debug.Log("Game Over!");
+						gameover = true;
+					}
+                }
+                obj = null;
+            }
+        }
 	}
 }

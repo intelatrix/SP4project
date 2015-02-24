@@ -4,7 +4,8 @@ using System.Collections;
 public class ObjSettings : MonoBehaviour {
 
     private int leftOrRight = -1;
-    private bool active = false;
+    private bool isActive = false;
+    private int type = -1;
 
 	// Use this for initialization
 	void Start () {
@@ -25,10 +26,18 @@ public class ObjSettings : MonoBehaviour {
     }
 
     public bool getActive() {
-        return active;
+        return isActive;
     }
 
     public void setActive(bool exist) {
-        active = exist;
+        isActive = exist;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int newNum) {
+        type = newNum;
     }
 }
