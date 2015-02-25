@@ -47,6 +47,16 @@ public class CitizenBehaviour : MonoBehaviour {
 					target.GetComponent<Gantry>().FoundInfected();
 	
 			}
+			
+			if(transform.position.z > 19 || (transform.position.z > 0 && (transform.position.x > 35) || (transform.position.x < -35)))
+			{
+				GameObject Controls = GameObject.Find("Controls");
+				if(Controls != null && Infected && !ThisDragged && !DeathType)
+				{
+					Controls.GetComponent<Controls>().MinusOneLife();
+				}
+				Destroy(gameObject);
+			}
 		}
 	}
 		
@@ -76,16 +86,6 @@ public class CitizenBehaviour : MonoBehaviour {
 	public bool IfInfected()
 	{
 		return Infected;
-	}
-	
-	void OnBecameInvisible() 
-	{
-		GameObject Controls = GameObject.Find("Controls");
-		if(Controls != null && Infected && !ThisDragged && !DeathType)
-		{
-			Controls.GetComponent<Controls>().MinusOneLife();
-		}
-		Destroy(gameObject);
 	}
 	
 	public bool IfOverGantry()

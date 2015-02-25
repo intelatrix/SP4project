@@ -14,7 +14,6 @@ public class Drag : MonoBehaviour {
 	}
 
     void OnMouseOver() {
-		//renderer.material.shader = Shader.Find("Outlined/Diffuse");
     }
 
     void OnMouseDown() {

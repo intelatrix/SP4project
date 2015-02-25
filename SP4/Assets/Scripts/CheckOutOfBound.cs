@@ -38,19 +38,18 @@ public class CheckOutOfBound : MonoBehaviour {
 			gameover = true;
 		}
 
-		if (Input.GetMouseButtonDown (0) && GameObject.Find ("Spawner").GetComponent<Spawner> ().control == true) {
+		if (Input.GetMouseButtonDown (0) && GameObject.Find("Spawner").GetComponent<Spawner> ().control == true) {
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;
 
 			if (Physics.Raycast (ray, out hit)) {
 				if (hit.collider.gameObject.tag == "Obj") {
 					obj = hit.collider.gameObject;
-					//targetLocked = true;
 				}
 			}
 		}
 
-		if (Input.GetMouseButtonUp (0) && GameObject.Find ("Spawner").GetComponent<Spawner>().control == true) {
+		if (Input.GetMouseButtonUp (0) && GameObject.Find("Spawner").GetComponent<Spawner> ().control == true) {
 			if (numOfCorrect > 0) {
 				if (obj != null) {
 					Vector3 newVector = rightPlank.transform.position - obj.transform.position;
@@ -79,10 +78,10 @@ public class CheckOutOfBound : MonoBehaviour {
 						Debug.Log ("Game Over!");
 						gameover = true;
 					}
-					//targetLocked = false;
 				}
 				obj = null;
 			}
+
 		}
 		
 		if (numOfCorrect <= 0) {
