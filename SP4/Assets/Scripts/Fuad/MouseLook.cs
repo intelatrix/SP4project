@@ -25,26 +25,25 @@ public class MouseLook : MonoBehaviour {
 
 	void Update ()
 	{
-		if (aimTrue == 1) 
-		{
-			cameraZoom = Mathf.SmoothDamp(cameraZoom, 1, ref cameraZoomV, cameraZoomSpeed);
+		if (TimeManager.isStart) {
+			if (aimTrue == 1) {
+				cameraZoom = Mathf.SmoothDamp (cameraZoom, 1, ref cameraZoomV, cameraZoomSpeed);
+			} else {
+				cameraZoom = Mathf.SmoothDamp (cameraZoom, 0, ref cameraZoomV, cameraZoomSpeed);
+			}
+
+			camera.fieldOfView = Mathf.Lerp (targetCamera, cameraDefault, cameraZoom);
+
+			yRot += Input.GetAxis ("Mouse X") * lookSens;
+			xRot -= Input.GetAxis ("Mouse Y") * lookSens;
+
+			xRot = Mathf.Clamp (xRot, -80, 100);
+
+			cur_xRot = Mathf.SmoothDamp (cur_xRot, xRot, ref xRotV, lookSmoothness);
+			cur_yRot = Mathf.SmoothDamp (cur_yRot, yRot, ref yRotV, lookSmoothness);
+
+			transform.rotation = Quaternion.Euler (xRot, yRot, 0);
 		}
-		else
-		{
-			cameraZoom = Mathf.SmoothDamp(cameraZoom, 0, ref cameraZoomV, cameraZoomSpeed);
-		}
-
-		camera.fieldOfView = Mathf.Lerp (targetCamera, cameraDefault, cameraZoom);
-
-		yRot += Input.GetAxis ("Mouse X") * lookSens;
-		xRot -= Input.GetAxis ("Mouse Y") * lookSens;
-
-		xRot = Mathf.Clamp(xRot, -80, 100);
-
-		cur_xRot = Mathf.SmoothDamp (cur_xRot, xRot, ref xRotV, lookSmoothness);
-		cur_yRot = Mathf.SmoothDamp (cur_yRot, yRot, ref yRotV, lookSmoothness);
-
-		transform.rotation = Quaternion.Euler (xRot, yRot, 0);
 	}
 
  
