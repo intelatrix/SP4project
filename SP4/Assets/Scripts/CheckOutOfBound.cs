@@ -25,7 +25,7 @@ public class CheckOutOfBound : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		if (GameObject.Find ("Spawner").GetComponent<Spawner> ().control == true) {
+		if (GameObject.Find ("Spawner").GetComponent<Spawner> ().control == true && win == false && gameover == false) {
 			time = Mathf.MoveTowards (time, 0, Time.deltaTime);
 			timer.SetActive(true);
 			timer.GetComponent<Text> ().text = "Time Left: " + time.ToString ("n2");
