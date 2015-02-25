@@ -10,6 +10,7 @@ public class RockShip : MonoBehaviour {
 	private float angle = 0.06f;
 	private bool turn = false;
 
+	//Play ship rocking sound if possible
 	// Update is called once per frame
 	void Update () {
 		if (turn == false) {

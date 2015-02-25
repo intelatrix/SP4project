@@ -15,6 +15,7 @@ public class Spawner : MonoBehaviour {
 	public GameObject obj5;
 	//Chest
 	public GameObject obj6;
+	//More obj on the way
 
     public GameObject dirLeft;
     public GameObject dirRight;
@@ -200,6 +201,7 @@ public class Spawner : MonoBehaviour {
         }
     }
 
+	//Play the spawn type of sound in this function
     void StartingScreen() {
         ObjSettings script = arrayList[objCounter].GetComponent<ObjSettings>();
 
@@ -241,6 +243,7 @@ public class Spawner : MonoBehaviour {
         }
     }
 
+	//Play the spawn type of sound in this function too
     void DirectionTime()
     {
         ObjSettings script = arrayList[dirCounter].GetComponent<ObjSettings>();
@@ -268,6 +271,7 @@ public class Spawner : MonoBehaviour {
         }
     }
 
+	//Play bgm sound here, waves sound
     void StartMainGame() {
         Camera.main.transform.position = new Vector3(0.0f, 3.0f, -10.0f);
         Camera.main.transform.rotation = Quaternion.Euler(10.0f, 0.0f, 0.0f);

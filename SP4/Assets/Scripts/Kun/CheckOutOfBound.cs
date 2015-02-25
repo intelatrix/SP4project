@@ -13,8 +13,7 @@ public class CheckOutOfBound : MonoBehaviour {
 
 	public float time = 10.0f;
 
-	private bool targetLocked = false;
-	private bool correctAnswer = false;
+	private bool falling = false;
 	private bool gameover = false;
 	private bool win = false;
 
@@ -33,6 +32,7 @@ public class CheckOutOfBound : MonoBehaviour {
 			timer.SetActive(false);
 		}
 
+		//Maybe add in a sound for time's up?
 		if (time <= 0.0f && win == false && gameover == false) {
 			Debug.Log("Time's up! Gameover!");
 			gameover = true;
@@ -50,40 +50,53 @@ public class CheckOutOfBound : MonoBehaviour {
 		}
 
 		if (Input.GetMouseButtonUp (0) && GameObject.Find("Spawner").GetComponent<Spawner> ().control == true) {
-			if (numOfCorrect > 0) {
-				if (obj != null) {
-					Vector3 newVector = rightPlank.transform.position - obj.transform.position;
-
-					float dotproduct = Vector3.Dot (newVector, rightPlank.transform.position);
-
-					Vector3 newVector2 = leftPlank.transform.position - obj.transform.position;
-
-					float dotproduct2 = Vector3.Dot (newVector2, leftPlank.transform.position);
-
-					if ((dotproduct < 0 || dotproduct2 < 0) && obj.GetComponent<ObjSettings> ().getActive ()) {
-						if (dotproduct < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 1) {
-							AddCorrect();
-							Debug.Log ("Right");
-						} else if (dotproduct2 < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 2) {
-							AddCorrect();
-							Debug.Log ("Left");
-						} else if (dotproduct < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 2) {
-							Debug.Log ("Game Over! Suppose to be Left");
-							gameover = true;
-						} else if (dotproduct2 < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 1) {
-							Debug.Log ("Game Over! Suppose to be Right");
-							gameover = true;
-						}
-					} else if (((dotproduct < 0 || dotproduct2 < 0) && obj.GetComponent<ObjSettings> ().getActive () == false)) {
-						Debug.Log ("Game Over!");
-						gameover = true;
-					}
-				}
-				obj = null;
-			}
-
+			falling = true;
 		}
-		
+
+		if (numOfCorrect > 0 && falling == true) {
+			if (obj != null) {
+				Vector3 newVector = rightPlank.transform.position - obj.transform.position;
+				
+				float dotproduct = Vector3.Dot (newVector, rightPlank.transform.position);
+				
+				Vector3 newVector2 = leftPlank.transform.position - obj.transform.position;
+				
+				float dotproduct2 = Vector3.Dot (newVector2, leftPlank.transform.position);
+
+				//Play the splash sound in the next if statement
+
+				if ((dotproduct < 0 || dotproduct2 < 0) && obj.GetComponent<ObjSettings> ().getActive () && obj.transform.position.y < 0.2f) {
+					if (dotproduct < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 1) {
+						AddCorrect();
+						Debug.Log ("Right");
+						obj = null;
+						falling = false;
+					} else if (dotproduct2 < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 2) {
+						AddCorrect();
+						Debug.Log ("Left");
+						obj = null;
+						falling = false;
+					} else if (dotproduct < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 2) {
+						Debug.Log ("Game Over! Suppose to be Left");
+						gameover = true;
+						obj = null;
+						falling = false;
+					} else if (dotproduct2 < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 1) {
+						Debug.Log ("Game Over! Suppose to be Right");
+						gameover = true;
+						obj = null;
+						falling = false;
+					}
+				} else if (((dotproduct < 0 || dotproduct2 < 0) && obj.GetComponent<ObjSettings> ().getActive () == false) && obj.transform.position.y < 0.2f) {
+					Debug.Log ("Game Over!");
+					gameover = true;
+					obj = null;
+					falling = false;
+				}
+			}
+		}
+
+		//Victory sound?
 		if (numOfCorrect <= 0) {
 			win = true;
 			LevelLoader.WinLevel();
