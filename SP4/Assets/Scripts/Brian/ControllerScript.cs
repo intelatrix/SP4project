@@ -14,6 +14,7 @@ public class ControllerScript : MonoBehaviour {
 	public LayerMask whatIsGround;
 	public float jumpForce = 700; 
 	public float forwardMovementSpeed = 3.0f;
+	private bool dead = false;
 	float groundRadius = 0.2f;
 
 	bool doubleJump = false;
@@ -31,11 +32,12 @@ public class ControllerScript : MonoBehaviour {
 			doubleJump = false;
 
 		//anim.SetFloat ("vSpeed", rigidbody2D.velocity.y);
-
-		Vector2 newVelocity = rigidbody2D.velocity;
-		newVelocity.x = forwardMovementSpeed;
-		rigidbody2D.velocity = newVelocity;
-
+		if (!dead) {
+			Vector2 newVelocity = rigidbody2D.velocity;
+			newVelocity.x = forwardMovementSpeed;
+			rigidbody2D.velocity = newVelocity;
+		}
+	
 		//if (!grounded)return; /*for disabling areal turn*/
 	
 
@@ -46,6 +48,16 @@ public class ControllerScript : MonoBehaviour {
 			Flip ();
 		else if (forwardMovementSpeed < 0 && facingRight)
 			Flip (); 
+	}
+
+	void OnTriggerEnter2D(Collider2D collider)
+	{
+		HitByFire(collider);
+	}
+	
+	void HitByFire(Collider2D firecollider)
+	{
+		dead = true;
 	}
 
 	void Update()
