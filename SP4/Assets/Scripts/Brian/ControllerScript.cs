@@ -15,6 +15,7 @@ public class ControllerScript : MonoBehaviour {
 	public float jumpForce = 700; 
 	public float forwardMovementSpeed = 3.0f;
 	private bool dead = false;
+	private uint people = 0;
 	float groundRadius = 0.2f;
 
 	bool doubleJump = false;
@@ -38,6 +39,7 @@ public class ControllerScript : MonoBehaviour {
 			rigidbody2D.velocity = newVelocity;
 		}
 	
+
 		//if (!grounded)return; /*for disabling areal turn*/
 	
 
@@ -50,9 +52,20 @@ public class ControllerScript : MonoBehaviour {
 			Flip (); 
 	}
 
+	void CollectPeople(Collider2D peopleCollider)
+	{
+		people++;
+		Destroy (peopleCollider);
+
+	}
+
 	void OnTriggerEnter2D(Collider2D collider)
 	{
-		HitByFire(collider);
+;
+		if (collider.gameObject.CompareTag ("Citizen"))
+			CollectPeople (collider);
+		else
+			HitByFire (collider);
 	}
 	
 	void HitByFire(Collider2D firecollider)

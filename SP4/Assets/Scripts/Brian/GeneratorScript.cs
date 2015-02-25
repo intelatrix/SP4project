@@ -65,32 +65,20 @@ public class GeneratorScript : MonoBehaviour {
 
 	void GenerateRoomIfRequred()
 	{
-		//1
 		List<GameObject> roomsToRemove = new List<GameObject>();
-		
-		//2
-		bool addRooms = true;        
-		
-		//3
+
+		bool addRooms = true;
 		float playerX = transform.position.x;
-		
-		//4
 		float removeRoomX = playerX - screenWidthInPoints;        
-		
-		//5
 		float addRoomX = playerX + screenWidthInPoints;
-		
-		//6
 		float farhtestRoomEndX = 0;
 		
 		foreach(var room in currentRooms)
 		{
-			//7
 			float roomWidth = room.transform.FindChild("Floor").localScale.x;
 			float roomStartX = room.transform.position.x - (roomWidth * 0.5f);    
-			float roomEndX = roomStartX + roomWidth;                            
-			
-			//8
+			float roomEndX = roomStartX + roomWidth;                            			
+		
 			if (roomStartX > addRoomX)
 				addRooms = false;
 			
@@ -106,7 +94,7 @@ public class GeneratorScript : MonoBehaviour {
 		foreach(var room in roomsToRemove)
 		{
 			currentRooms.Remove(room);
-			Destroy(room);            
+			DestroyImmediate(room);            
 		}
 		
 		//12

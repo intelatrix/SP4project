@@ -47,7 +47,7 @@ public class RoomGen : MonoBehaviour {
 		foreach(var room in roomsToRemove)
 		{
 			currentRooms.Remove(room);
-			Destroy(room);            
+			DestroyImmediate(room, true);            
 		}
 		if (addRooms)
 			AddRoom(farthestRoomEndX);
