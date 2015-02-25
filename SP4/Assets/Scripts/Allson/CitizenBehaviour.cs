@@ -43,6 +43,7 @@ public class CitizenBehaviour : MonoBehaviour {
 				
 				if(transform.position.z > 19 || (transform.position.z > 0 && (transform.position.x > 35) || (transform.position.x < -35)))
 				{
+					//Play Wrong Sound
 					GameObject Controls = GameObject.Find("Controls");
 					if(Controls != null && Infected && !ThisDragged && !DeathType)
 					{
@@ -55,7 +56,11 @@ public class CitizenBehaviour : MonoBehaviour {
 			if(Vector3.Distance(new Vector3(transform.position.x, 1.5f, transform.position.z), new Vector3(target.transform.position.x , 1.5f , target.transform.position.z)) <= 1) 
 			{
 				if(Infected)
+				{
+					//if(target.GetComponent<Gantry>().PlayBuzzerSound())
+						//Uncomment and play gantry buzzer sound
 					target.GetComponent<Gantry>().FoundInfected();
+				}
 	
 			}
 		}

@@ -6,6 +6,7 @@ public class Gantry : MonoBehaviour {
 	Vector3 CenterPosition;
 	bool InfectedDetected;
 	bool Activated = true;
+	bool PlayBuzzer = true;
 	// Use this for initialization
 	void Start () 
 	{
@@ -38,6 +39,8 @@ public class Gantry : MonoBehaviour {
 				child.renderer.material.shader = Shader.Find("Diffuse");
 			}
 		}
+		if(!InfectedDetected)
+			PlayBuzzer = true;
 		InfectedDetected = false;
 	}
 	
@@ -62,5 +65,10 @@ public class Gantry : MonoBehaviour {
 	public bool IfActive()
 	{
 		return Activated;
+	}
+	
+	public bool PlayBuzzerSound()
+	{
+		return PlayBuzzer ;
 	}
 }
