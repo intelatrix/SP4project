@@ -7,6 +7,14 @@ public class Spawner : MonoBehaviour {
     public GameObject obj1;
     //crate
     public GameObject obj2;
+	//Barge
+	public GameObject obj3;
+	//Grain
+	public GameObject obj4;
+	//Barrel
+	public GameObject obj5;
+	//Chest
+	public GameObject obj6;
 
     public GameObject dirLeft;
     public GameObject dirRight;
@@ -20,16 +28,14 @@ public class Spawner : MonoBehaviour {
     private GameObject[] arrayList;
     private GameObject display = null;
     private int[] holder;
-    public int setCorrectNo = 5;
-    private int numOfObj = 10;
+    public int setCorrectNo = 2;
+    private int numOfObj = 6;
 
     private float timer = 0;
     private int objCounter = 0;
     private int dirCounter = 0;
 
      Vector3 pos;
-
-    //Notice: This is hardcoded to 5 objects with 2 correct answers
     //
     //
     //
@@ -97,7 +103,7 @@ public class Spawner : MonoBehaviour {
             }
 
             //while obj flashing isnt complete
-            if (phase1 == false)
+            if (phase1 == false && done == false)
             {
                 objCounter++;
                 done = true;
@@ -129,18 +135,29 @@ public class Spawner : MonoBehaviour {
 		arrayList = new GameObject[numOfObj];
 		holder = new int[numOfObj];
         for (int i = 0; i < numOfObj; i++) {
-            int randNum = Random.Range(1 , 3);
+            //int randNum = Random.Range(1 , 3);
             float posX = Random.Range(-3.5f, 3.5f);
             float posZ = Random.Range(-5.0f, 8.5f);
-            if (randNum == 1)
-            { 
-                arrayList[i] = Instantiate(obj1, new Vector3(posX, 0.5f, posZ), Quaternion.identity) as GameObject;
+            if (i == 0)
+            {
+				arrayList[i] = Instantiate(obj1, new Vector3(posX, 0.5f, posZ), Quaternion.identity) as GameObject;
                 holder[i] = 1;
-            }
-            else {
+            } else if (i == 1) {
                 arrayList[i] = Instantiate(obj2, new Vector3(posX, 0.5f, posZ), Quaternion.identity) as GameObject;
                 holder[i] = 2;
-            }
+			}  else if (i == 2) {
+				arrayList[i] = Instantiate(obj3, new Vector3(posX, 0.5f, posZ), Quaternion.identity) as GameObject;
+				holder[i] = 3;
+			}  else if (i == 3) {
+				arrayList[i] = Instantiate(obj4, new Vector3(posX, 0.5f, posZ), Quaternion.identity) as GameObject;
+				holder[i] = 4;
+			}  else if (i == 4) {
+				arrayList[i] = Instantiate(obj5, new Vector3(posX, 0.5f, posZ), Quaternion.identity) as GameObject;
+				holder[i] = 5;
+			}  else if (i == 5) {
+				arrayList[i] = Instantiate(obj6, new Vector3(posX, 0.5f, posZ), Quaternion.identity) as GameObject;
+				holder[i] = 6;
+			}
             arrayList[i].tag = "Obj";
         }
     }
@@ -169,7 +186,7 @@ public class Spawner : MonoBehaviour {
                             script.setLeftOrRight(2);
                         }
                         leftOrRight = 0;
-                        setCorrectNo--;
+                        --setCorrectNo;
                     }
                 }
             }
@@ -179,18 +196,35 @@ public class Spawner : MonoBehaviour {
     void StartingScreen() {
         ObjSettings script = arrayList[objCounter].GetComponent<ObjSettings>();
 
-        if (script.getActive())
+        if (script.getActive() == true)
         {
-            if (holder[objCounter] == 1)
+            if (script.getType() == 1)
             {
                 display = Instantiate(obj1, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity) as GameObject;
                 display.transform.localScale = new Vector3(4.0f, 4.0f, 4.0f);
             }
-            else if (holder[objCounter] == 2)
+			else if (script.getType() == 2)
             {
                 display = Instantiate(obj2, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity) as GameObject;
                 display.transform.localScale = new Vector3(4.0f, 4.0f, 4.0f);
-            }
+			} else if (script.getType() == 3)
+			{
+				display = Instantiate(obj3, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity) as GameObject;
+				display.transform.localScale = new Vector3(4.0f, 4.0f, 4.0f);
+			} else if (script.getType() == 4)
+			{
+				display = Instantiate(obj4, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity) as GameObject;
+				display.transform.Rotate(new Vector3(0.0f, 1.0f, 0.0f), 90.0f);
+				display.transform.localScale = new Vector3(4.0f, 4.0f, 4.0f);
+			} else if (script.getType() == 5)
+			{
+				display = Instantiate(obj5, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity) as GameObject;
+				display.transform.localScale = new Vector3(4.0f, 4.0f, 4.0f);
+			} else if (script.getType() == 6)
+			{
+				display = Instantiate(obj6, new Vector3(pos.x-8.0f, pos.y, pos.z), Quaternion.identity) as GameObject;
+				display.transform.Rotate(new Vector3(0.0f, 1.0f, 0.0f), 90.0f);
+			}
         }
         else
         {
@@ -228,7 +262,6 @@ public class Spawner : MonoBehaviour {
     }
 
     void StartMainGame() {
-        //control = true;
         Camera.main.transform.position = new Vector3(0.0f, 3.0f, -10.0f);
         Camera.main.transform.rotation = Quaternion.Euler(10.0f, 0.0f, 0.0f);
     }

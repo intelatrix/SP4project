@@ -10,6 +10,9 @@ public class Text_Toggle : MonoBehaviour {
 
     public bool toggle;
 	public bool changeText;
+
+	private int numofcorrect = 0;
+
     void Start() {
         
     }
@@ -34,7 +37,9 @@ public class Text_Toggle : MonoBehaviour {
 		}
 
 		if (toggle) {
-			obj2.GetComponent<Text>().text = "Throw them down!";
+			numofcorrect = GameObject.Find ("Check").GetComponent<CheckOutOfBound> ().numOfCorrect;
+			obj2.GetComponent<Text> ().text = "Throw them down!";
+			obj3.GetComponent<Text> ().text = "Num of Correct Object Left: " + numofcorrect;
 		}
     }
 }
