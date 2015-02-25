@@ -10,12 +10,6 @@ public class Gantry : MonoBehaviour {
 	void Start () 
 	{
 		InfectedDetected = false;
-//		foreach (Transform child in this.transform) 
-//		{
-//			if(child.name == "ListOfPages")
-//			{
-//			}
-//		}
 	}
 	
 	// Update is called once per frame
@@ -25,7 +19,8 @@ public class Gantry : MonoBehaviour {
 		{
 			foreach (Transform child in this.transform) 
 			{
-				child.renderer.material.color = Color.black;
+				child.renderer.material.color = Color.white;
+				child.renderer.material.shader = Shader.Find("Outlined/Diffuse");
 			}
 		}
 		else if(InfectedDetected)
@@ -40,6 +35,7 @@ public class Gantry : MonoBehaviour {
 			foreach (Transform child in this.transform) 
 			{
 				child.renderer.material.color = Color.white;
+				child.renderer.material.shader = Shader.Find("Diffuse");
 			}
 		}
 		InfectedDetected = false;
