@@ -46,6 +46,13 @@ public class Spawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		if (LevelLoader.GetRound () == 2) {
+			setCorrectNo = 3;
+			numOfObj = 8;
+		} else if (LevelLoader.GetRound () >= 3) {
+			setCorrectNo = 4;
+			numOfObj = 10;
+		}
         Spawn();
         Init();
         pos.x = 66.4f;
@@ -154,7 +161,7 @@ public class Spawner : MonoBehaviour {
 			}  else if (i == 4) {
 				arrayList[i] = Instantiate(obj5, new Vector3(posX, 0.5f, posZ), Quaternion.identity) as GameObject;
 				holder[i] = 5;
-			}  else if (i == 5) {
+			}  else if (i >= 5) {
 				arrayList[i] = Instantiate(obj6, new Vector3(posX, 0.5f, posZ), Quaternion.identity) as GameObject;
 				holder[i] = 6;
 			}

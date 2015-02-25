@@ -21,6 +21,11 @@ public class LevelLoader : MonoBehaviour
 		NextLevel();
 	}
 
+	//Wei Kun was here
+	static public void SetRound(int newNum) {
+		Round = newNum;
+	}
+
 	static public void LoseLevel()
 	{
 		--Lives;

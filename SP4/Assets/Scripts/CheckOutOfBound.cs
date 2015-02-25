@@ -75,7 +75,7 @@ public class CheckOutOfBound : MonoBehaviour {
 							Debug.Log ("Game Over! Suppose to be Right");
 							gameover = true;
 						}
-					} else {
+					} else if (((dotproduct < 0 || dotproduct2 < 0) && obj.GetComponent<ObjSettings> ().getActive () == false)) {
 						Debug.Log ("Game Over!");
 						gameover = true;
 					}
@@ -87,6 +87,7 @@ public class CheckOutOfBound : MonoBehaviour {
 		
 		if (numOfCorrect <= 0) {
 			win = true;
+			LevelLoader.WinLevel();
 			Debug.Log ("Victory! Sang Nila Utama has reached Temasek!");
 		}
 	}
