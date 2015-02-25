@@ -14,11 +14,11 @@ public class Drag : MonoBehaviour {
 	}
 
     void OnMouseOver() {
-        if (GameObject.Find("Spawner").GetComponent<Spawner>().control == true)
-        {
-            Vector3 axis = new Vector3(1.0f, 0.0f, 0.0f);
-            transform.Rotate(axis, 20);
-        }
+//        if (GameObject.Find("Spawner").GetComponent<Spawner>().control == true)
+//        {
+//            Vector3 axis = new Vector3(1.0f, 0.0f, 0.0f);
+//            transform.Rotate(axis, 20);
+//        }
     }
 
     void OnMouseDown() {

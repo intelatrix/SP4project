@@ -13,7 +13,7 @@ public class RestartTrans : MonoBehaviour {
 		
 		if (!audio.isPlaying) 
 			
-			Application.LoadLevel ("FPS_Splash");
+			LevelLoader.WinLevel();
 
 	
 	}

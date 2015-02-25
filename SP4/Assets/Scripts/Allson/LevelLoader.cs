@@ -6,6 +6,7 @@ public class LevelLoader : MonoBehaviour
 	private enum Games
 	{
 		GAME_SARSGANTRY,
+		GAME_FUAD,
 		GAME_TOTAL
 	} ;
 	
@@ -82,6 +83,9 @@ public class LevelLoader : MonoBehaviour
 		{	
 		case Games.GAME_SARSGANTRY:
 			Application.LoadLevel("Sars");
+			break;
+		case Games.GAME_FUAD:
+			Application.LoadLevel("FPS");
 			break;
 		default:
 			break;

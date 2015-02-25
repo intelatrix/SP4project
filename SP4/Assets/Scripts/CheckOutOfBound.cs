@@ -45,14 +45,14 @@ public class CheckOutOfBound : MonoBehaviour {
 			if (Physics.Raycast (ray, out hit)) {
 				if (hit.collider.gameObject.tag == "Obj") {
 					obj = hit.collider.gameObject;
-					targetLocked = true;
+					//targetLocked = true;
 				}
 			}
 		}
 
-		if (Input.GetMouseButtonUp (0) && GameObject.Find ("Spawner").GetComponent<Spawner> ().control == true) {
+		if (Input.GetMouseButtonUp (0) && GameObject.Find ("Spawner").GetComponent<Spawner>().control == true) {
 			if (numOfCorrect > 0) {
-				if (obj != null && targetLocked == true) {
+				if (obj != null) {
 					Vector3 newVector = rightPlank.transform.position - obj.transform.position;
 
 					float dotproduct = Vector3.Dot (newVector, rightPlank.transform.position);
@@ -79,15 +79,15 @@ public class CheckOutOfBound : MonoBehaviour {
 						Debug.Log ("Game Over!");
 						gameover = true;
 					}
-					targetLocked = false;
+					//targetLocked = false;
 				}
 				obj = null;
 			}
-
-			if (numOfCorrect <= 0) {
-				win = true;
-				Debug.Log ("Victory! Sang Nila Utama has reached Temasek!");
-			}
+		}
+		
+		if (numOfCorrect <= 0) {
+			win = true;
+			Debug.Log ("Victory! Sang Nila Utama has reached Temasek!");
 		}
 	}
 
