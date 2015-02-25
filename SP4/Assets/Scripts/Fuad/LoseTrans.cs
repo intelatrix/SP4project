@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RestartTrans : MonoBehaviour {
-
+public class LoseTrans : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
-	
+		Screen.showCursor = true;		
 	}
 	
 	// Update is called once per frame
@@ -13,8 +12,8 @@ public class RestartTrans : MonoBehaviour {
 		
 		if (!audio.isPlaying) 
 			
-			Application.LoadLevel ("FPS_Splash");
-
-	
+			LevelLoader.LoseLevel();
+		
+		
 	}
 }

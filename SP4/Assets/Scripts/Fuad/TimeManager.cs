@@ -4,12 +4,18 @@ using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour {
 
-	float time = 10f;
+	float time;
 	private float StartCount;
 	public static bool isStart = false;
 
 	// Use this for initialization
 	void Start () {
+
+		time = 30f;
+
+	int multiplier = LevelLoader.GetRound ();
+
+		time = time / multiplier;
 
 		StartCount = 3;
 		isStart = false;
