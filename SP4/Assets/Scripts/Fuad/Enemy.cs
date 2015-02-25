@@ -5,7 +5,6 @@ public class Enemy : MonoBehaviour {
 
 	public int startingHealth = 10;
 	public int currentHealth;
-	public AudioClip enemyDeath;
 
 	bool isDead;
 
@@ -27,8 +26,7 @@ public class Enemy : MonoBehaviour {
 
 	public void TakeDamage (int amount, Vector3 hitPoint){
 		if (isDead) {
-			
-			audio.PlayOneShot (enemyDeath);
+
 
 			return;
 		}
