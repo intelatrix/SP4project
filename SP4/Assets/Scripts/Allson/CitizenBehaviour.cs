@@ -40,22 +40,23 @@ public class CitizenBehaviour : MonoBehaviour {
 				{
 					transform.position += Time.deltaTime*Direction*(10+ LevelLoader.GetRound());
 				}
+				
+				if(transform.position.z > 19 || (transform.position.z > 0 && (transform.position.x > 35) || (transform.position.x < -35)))
+				{
+					GameObject Controls = GameObject.Find("Controls");
+					if(Controls != null && Infected && !ThisDragged && !DeathType)
+					{
+						Controls.GetComponent<Controls>().MinusOneLife();
+					}
+					Destroy(gameObject);
+				}
+				
 			}
 			if(Vector3.Distance(new Vector3(transform.position.x, 1.5f, transform.position.z), new Vector3(target.transform.position.x , 1.5f , target.transform.position.z)) <= 1) 
 			{
 				if(Infected)
 					target.GetComponent<Gantry>().FoundInfected();
 	
-			}
-			
-			if(transform.position.z > 19 || (transform.position.z > 0 && (transform.position.x > 35) || (transform.position.x < -35)))
-			{
-				GameObject Controls = GameObject.Find("Controls");
-				if(Controls != null && Infected && !ThisDragged && !DeathType)
-				{
-					Controls.GetComponent<Controls>().MinusOneLife();
-				}
-				Destroy(gameObject);
 			}
 		}
 	}
