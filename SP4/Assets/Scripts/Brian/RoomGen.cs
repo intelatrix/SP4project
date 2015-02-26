@@ -18,7 +18,7 @@ public class RoomGen : MonoBehaviour {
 	{
 		int randomRoomIndex = Random.Range(0, availableRooms.Length);
 		GameObject room = (GameObject)Instantiate(availableRooms[randomRoomIndex]);
-		float roomWidth = room.transform.FindChild("floor").localScale.x;
+		float roomWidth = room.transform.FindChild("Floor").localScale.x;
 		float roomCenter = farhtestRoomEndX + roomWidth * 0.5f;
 		room.transform.position = new Vector3(roomCenter, 0, 0);
 		currentRooms.Add(room);         
@@ -35,7 +35,7 @@ public class RoomGen : MonoBehaviour {
 		float farthestRoomEndX = 0;
 		foreach(var room in currentRooms)
 		{
-			float roomWidth = room.transform.FindChild("floor").localScale.x;
+			float roomWidth = room.transform.FindChild("Floor").localScale.x;
 			float roomStartX = room.transform.position.x - (roomWidth * 0.5f);    
 			float roomEndX = roomStartX + roomWidth;                            
 			if (roomStartX > addRoomX)
@@ -47,7 +47,7 @@ public class RoomGen : MonoBehaviour {
 		foreach(var room in roomsToRemove)
 		{
 			currentRooms.Remove(room);
-			Destroy(room);            
+			DestroyImmediate(room, true);            
 		}
 		if (addRooms)
 			AddRoom(farthestRoomEndX);

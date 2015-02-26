@@ -18,7 +18,12 @@ public class LevelLoader : MonoBehaviour
 
 	static public void WinLevel()
 	{
-		NextLevel();
+		Application.LoadLevel("WinLevel");
+	}
+
+	//Wei Kun was here
+	static public void SetRound(int newNum) {
+		Round = newNum;
 	}
 
 	static public void LoseLevel()
@@ -26,12 +31,12 @@ public class LevelLoader : MonoBehaviour
 		--Lives;
 		if(Lives == 0)
 		{
-			//Lose Game - Load Lose Level
+			//Lose Game - Load Lose Screen
 			
 		}
 		else
 		{
-			NextLevel();
+			Application.LoadLevel("LoseLevel");
 		}
 	}
 	
@@ -85,7 +90,7 @@ public class LevelLoader : MonoBehaviour
 			Application.LoadLevel("Sars");
 			break;
 		case Games.GAME_FUAD:
-			Application.LoadLevel("FPS");
+			Application.LoadLevel("FPS_Splash");
 			break;
 		default:
 			break;

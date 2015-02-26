@@ -23,8 +23,10 @@ public class GunScript : MonoBehaviour {
 	public GameObject spawnBullet;
 	public GameObject bulletHole;
 	public GameObject cameraObject;	
+	public GameObject BloodSpatter;
 	public AudioClip bang;
 	public AudioClip death;
+
 
 	
 	int enemyMask;
@@ -41,54 +43,59 @@ public class GunScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (TimeManager.isStart) {
 		
-		if (Input.GetButton ("Fire1")) {
+			if (Input.GetButton ("Fire1")) {
 			
-			if(waitTillFire <= 0)
-			{
+				if (waitTillFire <= 0) {
 
 					
-					audio.PlayOneShot(bang);
+					audio.PlayOneShot (bang);
 					
 					RaycastHit hit;
-					Ray ray = new Ray(transform.position, transform.forward);
-				if (Physics.Raycast(ray, out hit, 100.0f, enemyMask))
-										{
-											Enemy enemyHealth = hit.collider.GetComponent<Enemy>();
-					
-											if(enemyHealth != null){
-												enemyHealth.TakeDamage(1, hit.point);
-													audio.PlayOneShot(death);
-						EnemyManager.TCheck--;
-											
-											}
-										}
+					Ray ray = new Ray (transform.position, transform.forward);
+					if (Physics.Raycast (ray, out hit, 100.0f, enemyMask)) {
 
-				waitTillFire = 1;
-			}
+//					GameObject newSplatter = 
+						Instantiate(BloodSpatter, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
+							//as GameObject;
+						//newSplatter.transform.localScale = new Vector3 (0.1f, 0.1f, 0.1f);
+
+						Enemy enemyHealth = hit.collider.GetComponent<Enemy> ();
+					
+						if (enemyHealth != null) {
+							enemyHealth.TakeDamage (1, hit.point);
+							audio.PlayOneShot (death);
+							EnemyManager.TCheck--;
+											
+						}
+					}
+
+					waitTillFire = 1;
+				}
 			
+			}
+		
+			waitTillFire -= Time.deltaTime * fireRate;
+		
+			MouseLook.targetCamera = zoomAngle;
+		
+			if (Input.GetButton ("Fire2")) {
+				holdDown = Mathf.SmoothDamp (holdDown, 0, ref holdDownV, aimSpeed);
+				MouseLook.aimTrue = aimingTrue;
+			} else {
+				holdDown = Mathf.SmoothDamp (holdDown, 1, ref holdDownV, aimSpeed);
+				MouseLook.aimTrue = 1;
+			}
 		}
 		
-		waitTillFire -= Time.deltaTime * fireRate;
+			transform.position = cameraObject.transform.position + (Quaternion.Euler (0, targetYRot, 0) * new Vector3 (holdDown * holdX, holdDown * holdY, holdDown * holdZ));
+			targetXRot = Mathf.SmoothDamp (targetXRot, MouseLook.xRot, ref targetXRotV, rotSpeed);	
+			targetYRot = Mathf.SmoothDamp (targetYRot, MouseLook.yRot, ref targetYRotV, rotSpeed);
 		
-		MouseLook.targetCamera = zoomAngle;
+			transform.rotation = Quaternion.Euler (targetXRot, targetYRot, 0);
 		
-		if(Input.GetButton("Fire2"))
-		{
-			holdDown = Mathf.SmoothDamp(holdDown, 0, ref holdDownV, aimSpeed);
-			MouseLook.aimTrue = aimingTrue;
-		}
-		else
-		{
-			holdDown = Mathf.SmoothDamp(holdDown, 1, ref holdDownV, aimSpeed);
-			MouseLook.aimTrue = 1;
-		}
-		
-		transform.position = cameraObject.transform.position + (Quaternion.Euler (0, targetYRot, 0) * new Vector3 (holdDown * holdX, holdDown * holdY, holdDown * holdZ));
-		targetXRot = Mathf.SmoothDamp (targetXRot, MouseLook.xRot, ref targetXRotV, rotSpeed);	
-		targetYRot = Mathf.SmoothDamp (targetYRot, MouseLook.yRot, ref targetYRotV, rotSpeed);
-		
-		transform.rotation = Quaternion.Euler (targetXRot, targetYRot, 0);
 		
 		
 	}

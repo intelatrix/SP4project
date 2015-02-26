@@ -15,7 +15,9 @@ public class EnemyManager : MonoBehaviour
 	void Start ()
 	{
 		// Call the Spawn function after a delay of the spawnTime and then continue to call after the same amount of time.
-		InvokeRepeating ("Spawn", spawnTime, spawnTime);
+//		InvokeRepeating ("Spawn", spawnTime, spawnTime);
+
+		Spawn ();
 
 		GameObject.Find ("TLeft").GetComponent<Text> ().text = "Enemies Left: " + (TCount);
 		TCheck = TCount;
@@ -31,13 +33,19 @@ public class EnemyManager : MonoBehaviour
 			return;
 		}
 
-
+					
+		for (int i = 0; i < TCount; i++) {
 			// Find a random index between zero and one less than the number of spawn points.
 			int spawnPointIndex = Random.Range (0, spawnPoints.Length);
-		
+
 			// Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
+
 			Instantiate (enemy, spawnPoints [spawnPointIndex].position, spawnPoints [spawnPointIndex].rotation);
-		amount++;
+		}
+
+
+
+		//amount++;
 
 	}
 
@@ -45,8 +53,8 @@ public class EnemyManager : MonoBehaviour
 
 		GameObject.Find ("TLeft").GetComponent<Text> ().text = "Enemies Left: " + (TCheck);
 
-		if (amount >= TCount) {
-		CancelInvoke();
-		}
+//		if (amount >= TCount) {
+//		CancelInvoke();
+//		}
 	}
 }

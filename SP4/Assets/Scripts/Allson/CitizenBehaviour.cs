@@ -11,6 +11,9 @@ public class CitizenBehaviour : MonoBehaviour {
 	Vector3 Direction;
 	bool ActiveOr = false;
 
+
+	public AudioClip wrong;
+
 	void Start () {
 		ThisDragged = false;
 		PassGantry = false;
@@ -40,11 +43,32 @@ public class CitizenBehaviour : MonoBehaviour {
 				{
 					transform.position += Time.deltaTime*Direction*(10+ LevelLoader.GetRound());
 				}
+				
+				if(transform.position.z > 19 || (transform.position.z > 0 && (transform.position.x > 35) || (transform.position.x < -35)))
+				{
+					//Play Wrong Sound
+					audio.PlayOneShot(wrong);
+
+					GameObject Controls = GameObject.Find("Controls");
+					if(Controls != null && Infected && !ThisDragged && !DeathType)
+					{
+						Controls.GetComponent<Controls>().MinusOneLife();
+					}
+					Destroy(gameObject);
+				}
+				
 			}
 			if(Vector3.Distance(new Vector3(transform.position.x, 1.5f, transform.position.z), new Vector3(target.transform.position.x , 1.5f , target.transform.position.z)) <= 1) 
 			{
 				if(Infected)
+				{
+//					if(target.GetComponent<Gantry>().PlayBuzzerSound())
+//					{
+//						
+//						target.GetComponent<Gantry>().PlayedBuzzer();
+//					}
 					target.GetComponent<Gantry>().FoundInfected();
+				}
 	
 			}
 		}
@@ -76,16 +100,6 @@ public class CitizenBehaviour : MonoBehaviour {
 	public bool IfInfected()
 	{
 		return Infected;
-	}
-	
-	void OnBecameInvisible() 
-	{
-		GameObject Controls = GameObject.Find("Controls");
-		if(Controls != null && Infected && !ThisDragged && !DeathType)
-		{
-			Controls.GetComponent<Controls>().MinusOneLife();
-		}
-		Destroy(gameObject);
 	}
 	
 	public bool IfOverGantry()

@@ -15,6 +15,11 @@ public class Controls : MonoBehaviour
 	float TimeCountDown;
 	int Lives;
 	bool StartOr = false;
+	public AudioClip squirm;
+	public AudioClip wrong;
+	public AudioClip correct;
+
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -45,6 +50,8 @@ public class Controls : MonoBehaviour
 						offset = Dragged.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 						
 						Dragged.GetComponent<CitizenBehaviour>().SetDragged(true);
+						//Play Squirm
+							audio.PlayOneShot(squirm);
 						}
 					}
 				}
@@ -63,9 +70,15 @@ public class Controls : MonoBehaviour
 						if(hit.transform.gameObject.name == "GZ")
 						{
 							if(!Dragged.GetComponent<CitizenBehaviour>().IfInfected())
+							{
+							//Play Wrong Sound
 								MinusOneLife();
+								audio.PlayOneShot(wrong);
+							}
 							else 
 							{
+								//Play Correct Sound
+								audio.PlayOneShot(correct);
 								Dragged.GetComponent<CitizenBehaviour>().SetDeath(true);
 							}
 							Destroy(Dragged);

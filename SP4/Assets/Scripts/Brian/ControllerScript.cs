@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ControllerScript : MonoBehaviour {
 	
@@ -14,6 +15,9 @@ public class ControllerScript : MonoBehaviour {
 	public LayerMask whatIsGround;
 	public float jumpForce = 700; 
 	public float forwardMovementSpeed = 3.0f;
+	private bool dead = false;
+	private uint people = 0;
+	float TimeCountDown;
 	float groundRadius = 0.2f;
 
 	bool doubleJump = false;
@@ -21,6 +25,7 @@ public class ControllerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator>();
+		TimeCountDown = 15f;
 	}
 
 	void FixedUpdate () 
@@ -31,10 +36,12 @@ public class ControllerScript : MonoBehaviour {
 			doubleJump = false;
 
 		//anim.SetFloat ("vSpeed", rigidbody2D.velocity.y);
-
-		Vector2 newVelocity = rigidbody2D.velocity;
-		newVelocity.x = forwardMovementSpeed;
-		rigidbody2D.velocity = newVelocity;
+		if (!dead) {
+			Vector2 newVelocity = rigidbody2D.velocity;
+			newVelocity.x = forwardMovementSpeed;
+			rigidbody2D.velocity = newVelocity;
+		}
+	
 
 		//if (!grounded)return; /*for disabling areal turn*/
 	
@@ -48,6 +55,27 @@ public class ControllerScript : MonoBehaviour {
 			Flip (); 
 	}
 
+	void CollectPeople(Collider2D peopleCollider)
+	{
+		people++;
+		Destroy (peopleCollider);
+
+	}
+
+	void OnTriggerEnter2D(Collider2D collider)
+	{
+;
+		if (collider.gameObject.CompareTag ("Citizen"))
+			CollectPeople (collider);
+		else
+			HitByFire (collider);
+	}
+	
+	void HitByFire(Collider2D firecollider)
+	{
+		dead = true;
+	}
+
 	void Update()
 	{
 		if ((grounded || !doubleJump) && Input.GetKeyDown (KeyCode.Space)) 
@@ -58,6 +86,13 @@ public class ControllerScript : MonoBehaviour {
 			if(!doubleJump && !grounded)
 				doubleJump = true;
 		}
+		
+		TimeCountDown = Mathf.MoveTowards(TimeCountDown, 0, Time.deltaTime);
+		if(TimeCountDown <= 0)
+		{
+			LevelLoader.LoseLevel();
+		}
+		GameObject.Find("CountDown").GetComponent<Text>().text = "Time Left: " + TimeCountDown.ToString("n2");
 	}
 
 	void Flip()

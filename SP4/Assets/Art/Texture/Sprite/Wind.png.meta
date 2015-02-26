@@ -1,0 +1,588 @@
+fileFormatVersion: 2
+guid: 51e830e86785d224dbb10320ba1a7afa
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Wind_0
+    21300002: Wind_1
+    21300004: Wind_2
+    21300006: Wind_3
+    21300008: Wind_4
+    21300010: Wind_5
+    21300012: Wind_6
+    21300014: Wind_7
+    21300016: Wind_8
+    21300018: Wind_9
+    21300020: Wind_10
+    21300022: Wind_11
+    21300024: Wind_12
+    21300026: Wind_13
+    21300028: Wind_14
+    21300030: Wind_15
+    21300032: Wind_16
+    21300034: Wind_17
+    21300036: Wind_18
+    21300038: Wind_19
+    21300040: Wind_20
+    21300042: Wind_21
+    21300044: Wind_22
+    21300046: Wind_23
+    21300048: Wind_24
+    21300050: Wind_25
+    21300052: Wind_26
+    21300054: Wind_27
+    21300056: Wind_28
+    21300058: Wind_29
+    21300060: Wind_30
+    21300062: Wind_31
+    21300064: Wind_32
+    21300066: Wind_33
+    21300068: Wind_34
+    21300070: Wind_35
+    21300072: Wind_36
+    21300074: Wind_37
+    21300076: Wind_38
+    21300078: Wind_39
+    21300080: Wind_40
+    21300082: Wind_41
+    21300084: Wind_42
+    21300086: Wind_43
+    21300088: Wind_44
+    21300090: Wind_45
+    21300092: Wind_46
+    21300094: Wind_47
+    21300096: Wind_48
+    21300098: Wind_49
+    21300100: Wind_50
+    21300102: Wind_51
+    21300104: Wind_52
+    21300106: Wind_53
+    21300108: Wind_54
+    21300110: Wind_55
+    21300112: Wind_56
+    21300114: Wind_57
+    21300116: Wind_58
+    21300118: Wind_59
+    21300120: Wind_60
+    21300122: Wind_61
+    21300124: Wind_62
+    21300126: Wind_63
+    21300128: Wind_64
+    21300130: Wind_65
+    21300132: Wind_66
+    21300134: Wind_67
+    21300136: Wind_68
+    21300138: Wind_69
+    21300140: Wind_70
+    21300142: Wind_71
+    21300144: Wind_72
+    21300146: Wind_73
+    21300148: Wind_74
+    21300150: Wind_75
+    21300152: Wind_76
+    21300154: Wind_77
+    21300156: Wind_78
+    21300158: Wind_79
+    21300160: Wind_80
+    21300162: Wind_81
+    21300164: Wind_82
+    21300166: Wind_83
+    21300168: Wind_84
+    21300170: Wind_85
+    21300172: Wind_86
+    21300174: Wind_87
+    21300176: Wind_88
+    21300178: Wind_89
+    21300180: Wind_90
+    21300182: Wind_91
+    21300184: Wind_92
+    21300186: Wind_93
+    21300188: Wind_94
+    21300190: Wind_95
+    21300192: Wind_96
+    21300194: Wind_97
+    21300196: Wind_98
+    21300198: Wind_99
+    21300200: Wind_100
+    21300202: Wind_101
+    21300204: Wind_102
+    21300206: Wind_103
+    21300208: Wind_104
+    21300210: Wind_105
+    21300212: Wind_106
+    21300214: Wind_107
+    21300216: Wind_108
+    21300218: Wind_109
+    21300220: Wind_110
+    21300222: Wind_111
+    21300224: Wind_112
+    21300226: Wind_113
+    21300228: Wind_114
+    21300230: Wind_115
+    21300232: Wind_116
+    21300234: Wind_117
+    21300236: Wind_118
+    21300238: Wind_119
+    21300240: Wind_120
+    21300242: Wind_121
+    21300244: Wind_122
+    21300246: Wind_123
+    21300248: Wind_124
+    21300250: Wind_125
+    21300252: Wind_126
+    21300254: Wind_127
+    21300256: Wind_128
+    21300258: Wind_129
+    21300260: Wind_130
+    21300262: Wind_131
+    21300264: Wind_132
+    21300266: Wind_133
+    21300268: Wind_134
+    21300270: Wind_135
+    21300272: Wind_136
+    21300274: Wind_137
+    21300276: Wind_138
+    21300278: Wind_139
+    21300280: Wind_140
+    21300282: Wind_141
+    21300284: Wind_142
+    21300286: Wind_143
+    21300288: Wind_144
+    21300290: Wind_145
+    21300292: Wind_146
+    21300294: Wind_147
+    21300296: Wind_148
+    21300298: Wind_149
+    21300300: Wind_150
+    21300302: Wind_151
+    21300304: Wind_152
+    21300306: Wind_153
+    21300308: Wind_154
+    21300310: Wind_155
+    21300312: Wind_156
+    21300314: Wind_157
+    21300316: Wind_158
+    21300318: Wind_159
+    21300320: Wind_160
+    21300322: Wind_161
+    21300324: Wind_162
+    21300326: Wind_163
+    21300328: Wind_164
+    21300330: Wind_165
+    21300332: Wind_166
+    21300334: Wind_167
+    21300336: Wind_168
+    21300338: Wind_169
+    21300340: Wind_170
+    21300342: Wind_171
+    21300344: Wind_172
+    21300346: Wind_173
+    21300348: Wind_174
+    21300350: Wind_175
+    21300352: Wind_176
+    21300354: Wind_177
+    21300356: Wind_178
+    21300358: Wind_179
+    21300360: Wind_180
+    21300362: Wind_181
+    21300364: Wind_182
+    21300366: Wind_183
+    21300368: Wind_184
+    21300370: Wind_185
+    21300372: Wind_186
+    21300374: Wind_187
+    21300376: Wind_188
+    21300378: Wind_189
+    21300380: Wind_190
+    21300382: Wind_191
+    21300384: Wind_192
+    21300386: Wind_193
+    21300388: Wind_194
+    21300390: Wind_195
+    21300392: Wind_196
+    21300394: Wind_197
+    21300396: Wind_198
+    21300398: Wind_199
+    21300400: Wind_200
+    21300402: Wind_201
+    21300404: Wind_202
+    21300406: Wind_203
+    21300408: Wind_204
+    21300410: Wind_205
+    21300412: Wind_206
+    21300414: Wind_207
+    21300416: Wind_208
+    21300418: Wind_209
+    21300420: Wind_210
+    21300422: Wind_211
+    21300424: Wind_212
+    21300426: Wind_213
+    21300428: Wind_214
+    21300430: Wind_215
+    21300432: Wind_216
+    21300434: Wind_217
+    21300436: Wind_218
+    21300438: Wind_219
+    21300440: Wind_220
+    21300442: Wind_221
+    21300444: Wind_222
+    21300446: Wind_223
+    21300448: Wind_224
+    21300450: Wind_225
+    21300452: Wind_226
+    21300454: Wind_227
+    21300456: Wind_228
+    21300458: Wind_229
+    21300460: Wind_230
+    21300462: Wind_231
+    21300464: Wind_232
+    21300466: Wind_233
+    21300468: Wind_234
+    21300470: Wind_235
+    21300472: Wind_236
+    21300474: Wind_237
+    21300476: Wind_238
+    21300478: Wind_239
+    21300480: Wind_240
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Wind_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 960
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 960
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 960
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_4
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 960
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 768
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 768
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_8
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 768
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_9
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 576
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 576
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_13
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 576
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_14
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 576
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_17
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_18
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_19
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_21
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_22
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_23
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_24
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_26
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_27
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_28
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wind_29
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
