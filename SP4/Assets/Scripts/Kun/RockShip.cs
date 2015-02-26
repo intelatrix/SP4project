@@ -36,11 +36,11 @@ public class RockShip : MonoBehaviour {
 		}
 
 		if (startRotate == 1 && turn) {
-			//transform.Rotate(new Vector3 (0.0f, 0.0f, 1.0f), angle);
+			transform.Rotate(new Vector3 (0.0f, 0.0f, 1.0f), angle);
 		}
 
 		if (startRotate == 2 && turn) {
-			//transform.Rotate(new Vector3 (0.0f, 0.0f, 1.0f), -angle);
+			transform.Rotate(new Vector3 (0.0f, 0.0f, 1.0f), -angle);
 		}
 	}
 }
