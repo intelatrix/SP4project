@@ -10,7 +10,6 @@ public class CitizenBehaviour : MonoBehaviour {
 	int TargetGantry;	
 	Vector3 Direction;
 	bool ActiveOr = false;
-	public AudioClip gantry;
 
 
 	public AudioClip wrong;
@@ -65,7 +64,7 @@ public class CitizenBehaviour : MonoBehaviour {
 				{
 //					if(target.GetComponent<Gantry>().PlayBuzzerSound())
 //					{
-//						audio.PlayOneShot (gantry);
+//						
 //						target.GetComponent<Gantry>().PlayedBuzzer();
 //					}
 					target.GetComponent<Gantry>().FoundInfected();

@@ -7,6 +7,8 @@ public class Gantry : MonoBehaviour {
 	bool InfectedDetected;
 	bool Activated = true;
 	bool PlayBuzzer = true;
+	public AudioClip gantry;
+
 
 	// Use this for initialization
 	void Start () 
@@ -46,6 +48,7 @@ public class Gantry : MonoBehaviour {
 			{
 				PlayBuzzer = false;
 				//Play GantryBuzz
+				audio.PlayOneShot (gantry);
 				
 			}
 		}

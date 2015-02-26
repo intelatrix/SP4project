@@ -16,6 +16,8 @@ public class Controls : MonoBehaviour
 	int Lives;
 	bool StartOr = false;
 	public AudioClip squirm;
+	public AudioClip wrong;
+	public AudioClip correct;
 
 
 	// Use this for initialization
@@ -71,10 +73,12 @@ public class Controls : MonoBehaviour
 							{
 							//Play Wrong Sound
 								MinusOneLife();
+								audio.PlayOneShot(wrong);
 							}
 							else 
 							{
 								//Play Correct Sound
+								audio.PlayOneShot(correct);
 								Dragged.GetComponent<CitizenBehaviour>().SetDeath(true);
 							}
 							Destroy(Dragged);
