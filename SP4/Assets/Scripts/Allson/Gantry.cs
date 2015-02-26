@@ -7,6 +7,7 @@ public class Gantry : MonoBehaviour {
 	bool InfectedDetected;
 	bool Activated = true;
 	bool PlayBuzzer = true;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -69,6 +70,7 @@ public class Gantry : MonoBehaviour {
 	
 	public bool PlayBuzzerSound()
 	{
+
 		return PlayBuzzer ;
 	}
 }

@@ -15,6 +15,9 @@ public class Controls : MonoBehaviour
 	float TimeCountDown;
 	int Lives;
 	bool StartOr = false;
+	public AudioClip squirm;
+
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -46,6 +49,7 @@ public class Controls : MonoBehaviour
 						
 						Dragged.GetComponent<CitizenBehaviour>().SetDragged(true);
 						//Play Squirm
+							audio.PlayOneShot(squirm);
 						}
 					}
 				}

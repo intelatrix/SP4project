@@ -17,6 +17,8 @@ public class CheckOutOfBound : MonoBehaviour {
 	private bool gameover = false;
 	private bool win = false;
 
+	public AudioClip splash;
+
 	void Start() {
 		numOfCorrect = GameObject.Find ("Spawner").GetComponent<Spawner> ().setCorrectNo;
 	}
@@ -66,26 +68,31 @@ public class CheckOutOfBound : MonoBehaviour {
 				//Play the splash sound in the next if statement
 
 				if ((dotproduct < 0 || dotproduct2 < 0) && obj.GetComponent<ObjSettings> ().getActive () && obj.transform.position.y < 0.2f) {
+
 					if (dotproduct < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 1) {
 						AddCorrect();
 						Debug.Log ("Right");
 						obj = null;
 						falling = false;
+						audio.PlayOneShot(splash);
 					} else if (dotproduct2 < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 2) {
 						AddCorrect();
 						Debug.Log ("Left");
 						obj = null;
 						falling = false;
+						audio.PlayOneShot(splash);
 					} else if (dotproduct < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 2) {
 						Debug.Log ("Game Over! Suppose to be Left");
 						gameover = true;
 						obj = null;
 						falling = false;
+						audio.PlayOneShot(splash);
 					} else if (dotproduct2 < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 1) {
 						Debug.Log ("Game Over! Suppose to be Right");
 						gameover = true;
 						obj = null;
 						falling = false;
+						audio.PlayOneShot(splash);
 					}
 				} else if (((dotproduct < 0 || dotproduct2 < 0) && obj.GetComponent<ObjSettings> ().getActive () == false) && obj.transform.position.y < 0.2f) {
 					Debug.Log ("Game Over!");

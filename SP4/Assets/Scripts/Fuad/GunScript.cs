@@ -23,8 +23,10 @@ public class GunScript : MonoBehaviour {
 	public GameObject spawnBullet;
 	public GameObject bulletHole;
 	public GameObject cameraObject;	
+	public GameObject BloodSpatter;
 	public AudioClip bang;
 	public AudioClip death;
+
 
 	
 	int enemyMask;
@@ -54,6 +56,12 @@ public class GunScript : MonoBehaviour {
 					RaycastHit hit;
 					Ray ray = new Ray (transform.position, transform.forward);
 					if (Physics.Raycast (ray, out hit, 100.0f, enemyMask)) {
+
+//					GameObject newSplatter = 
+						Instantiate(BloodSpatter, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
+							//as GameObject;
+						//newSplatter.transform.localScale = new Vector3 (0.1f, 0.1f, 0.1f);
+
 						Enemy enemyHealth = hit.collider.GetComponent<Enemy> ();
 					
 						if (enemyHealth != null) {
