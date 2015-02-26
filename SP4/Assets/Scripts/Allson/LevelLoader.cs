@@ -90,7 +90,7 @@ public class LevelLoader : MonoBehaviour
 			Application.LoadLevel("Sars");
 			break;
 		case Games.GAME_FUAD:
-			Application.LoadLevel("FPS");
+			Application.LoadLevel("FPS_Splash");
 			break;
 		default:
 			break;

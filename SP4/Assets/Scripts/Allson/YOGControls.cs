@@ -45,6 +45,8 @@ public class YOGControls : MonoBehaviour {
 					Torch.transform.parent = RunningMan.transform;
 					Torch.transform.position = RunningMan.transform.position + new Vector3(0.6f,0.8f ,0);
 					Torch.transform.Rotate(new Vector3(0,0,340));
+					
+					GameObject.Find("WindSpawner").GetComponent<WindSpawner>().StartSpawning();
 				}
 			}
 		}
