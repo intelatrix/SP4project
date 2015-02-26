@@ -63,10 +63,11 @@ public class CitizenBehaviour : MonoBehaviour {
 			{
 				if(Infected)
 				{
-					if(target.GetComponent<Gantry>().PlayBuzzerSound())
-						//Uncomment and play gantry buzzer sound
-					
-						audio.PlayOneShot (gantry);
+//					if(target.GetComponent<Gantry>().PlayBuzzerSound())
+//					{
+//						audio.PlayOneShot (gantry);
+//						target.GetComponent<Gantry>().PlayedBuzzer();
+//					}
 					target.GetComponent<Gantry>().FoundInfected();
 				}
 	

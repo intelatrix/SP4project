@@ -40,8 +40,22 @@ public class Gantry : MonoBehaviour {
 				child.renderer.material.shader = Shader.Find("Diffuse");
 			}
 		}
-		if(!InfectedDetected)
-			PlayBuzzer = true;
+		if(InfectedDetected)
+		{
+			if(PlayBuzzer)
+			{
+				PlayBuzzer = false;
+				//Play GantryBuzz
+				
+			}
+		}
+		else
+		{
+			if(!PlayBuzzer)
+			{
+				PlayBuzzer = true;
+			}
+		}
 		InfectedDetected = false;
 	}
 	
@@ -72,5 +86,10 @@ public class Gantry : MonoBehaviour {
 	{
 
 		return PlayBuzzer ;
+	}
+	
+	public void PlayedBuzzer()
+	{
+		PlayBuzzer = false;
 	}
 }
