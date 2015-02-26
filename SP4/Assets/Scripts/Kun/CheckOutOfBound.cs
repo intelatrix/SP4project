@@ -7,6 +7,7 @@ public class CheckOutOfBound : MonoBehaviour {
     public GameObject rightPlank;
     public GameObject leftPlank;
 	public GameObject timer;
+	public GameObject waterParticle;
     
     private GameObject obj = null;
     public int numOfCorrect = 2;
@@ -69,32 +70,45 @@ public class CheckOutOfBound : MonoBehaviour {
 					if (dotproduct < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 1) {
 						AddCorrect();
 						Debug.Log ("Right");
+						waterParticle.SetActive(true);
+						waterParticle = Instantiate(waterParticle, new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z), Quaternion.identity) as GameObject;
 						obj = null;
 						falling = false;
 					} else if (dotproduct2 < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 2) {
 						AddCorrect();
 						Debug.Log ("Left");
+						waterParticle.SetActive(true);
+						waterParticle = Instantiate(waterParticle, new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z), Quaternion.identity) as GameObject;
 						obj = null;
 						falling = false;
 					} else if (dotproduct < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 2) {
 						Debug.Log ("Game Over! Suppose to be Left");
+						waterParticle.SetActive(true);
+						waterParticle = Instantiate(waterParticle, new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z), Quaternion.identity) as GameObject;
 						gameover = true;
 						obj = null;
 						falling = false;
 					} else if (dotproduct2 < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 1) {
 						Debug.Log ("Game Over! Suppose to be Right");
+						waterParticle.SetActive(true);
+						waterParticle = Instantiate(waterParticle, new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z), Quaternion.identity) as GameObject;
 						gameover = true;
 						obj = null;
 						falling = false;
 					}
 				} else if (((dotproduct < 0 || dotproduct2 < 0) && obj.GetComponent<ObjSettings> ().getActive () == false) && obj.transform.position.y < 0.2f) {
 					Debug.Log ("Game Over!");
+					waterParticle.SetActive(true);
+					waterParticle = Instantiate(waterParticle, new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z), Quaternion.identity) as GameObject;
 					gameover = true;
 					obj = null;
 					falling = false;
 				}
+			} else if (obj == null) {
+				falling = false;
 			}
 		}
+
 
 		//Victory sound?
 		if (numOfCorrect <= 0) {

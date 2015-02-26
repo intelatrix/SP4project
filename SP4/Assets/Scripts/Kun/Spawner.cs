@@ -144,26 +144,26 @@ public class Spawner : MonoBehaviour {
 		holder = new int[numOfObj];
         for (int i = 0; i < numOfObj; i++) {
             //int randNum = Random.Range(1 , 3);
-            float posX = Random.Range(-3.5f, 3.5f);
+            float posX = Random.Range(-3.0f, 3.0f);
             float posZ = Random.Range(-5.0f, 8.5f);
             if (i == 0)
             {
-				arrayList[i] = Instantiate(obj1, new Vector3(posX, 0.5f, posZ), Quaternion.identity) as GameObject;
+				arrayList[i] = Instantiate(obj1, new Vector3(posX, 5.0f, posZ), Quaternion.identity) as GameObject;
                 holder[i] = 1;
             } else if (i == 1) {
-                arrayList[i] = Instantiate(obj2, new Vector3(posX, 0.5f, posZ), Quaternion.identity) as GameObject;
+				arrayList[i] = Instantiate(obj2, new Vector3(posX, 5.0f, posZ), Quaternion.identity) as GameObject;
                 holder[i] = 2;
 			}  else if (i == 2) {
-				arrayList[i] = Instantiate(obj3, new Vector3(posX, 0.5f, posZ), Quaternion.identity) as GameObject;
+				arrayList[i] = Instantiate(obj3, new Vector3(posX, 5.0f, posZ), Quaternion.identity) as GameObject;
 				holder[i] = 3;
 			}  else if (i == 3) {
-				arrayList[i] = Instantiate(obj4, new Vector3(posX, 0.5f, posZ), Quaternion.identity) as GameObject;
+				arrayList[i] = Instantiate(obj4, new Vector3(posX, 5.0f, posZ), Quaternion.identity) as GameObject;
 				holder[i] = 4;
 			}  else if (i == 4) {
-				arrayList[i] = Instantiate(obj5, new Vector3(posX, 0.5f, posZ), Quaternion.identity) as GameObject;
+				arrayList[i] = Instantiate(obj5, new Vector3(posX, 5.0f, posZ), Quaternion.identity) as GameObject;
 				holder[i] = 5;
 			}  else if (i >= 5) {
-				arrayList[i] = Instantiate(obj6, new Vector3(posX, 0.5f, posZ), Quaternion.identity) as GameObject;
+				arrayList[i] = Instantiate(obj6, new Vector3(posX, 5.0f, posZ), Quaternion.identity) as GameObject;
 				holder[i] = 6;
 			}
             arrayList[i].tag = "Obj";

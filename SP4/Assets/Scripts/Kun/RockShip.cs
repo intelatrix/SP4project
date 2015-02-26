@@ -35,11 +35,11 @@ public class RockShip : MonoBehaviour {
 			turn = false;
 		}
 
-		if (startRotate == 1 && turn && GameObject.Find("Spawner").GetComponent<Spawner>().control == true) {
+		if (startRotate == 1 && turn) {
 			transform.Rotate(new Vector3 (0.0f, 0.0f, 1.0f), angle);
 		}
 
-		if (startRotate == 2 && turn && GameObject.Find("Spawner").GetComponent<Spawner>().control == true) {
+		if (startRotate == 2 && turn) {
 			transform.Rotate(new Vector3 (0.0f, 0.0f, 1.0f), -angle);
 		}
 	}
