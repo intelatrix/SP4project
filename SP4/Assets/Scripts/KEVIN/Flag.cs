@@ -19,7 +19,7 @@ public class Flag : MonoBehaviour {
 		{
 			if(GameObject.Find ("character(Clone)")||GameObject.Find ("character2(Clone)"))
 			{
-			flagpos+=0.3f;
+			flagpos+=0.4f;
 			if (flagpos < 5.9f)
 			{
 					transform.position = new Vector3 (23.8f, flagpos, 0);
@@ -28,6 +28,7 @@ public class Flag : MonoBehaviour {
 			{
 				flagpos = 5.9f;
 					transform.position = new Vector3 (23.8f, flagpos, 0);
+					LevelLoader.NextLevel();
 			}
 			}
 		}
@@ -35,7 +36,7 @@ public class Flag : MonoBehaviour {
 		{
 			if(GameObject.Find ("character1(Clone)")||GameObject.Find ("character3(Clone)"))
 			{
-			flagpos+=0.5f;
+			flagpos+=0.4f;
 			if (flagpos < 5.9f)
 			{
 					transform.position = new Vector3 (23.8f, flagpos, 0);
@@ -44,19 +45,22 @@ public class Flag : MonoBehaviour {
 			{
 				flagpos = 5.9f;
 					transform.position = new Vector3 (23.8f, flagpos, 0);
+					LevelLoader.NextLevel();
 			}
 			}
 		}
-		if (flagpos < 5.9f)
+		if (flagpos <= 5.9f)
 		{
-			flagpos-=0.03f;
+			flagpos-=0.01f;
 			transform.position = new Vector3 (23.8f, flagpos, 0);
+			//LevelLoader.NextLevel();
 		}
 		if (flagpos <= -12.1f)
 		{
 			//Debug.Log ("lol");
 			flagpos=-12.1f;
 			transform.position = new Vector3 (23.8f, flagpos, 0);
+		
 		}
 	}
 	

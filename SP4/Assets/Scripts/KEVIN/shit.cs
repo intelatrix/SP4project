@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class shit : MonoBehaviour {
+public class Shit : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -12,10 +12,10 @@ public class shit : MonoBehaviour {
 	void Update () {
 	
 	}
-	void OnCollisionEnter2D(Collision2D shit) 
+	
+	void OnCollisionEnter2D(Collision2D col)
 	{
-		if (shit.gameObject.name == "shit_left" ||shit.gameObject.name ==  "shit_right") {
-			Destroy(shit.gameObject);
-		}
+
+		Destroy (this.gameObject);
 	}
 }
