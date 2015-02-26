@@ -41,7 +41,7 @@ public class CheckOutOfBound : MonoBehaviour {
 			gameover = true;
 		}
 
-		if (Input.GetMouseButtonDown (0) && GameObject.Find("Spawner").GetComponent<Spawner> ().control == true) {
+		if (Input.GetMouseButtonDown(0) && GameObject.Find("Spawner").GetComponent<Spawner> ().control == true) {
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;
 
@@ -52,11 +52,11 @@ public class CheckOutOfBound : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetMouseButtonUp (0) && GameObject.Find("Spawner").GetComponent<Spawner> ().control == true) {
+		if (Input.GetMouseButtonUp(0) && GameObject.Find("Spawner").GetComponent<Spawner> ().control == true) {
 			falling = true;
 		}
 
-		if (numOfCorrect > 0 && falling == true) {
+		if (falling == true) {
 			if (obj != null) {
 				Vector3 newVector = rightPlank.transform.position - obj.transform.position;
 				
@@ -69,50 +69,28 @@ public class CheckOutOfBound : MonoBehaviour {
 				//Play the splash sound in the next if statement
 
 				if ((dotproduct < 0 || dotproduct2 < 0) && obj.GetComponent<ObjSettings> ().getActive () && obj.transform.position.y < 0.2f) {
-
 					if (dotproduct < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 1) {
 						AddCorrect();
+						UnspawnObj();
 						Debug.Log ("Right");
-						waterParticle.SetActive(true);
-						waterParticle = Instantiate(waterParticle, new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z), Quaternion.identity) as GameObject;
-						obj = null;
-						falling = false;
-						audio.PlayOneShot(splash);
 					} else if (dotproduct2 < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 2) {
 						AddCorrect();
+						UnspawnObj();
 						Debug.Log ("Left");
-						waterParticle.SetActive(true);
-						waterParticle = Instantiate(waterParticle, new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z), Quaternion.identity) as GameObject;
-						obj = null;
-						falling = false;
-						audio.PlayOneShot(splash);
 					} else if (dotproduct < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 2) {
 						Debug.Log ("Game Over! Suppose to be Left");
-						waterParticle.SetActive(true);
-						waterParticle = Instantiate(waterParticle, new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z), Quaternion.identity) as GameObject;
+						UnspawnObj();
 						gameover = true;
-						obj = null;
-						falling = false;
-						audio.PlayOneShot(splash);
 					} else if (dotproduct2 < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 1) {
 						Debug.Log ("Game Over! Suppose to be Right");
-						waterParticle.SetActive(true);
-						waterParticle = Instantiate(waterParticle, new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z), Quaternion.identity) as GameObject;
+						UnspawnObj();
 						gameover = true;
-						obj = null;
-						falling = false;
-						audio.PlayOneShot(splash);
 					}
-				} else if (((dotproduct < 0 || dotproduct2 < 0) && obj.GetComponent<ObjSettings> ().getActive () == false) && obj.transform.position.y < 0.2f) {
+				} else if (((dotproduct < 0 || dotproduct2 < 0) && obj.GetComponent<ObjSettings>().getActive() == false) && obj.transform.position.y < 0.2f) {
 					Debug.Log ("Game Over!");
-					waterParticle.SetActive(true);
-					waterParticle = Instantiate(waterParticle, new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z), Quaternion.identity) as GameObject;
+					UnspawnObj();
 					gameover = true;
-					obj = null;
-					falling = false;
 				}
-			} else if (obj == null) {
-				falling = false;
 			}
 		}
 
@@ -123,6 +101,13 @@ public class CheckOutOfBound : MonoBehaviour {
 			LevelLoader.WinLevel();
 			Debug.Log ("Victory! Sang Nila Utama has reached Temasek!");
 		}
+	}
+
+	void UnspawnObj() {
+		waterParticle = Instantiate (waterParticle, new Vector3 (obj.transform.position.x, obj.transform.position.y + 2.0f, obj.transform.position.z), Quaternion.identity) as GameObject;
+		Destroy (obj);
+		falling = false;
+		audio.PlayOneShot (splash);
 	}
 
 	void AddCorrect() {

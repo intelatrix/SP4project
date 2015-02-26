@@ -54,6 +54,9 @@ public class Spawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Spawn();
+		Init();
+
 		Waves_s.loop = true;
 		BGM_s.loop = true;
 
@@ -70,8 +73,6 @@ public class Spawner : MonoBehaviour {
 			setCorrectNo = 4;
 			numOfObj = 10;
 		}
-        Spawn();
-        Init();
         pos.x = 66.4f;
         pos.y = -10.2f;
         pos.z = -9.8f;
@@ -164,22 +165,22 @@ public class Spawner : MonoBehaviour {
             float posZ = Random.Range(-5.0f, 8.5f);
             if (i == 0)
             {
-				arrayList[i] = Instantiate(obj1, new Vector3(posX, 5.0f, posZ), Quaternion.identity) as GameObject;
+				arrayList[i] = Instantiate(obj1, new Vector3(posX, 1.0f, posZ), Quaternion.identity) as GameObject;
                 holder[i] = 1;
             } else if (i == 1) {
-				arrayList[i] = Instantiate(obj2, new Vector3(posX, 5.0f, posZ), Quaternion.identity) as GameObject;
+				arrayList[i] = Instantiate(obj2, new Vector3(posX, 1.0f, posZ), Quaternion.identity) as GameObject;
                 holder[i] = 2;
 			}  else if (i == 2) {
-				arrayList[i] = Instantiate(obj3, new Vector3(posX, 5.0f, posZ), Quaternion.identity) as GameObject;
+				arrayList[i] = Instantiate(obj3, new Vector3(posX, 1.0f, posZ), Quaternion.identity) as GameObject;
 				holder[i] = 3;
 			}  else if (i == 3) {
-				arrayList[i] = Instantiate(obj4, new Vector3(posX, 5.0f, posZ), Quaternion.identity) as GameObject;
+				arrayList[i] = Instantiate(obj4, new Vector3(posX, 1.0f, posZ), Quaternion.identity) as GameObject;
 				holder[i] = 4;
 			}  else if (i == 4) {
-				arrayList[i] = Instantiate(obj5, new Vector3(posX, 5.0f, posZ), Quaternion.identity) as GameObject;
+				arrayList[i] = Instantiate(obj5, new Vector3(posX, 1.0f, posZ), Quaternion.identity) as GameObject;
 				holder[i] = 5;
 			}  else if (i >= 5) {
-				arrayList[i] = Instantiate(obj6, new Vector3(posX, 5.0f, posZ), Quaternion.identity) as GameObject;
+				arrayList[i] = Instantiate(obj6, new Vector3(posX, 1.0f, posZ), Quaternion.identity) as GameObject;
 				holder[i] = 6;
 			}
             arrayList[i].tag = "Obj";
@@ -302,7 +303,5 @@ public class Spawner : MonoBehaviour {
 
 		BGM_s.mute = false;
 		Waves_s.mute = false;
-
-
     }
 }
