@@ -9,7 +9,8 @@ public class BackgroundStart : MonoBehaviour {
 		int NumberOfBackgrounds = 0;
 		foreach (Transform child in this.transform) 
 		{
-			child.transform.position = new Vector3(0+NumberOfBackgrounds*20.5f,4,0);
+			child.transform.position = new Vector3(0+NumberOfBackgrounds*20.6f,4,0);
+			child.renderer.material.color = new Color (1f,1f,1f,0.9f);
 			++NumberOfBackgrounds;
 		}
 	}
