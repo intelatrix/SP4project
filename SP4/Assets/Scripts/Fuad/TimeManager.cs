@@ -37,9 +37,9 @@ public class TimeManager : MonoBehaviour {
 
 
 		if (time <= 0 && EnemyManager.TCheck != 0) {
-			Application.LoadLevel ("FPS_LoseScene");
+				LevelLoader.LoseLevel();
 		} else if (EnemyManager.TCheck <= 0) {
-			Application.LoadLevel ("FPS_WinScene");
+			LevelLoader.WinLevel();
 		}
 		}
 

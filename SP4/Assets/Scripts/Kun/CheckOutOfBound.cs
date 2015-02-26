@@ -18,6 +18,8 @@ public class CheckOutOfBound : MonoBehaviour {
 	private bool gameover = false;
 	private bool win = false;
 
+	public AudioClip splash;
+
 	void Start() {
 		numOfCorrect = GameObject.Find ("Spawner").GetComponent<Spawner> ().setCorrectNo;
 	}
@@ -67,6 +69,7 @@ public class CheckOutOfBound : MonoBehaviour {
 				//Play the splash sound in the next if statement
 
 				if ((dotproduct < 0 || dotproduct2 < 0) && obj.GetComponent<ObjSettings> ().getActive () && obj.transform.position.y < 0.2f) {
+
 					if (dotproduct < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 1) {
 						AddCorrect();
 						Debug.Log ("Right");
@@ -74,6 +77,7 @@ public class CheckOutOfBound : MonoBehaviour {
 						waterParticle = Instantiate(waterParticle, new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z), Quaternion.identity) as GameObject;
 						obj = null;
 						falling = false;
+						audio.PlayOneShot(splash);
 					} else if (dotproduct2 < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 2) {
 						AddCorrect();
 						Debug.Log ("Left");
@@ -81,6 +85,7 @@ public class CheckOutOfBound : MonoBehaviour {
 						waterParticle = Instantiate(waterParticle, new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z), Quaternion.identity) as GameObject;
 						obj = null;
 						falling = false;
+						audio.PlayOneShot(splash);
 					} else if (dotproduct < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 2) {
 						Debug.Log ("Game Over! Suppose to be Left");
 						waterParticle.SetActive(true);
@@ -88,6 +93,7 @@ public class CheckOutOfBound : MonoBehaviour {
 						gameover = true;
 						obj = null;
 						falling = false;
+						audio.PlayOneShot(splash);
 					} else if (dotproduct2 < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 1) {
 						Debug.Log ("Game Over! Suppose to be Right");
 						waterParticle.SetActive(true);
@@ -95,6 +101,7 @@ public class CheckOutOfBound : MonoBehaviour {
 						gameover = true;
 						obj = null;
 						falling = false;
+						audio.PlayOneShot(splash);
 					}
 				} else if (((dotproduct < 0 || dotproduct2 < 0) && obj.GetComponent<ObjSettings> ().getActive () == false) && obj.transform.position.y < 0.2f) {
 					Debug.Log ("Game Over!");

@@ -36,6 +36,13 @@ public class Spawner : MonoBehaviour {
     private int objCounter = 0;
     private int dirCounter = 0;
 
+	public AudioClip spawn_sound;
+	public AudioClip BGM;
+	public AudioClip Waves;
+
+	public AudioSource BGM_s;
+	public AudioSource Waves_s;
+
      Vector3 pos;
     //
     //
@@ -47,6 +54,15 @@ public class Spawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Waves_s.loop = true;
+		BGM_s.loop = true;
+
+		Waves_s.PlayOneShot (Waves);
+		BGM_s.PlayOneShot (BGM);
+
+		Waves_s.mute = true;
+		BGM_s.mute = true;
+
 		if (LevelLoader.GetRound () == 2) {
 			setCorrectNo = 3;
 			numOfObj = 8;
@@ -211,28 +227,34 @@ public class Spawner : MonoBehaviour {
             {
                 display = Instantiate(obj1, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity) as GameObject;
                 display.transform.localScale = new Vector3(4.0f, 4.0f, 4.0f);
+				audio.PlayOneShot(spawn_sound);
             }
 			else if (script.getType() == 2)
             {
                 display = Instantiate(obj2, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity) as GameObject;
-                display.transform.localScale = new Vector3(4.0f, 4.0f, 4.0f);
+				display.transform.localScale = new Vector3(4.0f, 4.0f, 4.0f);
+				audio.PlayOneShot(spawn_sound);
 			} else if (script.getType() == 3)
 			{
 				display = Instantiate(obj3, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity) as GameObject;
 				display.transform.localScale = new Vector3(4.0f, 4.0f, 4.0f);
+				audio.PlayOneShot(spawn_sound);
 			} else if (script.getType() == 4)
 			{
 				display = Instantiate(obj4, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity) as GameObject;
 				display.transform.Rotate(new Vector3(0.0f, 1.0f, 0.0f), 90.0f);
 				display.transform.localScale = new Vector3(4.0f, 4.0f, 4.0f);
+				audio.PlayOneShot(spawn_sound);
 			} else if (script.getType() == 5)
 			{
 				display = Instantiate(obj5, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity) as GameObject;
 				display.transform.localScale = new Vector3(4.0f, 4.0f, 4.0f);
+				audio.PlayOneShot(spawn_sound);
 			} else if (script.getType() == 6)
 			{
 				display = Instantiate(obj6, new Vector3(pos.x-8.0f, pos.y, pos.z), Quaternion.identity) as GameObject;
 				display.transform.Rotate(new Vector3(0.0f, 1.0f, 0.0f), 90.0f);
+				audio.PlayOneShot(spawn_sound);
 			}
         }
         else
@@ -255,12 +277,14 @@ public class Spawner : MonoBehaviour {
                 display = Instantiate(dirLeft, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity) as GameObject;
                 display.transform.localScale = new Vector3(4.0f, 4.0f, 4.0f);
                 display.transform.Rotate(new Vector3(0.0f, 1.0f, 0.0f), 90.0f);
+				audio.PlayOneShot(spawn_sound);
             }
             else if (script.getLeftOrRight() == 2)
             {
                 display = Instantiate(dirRight, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity) as GameObject;
                 display.transform.localScale = new Vector3(4.0f, 4.0f, 4.0f);
                 display.transform.Rotate(new Vector3(0.0f, 1.0f, 0.0f), 90.0f);
+				audio.PlayOneShot(spawn_sound);
             }
         }
         else
@@ -275,5 +299,10 @@ public class Spawner : MonoBehaviour {
     void StartMainGame() {
         Camera.main.transform.position = new Vector3(0.0f, 3.0f, -10.0f);
         Camera.main.transform.rotation = Quaternion.Euler(10.0f, 0.0f, 0.0f);
+
+		BGM_s.mute = false;
+		Waves_s.mute = false;
+
+
     }
 }

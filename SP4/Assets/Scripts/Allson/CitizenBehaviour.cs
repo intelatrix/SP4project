@@ -11,6 +11,9 @@ public class CitizenBehaviour : MonoBehaviour {
 	Vector3 Direction;
 	bool ActiveOr = false;
 
+
+	public AudioClip wrong;
+
 	void Start () {
 		ThisDragged = false;
 		PassGantry = false;
@@ -44,6 +47,8 @@ public class CitizenBehaviour : MonoBehaviour {
 				if(transform.position.z > 19 || (transform.position.z > 0 && (transform.position.x > 35) || (transform.position.x < -35)))
 				{
 					//Play Wrong Sound
+					audio.PlayOneShot(wrong);
+
 					GameObject Controls = GameObject.Find("Controls");
 					if(Controls != null && Infected && !ThisDragged && !DeathType)
 					{
@@ -57,8 +62,11 @@ public class CitizenBehaviour : MonoBehaviour {
 			{
 				if(Infected)
 				{
-					//if(target.GetComponent<Gantry>().PlayBuzzerSound())
-						//Uncomment and play gantry buzzer sound
+//					if(target.GetComponent<Gantry>().PlayBuzzerSound())
+//					{
+//						
+//						target.GetComponent<Gantry>().PlayedBuzzer();
+//					}
 					target.GetComponent<Gantry>().FoundInfected();
 				}
 	
