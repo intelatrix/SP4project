@@ -18,7 +18,7 @@ public class character : MonoBehaviour {
 	{
 
 		if (Input.GetKeyDown ("u"))
-		{	
+		{	//flag sound here
 			if(GameObject.Find ("character(Clone)"))
 			{
 				Instantiate (charater1, new Vector3 (18.8f, -10.9f, 0), Quaternion.identity) ;
@@ -34,7 +34,7 @@ public class character : MonoBehaviour {
 
 		}
 		else if (Input.GetKeyDown ("p")) 
-		{
+		{//flag sound here
 			if(GameObject.Find ("character1(Clone)"))
 			{
 				Instantiate (charater, new Vector3 (18.8f, -10.9f, 0), Quaternion.identity) ;

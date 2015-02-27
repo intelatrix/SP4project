@@ -28,78 +28,69 @@ public class callchar : MonoBehaviour {
 		shitcount2 = 0;
 		swag = FindObjectOfType<Soldiers> ();
 		round = LevelLoader.GetRound();
+	
+		if (LevelLoader.GetRound () == 2) {
+			shittime=1.5f;
+			swag.random = Random.Range (1, 80);	
+		} 
+		else if (LevelLoader.GetRound () >= 3) {
+			shittime=1f;
+			swag.random = Random.Range (1, 30);	
+		}
+
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		shittime+=Time.deltaTime;
-		if (shittime >= 2) {
+		LevelLoader.SetRound(3);
+	
+		shittime += Time.deltaTime;
+		if (shittime >= 3) {
 			
-			if (rightx <= 20) 
-			{
-				if (random == 1)
-				{
-					shittime=0;
+			if (rightx <= 20) {
+				if (random == 1) {
+					shittime = 0;
 					shitcount1++;
-						Instantiate (shit_right, new Vector3 (24.5f, 12f, 0), Quaternion.identity);
-						//transform.position =new Vector2(-2.5f, y);
-						rightx++;
-				} 
-
-				else 
-				{
-						random = Random.Range (1, 3);
+					Instantiate (shit_right, new Vector3 (24.5f, 7f, 0), Quaternion.identity);
+					//transform.position =new Vector2(-2.5f, y);
+					rightx++;
+				} else {
+					random = Random.Range (1, 3);
 				}
 			}
 			
 			
-			if (leftx <= 20) 
-			{
-				if (random == 2) 
-				{
+			if (leftx <= 20) {
+				if (random == 2) {
 
-					shittime=0;
+					shittime = 0;
 					shitcount2++;	
 
-						Instantiate (shit_left, new Vector3 (16.3f, 12f, 0), Quaternion.identity);
-						leftx++;
-				}
-				else 
-				{
+					Instantiate (shit_left, new Vector3 (16.3f, 7f, 0), Quaternion.identity);
+					leftx++;
+				} else {
 					random = Random.Range (1, 3);	
 				}
 			}
 		}
-		 if (shitcount2 >= 4)
-		{
-			random=1;
-			shitcount2=0;
+		if (shitcount2 >= 4) {
+			random = 1;
+			shitcount2 = 0;
+		} else if (shitcount1 >= 4) {
+			random = 2;
+			shitcount1 = 0;
 		}
-		else if (shitcount1 >= 4)
-		{
-			random=2;
-			shitcount1=0;
-		}
-		TimeCountDown = Mathf.MoveTowards(TimeCountDown, 0, Time.deltaTime);
-		GameObject.Find("CountDown").GetComponent<Text>().text = "Time Left: " + TimeCountDown.ToString("n2");
+		TimeCountDown = Mathf.MoveTowards (TimeCountDown, 0, Time.deltaTime);
+		GameObject.Find ("CountDown").GetComponent<Text> ().text = "Time Left: " + TimeCountDown.ToString ("n2");
 
-		if(TimeCountDown <= 0 )
-		{
-			//LevelLoader.LoseLevel();
+		if (TimeCountDown <= 0) {
+			LevelLoader.LoseLevel ();
 		}
 	
-		if (round == 2)
-		{
-		//	shittime =1.5f;
-		//	swag.random = Random.Range (1, 80);	
 
-		}
-		if (round == 3)
-		{
-		//	shittime =1f;
 		//	swag.random = Random.Range (1, 30);	
-		}
+	
 		/*foreach (char c in Input.inputString) 
 		{
 			if (test == "shoot")

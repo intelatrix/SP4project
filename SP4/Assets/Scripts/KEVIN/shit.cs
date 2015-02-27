@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Shit : MonoBehaviour {
+public class shit : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

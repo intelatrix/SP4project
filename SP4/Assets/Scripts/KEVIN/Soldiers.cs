@@ -7,6 +7,7 @@ public class Soldiers : MonoBehaviour {
 	public int random;
 	public GameObject soldiers;
 	public GameObject soldierfire;
+	public GameObject soldieridle;
 	public bool stop;
 	public bool check;
 	public callchar swag;
@@ -14,20 +15,26 @@ public class Soldiers : MonoBehaviour {
 	void Start () {
 		stop = false;
 		swag = FindObjectOfType<callchar> ();
+	
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		//print (random);
+		if (x == -15.2f)
+		{
+			random=5;
+		}
 
+		//print (random);
+	
 		if (random == 5) 
 		{
 			if (stop == false) 
 			{
 				if (x < 13.5f)
 				{
-					x += 0.05f;
+					x += 0.15f;
 					check = true;
 				}
 			}
@@ -44,6 +51,7 @@ public class Soldiers : MonoBehaviour {
 			{
 			stop = false;
 			random = 0;
+			//Instantiate (soldieridle, new Vector3 (-15.2f, 9.9f, 0), Quaternion.identity);
 			}
 			else 
 			{
@@ -60,7 +68,7 @@ public class Soldiers : MonoBehaviour {
 			GameObject.Destroy (GameObject.Find ("soldiers(Clone)"));
 
 			Instantiate (soldierfire, new Vector3 (13.9f, -9.9f, 0), Quaternion.identity).name = "soldierfire";
-			//LevelLoader.LoseLevel();
+			LevelLoader.LoseLevel();
 		}
 		transform.position = new Vector3 (x, -9.9f, 0);
 	}

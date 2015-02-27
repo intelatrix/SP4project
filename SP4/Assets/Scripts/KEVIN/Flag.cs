@@ -28,7 +28,7 @@ public class Flag : MonoBehaviour {
 			{
 				flagpos = 5.9f;
 					transform.position = new Vector3 (23.8f, flagpos, 0);
-					LevelLoader.NextLevel();
+					LevelLoader.WinLevel();
 			}
 			}
 		}
@@ -45,21 +45,22 @@ public class Flag : MonoBehaviour {
 			{
 				flagpos = 5.9f;
 					transform.position = new Vector3 (23.8f, flagpos, 0);
-					LevelLoader.NextLevel();
+					LevelLoader.WinLevel();
 			}
 			}
 		}
 		if (flagpos <= 5.9f)
 		{
-			flagpos-=0.01f;
+			flagpos-=0.03f;
 			transform.position = new Vector3 (23.8f, flagpos, 0);
-			//LevelLoader.NextLevel();
+		
 		}
 		if (flagpos <= -12.1f)
 		{
 			//Debug.Log ("lol");
 			flagpos=-12.1f;
 			transform.position = new Vector3 (23.8f, flagpos, 0);
+
 		
 		}
 	}

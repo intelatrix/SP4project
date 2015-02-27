@@ -93,6 +93,7 @@ public class LevelLoader : MonoBehaviour
 		case Games.GAME_FUAD:
 			Application.LoadLevel("FPS_Splash");
 			break;
+
 		default:
 			break;
 		}
