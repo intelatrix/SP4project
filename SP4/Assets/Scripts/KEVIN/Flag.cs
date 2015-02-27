@@ -4,6 +4,9 @@ using System.Collections;
 public class Flag : MonoBehaviour {
 	
 	public float flagpos;
+	public AudioClip majulah;
+	public AudioSource majulah_s;
+	bool playTrue = false;
 	
 	// Use this for initialization
 	void Start () {
@@ -28,6 +31,9 @@ public class Flag : MonoBehaviour {
 			{
 				flagpos = 5.9f;
 					transform.position = new Vector3 (23.8f, flagpos, 0);
+					playTrue = true;
+					playSound();
+
 					LevelLoader.NextLevel();
 			}
 			}
@@ -45,6 +51,9 @@ public class Flag : MonoBehaviour {
 			{
 				flagpos = 5.9f;
 					transform.position = new Vector3 (23.8f, flagpos, 0);
+					playTrue = true;
+					playSound();
+
 					LevelLoader.NextLevel();
 			}
 			}
@@ -62,6 +71,18 @@ public class Flag : MonoBehaviour {
 			transform.position = new Vector3 (23.8f, flagpos, 0);
 		
 		}
+	}
+
+	void playSound (){
+
+		if (playTrue == true && majulah_s.isPlaying == false) {
+			playTrue = false;
+			majulah_s.PlayOneShot (majulah);
+		} else if (playTrue == true && majulah_s.isPlaying == true) {
+			playTrue = false;
+		}
+
+
 	}
 	
 }
