@@ -101,6 +101,11 @@ public class CheckOutOfBound : MonoBehaviour {
 			LevelLoader.WinLevel();
 			Debug.Log ("Victory! Sang Nila Utama has reached Temasek!");
 		}
+
+		if (gameover == true) {
+			LevelLoader.LoseLevel();
+			Debug.Log("You Lose!");
+		}
 	}
 
 	void UnspawnObj() {
