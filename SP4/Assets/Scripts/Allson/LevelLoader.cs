@@ -103,7 +103,7 @@ public class LevelLoader : MonoBehaviour
 			Application.LoadLevel("BriSplash");
 			break;
 		case Games.GAME_BIRDSHIT:
-			Application.LoadLevel("raiseflag");
+			Application.LoadLevel("raiseflagsplash");
 			break;
 		default:
 			break;

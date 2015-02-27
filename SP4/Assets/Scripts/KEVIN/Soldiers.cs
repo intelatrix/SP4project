@@ -15,51 +15,44 @@ public class Soldiers : MonoBehaviour {
 	void Start () {
 		stop = false;
 		swag = FindObjectOfType<callchar> ();
+
 	
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if (x == -15.2f)
-		{
-			random=5;
-		}
 
-		//print (random);
+			if (x == -15.2f) {
+				random = 5;
+			}
+
+			//print (random);
 	
-		if (random == 5) 
-		{
-			if (stop == false) 
-			{
-				if (x < 13.5f)
-				{
-					x += 0.15f;
-					check = true;
+			if (random == 5) {
+				if (stop == false) {
+					if (x < 13.5f) {
+						x += 0.15f;
+						check = true;
+					}
+				}
+			} else {
+				random = Random.Range (1, 100);	
+				check = false;
+			}
+			if (Input.GetKeyDown ("space")) {
+				stop = true;
+				x -= 1.5f;
+				if (check == true) {
+					stop = false;
+					random = 0;
+					//Instantiate (soldieridle, new Vector3 (-15.2f, 9.9f, 0), Quaternion.identity);
+				} else {
+					swag.TimeCountDown -= 2;
+					stop = false;
+					random = 0;
 				}
 			}
-		} 
-		else
-		{
-			random = Random.Range (1, 200);	
-			check=false;
-		}
-		if (Input.GetKeyDown ("space")) {
-			stop = true;
-			x -= 1.5f;
-			if(check==true)
-			{
-			stop = false;
-			random = 0;
-			//Instantiate (soldieridle, new Vector3 (-15.2f, 9.9f, 0), Quaternion.identity);
-			}
-			else 
-			{
-				swag.TimeCountDown -= 2;
-				stop = false;
-				random = 0;
-			}
-		}
 
 
 		 
