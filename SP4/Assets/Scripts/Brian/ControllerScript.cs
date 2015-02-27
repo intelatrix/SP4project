@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 
 public class ControllerScript : MonoBehaviour {
 	
@@ -17,7 +16,6 @@ public class ControllerScript : MonoBehaviour {
 	public float forwardMovementSpeed = 3.0f;
 	private bool dead = false;
 	private uint people = 0;
-	float TimeCountDown;
 	float groundRadius = 0.2f;
 
 	bool doubleJump = false;
@@ -25,7 +23,6 @@ public class ControllerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator>();
-		TimeCountDown = 15f;
 	}
 
 	void FixedUpdate () 
@@ -86,13 +83,6 @@ public class ControllerScript : MonoBehaviour {
 			if(!doubleJump && !grounded)
 				doubleJump = true;
 		}
-		
-		TimeCountDown = Mathf.MoveTowards(TimeCountDown, 0, Time.deltaTime);
-		if(TimeCountDown <= 0)
-		{
-			LevelLoader.LoseLevel();
-		}
-		GameObject.Find("CountDown").GetComponent<Text>().text = "Time Left: " + TimeCountDown.ToString("n2");
 	}
 
 	void Flip()
