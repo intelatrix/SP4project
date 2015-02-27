@@ -28,7 +28,7 @@ public class callchar : MonoBehaviour {
 		shitcount2 = 0;
 		swag = FindObjectOfType<Soldiers> ();
 		round = LevelLoader.GetRound();
-	
+		LevelLoader.SetRound(3);
 		if (LevelLoader.GetRound () == 2) {
 			shittime=1.5f;
 			swag.random = Random.Range (1, 80);	
@@ -43,10 +43,10 @@ public class callchar : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		LevelLoader.SetRound(3);
-	
+
 		shittime += Time.deltaTime;
-		if (shittime >= 3) {
+		if (shittime >=2)
+		{
 			
 			if (rightx <= 20) {
 				if (random == 1) {
@@ -61,12 +61,12 @@ public class callchar : MonoBehaviour {
 			}
 			
 			
-			if (leftx <= 20) {
-				if (random == 2) {
-
+			if (leftx <= 20)
+			{
+				if (random == 2)
+				{
 					shittime = 0;
 					shitcount2++;	
-
 					Instantiate (shit_left, new Vector3 (16.3f, 7f, 0), Quaternion.identity);
 					leftx++;
 				} else {
@@ -81,10 +81,12 @@ public class callchar : MonoBehaviour {
 			random = 2;
 			shitcount1 = 0;
 		}
+
 		TimeCountDown = Mathf.MoveTowards (TimeCountDown, 0, Time.deltaTime);
 		GameObject.Find ("CountDown").GetComponent<Text> ().text = "Time Left: " + TimeCountDown.ToString ("n2");
 
-		if (TimeCountDown <= 0) {
+		if (TimeCountDown <= 0)
+		{
 			LevelLoader.LoseLevel ();
 		}
 	
