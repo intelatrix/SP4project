@@ -17,7 +17,7 @@ public class ControllerScript : MonoBehaviour {
 	public float forwardMovementSpeed = 3.0f;
 	float TimeCountDown;
 	private bool dead = false;
-	private uint people = 0;
+	public uint people = 0;
 	float groundRadius = 0.2f;
 
 	bool doubleJump = false;
@@ -76,6 +76,16 @@ public class ControllerScript : MonoBehaviour {
 		dead = true;
 	}
 
+	void PickupPeople (Collider2D peoplecollider)
+	{
+		if
+		(collider.gameObject.CompareTag("Citizen") == true) {
+			Destroy (this.gameObject);
+			dead = false;
+			people++;
+		}
+	}
+
 	void Update()
 	{
 		if ((grounded || !doubleJump) && Input.GetKeyDown (KeyCode.Space)) 
@@ -88,11 +98,13 @@ public class ControllerScript : MonoBehaviour {
 		}
 
 		TimeCountDown = Mathf.MoveTowards(TimeCountDown, 0, Time.deltaTime);
-		if(TimeCountDown <= 0 || dead == true)
-		{
-			LevelLoader.LoseLevel();
+		if (TimeCountDown <= 0 || dead == true) {
+			LevelLoader.LoseLevel ();
+		} else if (people == 2f) {
+			LevelLoader.WinLevel ();
 		}
 		GameObject.Find("CountDown").GetComponent<Text>().text = "Time Left: " + TimeCountDown.ToString("n2");
+		GameObject.Find ("People Remain").GetComponent<Text> ().text = "People Remaining: " + ControllerScript.PickupPeople ("n2");
 	}
 
 	void Flip()

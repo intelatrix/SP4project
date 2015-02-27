@@ -19,8 +19,8 @@ public class GeneratorScript : MonoBehaviour {
 	public float objectsMinY = -1.4f;
 	public float objectsMaxY = 1.4f;
 	
-	public float objectsMinRotation = -45.0f;
-	public float objectsMaxRotation = 45.0f; 
+	public float objectsMinRotation = 0f;
+	public float objectsMaxRotation = 0f; 
 
 
 	// Use this for initialization
