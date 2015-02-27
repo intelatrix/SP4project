@@ -32,6 +32,7 @@ public class LevelLoader : MonoBehaviour
 		if(Lives == 0)
 		{
 			//Lose Game - Load Lose Screen
+			Application.LoadLevel("LoseGame");
 			
 		}
 		else
@@ -110,5 +111,10 @@ public class LevelLoader : MonoBehaviour
 	static public int GetRound()
 	{
 		return Round;
+	}
+	
+	static public int GetLives()
+	{
+		return Lives;
 	}
 }
