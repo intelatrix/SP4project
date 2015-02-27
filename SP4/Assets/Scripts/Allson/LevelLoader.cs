@@ -88,7 +88,7 @@ public class LevelLoader : MonoBehaviour
 		switch(ListOfGames[Level])
 		{	
 		case Games.GAME_SARSGANTRY:
-			Application.LoadLevel("Sars");
+			Application.LoadLevel("Sars_Splash");
 			break;
 		case Games.GAME_FUAD:
 			Application.LoadLevel("FPS_Splash");
