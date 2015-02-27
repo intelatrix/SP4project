@@ -28,7 +28,7 @@ public class callchar : MonoBehaviour {
 		shitcount2 = 0;
 		swag = FindObjectOfType<Soldiers> ();
 		round = LevelLoader.GetRound();
-		LevelLoader.SetRound(3);
+		//LevelLoader.SetRound(3);
 		if (LevelLoader.GetRound () == 2) {
 			shittime=1.5f;
 			swag.random = Random.Range (1, 80);	

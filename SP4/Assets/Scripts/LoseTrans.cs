@@ -32,8 +32,12 @@ public class LoseTrans : MonoBehaviour {
 			Destroy(BurstingMerlion);
 		}
 		if (!audio.isPlaying && TimeCount >= 2) 
-			LevelLoader.NextLevel();
-		
+		{	
+			if(LevelLoader.GetLives() != 0)
+				LevelLoader.NextLevel();
+			else
+				Application.LoadLevel("LoseGame");
+		}
 		
 	}
 }
