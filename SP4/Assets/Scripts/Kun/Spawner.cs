@@ -29,8 +29,8 @@ public class Spawner : MonoBehaviour {
     private GameObject[] arrayList;
     private GameObject display = null;
     private int[] holder;
-    public int setCorrectNo = 2;
-    private int numOfObj = 6;
+    public int setCorrectNo;
+    private int numOfObj;
 
     private float timer = 0;
     private int objCounter = 0;
@@ -63,13 +63,18 @@ public class Spawner : MonoBehaviour {
 		Waves_s.mute = true;
 		BGM_s.mute = true;
 
-		if (LevelLoader.GetRound () == 2) {
+		 if (LevelLoader.GetRound() == 1) {
+			setCorrectNo = 2;
+			numOfObj = 6;
+		}
+		 else if (LevelLoader.GetRound() == 2) {
 			setCorrectNo = 3;
 			numOfObj = 8;
 		} else if (LevelLoader.GetRound () >= 3) {
 			setCorrectNo = 4;
 			numOfObj = 10;
 		}
+		
 		Spawn();
 		Init();
         pos.x = 66.4f;

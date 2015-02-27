@@ -7,6 +7,8 @@ public class LevelLoader : MonoBehaviour
 	{
 		GAME_SARSGANTRY,
 		GAME_FUAD,
+		GAME_ULA,
+		GAME_BURN,
 		GAME_TOTAL
 	} ;
 	
@@ -93,7 +95,12 @@ public class LevelLoader : MonoBehaviour
 		case Games.GAME_FUAD:
 			Application.LoadLevel("FPS_Splash");
 			break;
-
+		case Games.GAME_ULA:
+			Application.LoadLevel("SinkingShip_Splash");
+			break;
+		case Games.GAME_BURN:
+			Application.LoadLevel("BriSplash");
+			break;
 		default:
 			break;
 		}

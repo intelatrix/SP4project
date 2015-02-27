@@ -10,7 +10,7 @@ public class CheckOutOfBound : MonoBehaviour {
 	public GameObject waterParticle;
     
     private GameObject obj = null;
-    public int numOfCorrect = 2;
+    public int numOfCorrect;
 
 	public float time = 10.0f;
 
@@ -21,7 +21,14 @@ public class CheckOutOfBound : MonoBehaviour {
 	public AudioClip splash;
 
 	void Start() {
-		numOfCorrect = GameObject.Find ("Spawner").GetComponent<Spawner> ().setCorrectNo;
+		if (LevelLoader.GetRound() == 1) {
+			numOfCorrect = 2;
+		}
+		else if (LevelLoader.GetRound() == 2) {
+			numOfCorrect = 3;
+		} else if (LevelLoader.GetRound () >= 3) {
+			numOfCorrect = 4;
+		}
 	}
 
 	// Update is called once per frame
