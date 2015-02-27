@@ -7,6 +7,7 @@ public class LevelLoader : MonoBehaviour
 	{
 		GAME_SARSGANTRY,
 		GAME_FUAD,
+		GAME_CARGO,
 		GAME_TOTAL
 	} ;
 	
@@ -92,6 +93,9 @@ public class LevelLoader : MonoBehaviour
 			break;
 		case Games.GAME_FUAD:
 			Application.LoadLevel("FPS_Splash");
+			break;
+		case Games.GAME_CARGO:
+			Application.LoadLevel("SinkingShip_Splash");
 			break;
 		default:
 			break;
