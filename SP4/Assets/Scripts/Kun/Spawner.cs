@@ -54,9 +54,6 @@ public class Spawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Spawn();
-		Init();
-
 		Waves_s.loop = true;
 		BGM_s.loop = true;
 
@@ -73,6 +70,8 @@ public class Spawner : MonoBehaviour {
 			setCorrectNo = 4;
 			numOfObj = 10;
 		}
+		Spawn();
+		Init();
         pos.x = 66.4f;
         pos.y = -10.2f;
         pos.z = -9.8f;
@@ -82,7 +81,6 @@ public class Spawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
         //if all the flashing isnt done
         if (control == false)
         {

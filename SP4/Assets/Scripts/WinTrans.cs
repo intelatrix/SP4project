@@ -9,7 +9,7 @@ public class WinTrans : MonoBehaviour {
 	void Start () {
 	
 		Screen.showCursor = true;
-		for(int i = 0; i < LevelLoader.GetLives()+1; i++)
+		for(int i = 0; i < LevelLoader.GetLives(); i++)
 		{
 			Instantiate(Merlion, new Vector3(i*4 - 4,1,0), Quaternion.identity);
 		}
