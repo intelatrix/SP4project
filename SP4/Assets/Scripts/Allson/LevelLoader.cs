@@ -108,7 +108,7 @@ public class LevelLoader : MonoBehaviour
 			Application.LoadLevel("raiseflagsplash");
 			break;
 		case Games.GAME_HOSPITAL:
-			Application.LoadLevel("Hospital");
+			Application.LoadLevel("Hospital_Splash");
 			break;
 		case Games.GAME_YOG:
 			Application.LoadLevel("YOG_Splash");

@@ -16,7 +16,7 @@ public class HumanSpawner : MonoBehaviour {
 
 	private bool stopAll;
 	private bool checkPrice;
-	static float totalPrice;
+	private float totalPrice;
 
 	// Use this for initialization
 	void Start () {
