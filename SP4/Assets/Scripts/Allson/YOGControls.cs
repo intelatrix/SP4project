@@ -13,6 +13,9 @@ public class YOGControls : MonoBehaviour {
 	private int NumberOfBackgrounds;
 	private GameObject DestroyingWind;
 	bool CrossLast = false;
+	public AudioClip windDissipate;
+	public AudioClip Song;
+	public AudioClip Bang;
 	// Use this for initialization
 	void Start () 
 	{
@@ -50,6 +53,10 @@ public class YOGControls : MonoBehaviour {
 					
 					GameObject.Find("WindSpawner").GetComponent<WindSpawner>().StartSpawning();
 					GameObject.Find("RunningBackground").GetComponent<BackgroundStart>().StartScrolling();
+
+					audio.PlayOneShot(Song);
+					audio.PlayOneShot(Bang);
+
 				}
 			}
 		}
@@ -89,6 +96,7 @@ public class YOGControls : MonoBehaviour {
 				if(DestroyingWind != null)
 				{
 					Destroy(DestroyingWind);
+					audio.PlayOneShot(windDissipate);
 					ResetWords();
 				}
 			}
