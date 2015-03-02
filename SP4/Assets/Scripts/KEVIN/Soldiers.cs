@@ -4,7 +4,7 @@ using System.Collections;
 public class Soldiers : MonoBehaviour {
 	public float x = -15.2f;
 	public string strtoenter;
-	public int random;
+	public int randomq;
 	public GameObject soldiers;
 	public GameObject soldierfire;
 	public GameObject soldieridle;
@@ -21,17 +21,18 @@ public class Soldiers : MonoBehaviour {
 
 		if (LevelLoader.GetRound () == 1)
 		{	
-			random = Random.Range (1, 100);	
+			randomer = Random.Range (1, 200);	
 		}
 		if (LevelLoader.GetRound () == 2) 
 		{
-			random = Random.Range (1, 80);	
+			randomer = Random.Range (1, 80);	
 		} 
 		else if (LevelLoader.GetRound () >= 3) 
 		{
-			random = Random.Range (1, 30);	
+			randomer = Random.Range (1, 30);	
 		}
-
+		randomq = randomer;
+		//LevelLoader.SetRound (1);
 	}
 	
 	// Update is called once per frame
@@ -39,12 +40,12 @@ public class Soldiers : MonoBehaviour {
 	{
 
 			if (x == -15.2f) {
-				random = 5;
+			randomq = 5;
 			}
 
 			//print (random);
 	
-			if (random == 5) {
+		if (randomq == 5) {
 				if (stop == false) {
 					if (x < 13.5f) {
 						x += 0.15f;
@@ -52,7 +53,7 @@ public class Soldiers : MonoBehaviour {
 					}
 				}
 			} else {
-			random = Random.Range (1, 100);	
+			randomq = Random.Range (1, randomer);	
 				check = false;
 			}
 			if (Input.GetKeyDown ("space")) {
@@ -60,12 +61,12 @@ public class Soldiers : MonoBehaviour {
 				x -= 1.5f;
 				if (check == true) {
 					stop = false;
-					random = 0;
+				randomq = 0;
 					//Instantiate (soldieridle, new Vector3 (-15.2f, 9.9f, 0), Quaternion.identity);
 				} else {
 					swag.TimeCountDown -= 2;
 					stop = false;
-					random = 0;
+				randomq = 0;
 				}
 			}
 

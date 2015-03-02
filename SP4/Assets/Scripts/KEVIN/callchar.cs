@@ -18,7 +18,6 @@ public class callchar : MonoBehaviour {
 	public int shitcount1;
 	public int shitcount2;
 	public Soldiers swag;
-
 	public bool startgame;
 	public float roundx;
 	// Use this for initialization
@@ -31,7 +30,8 @@ public class callchar : MonoBehaviour {
 		shitcount2 = 0;
 		startgame = false;
 		swag = FindObjectOfType<Soldiers> ();
-		GameObject.Find ("CountDown").GetComponent<Text> ().text = "Time Left: " + TimeCountDown.ToString ("n2");		LevelLoader.SetRound (3);
+		GameObject.Find ("CountDown").GetComponent<Text> ().text = "Time Left: " + TimeCountDown.ToString ("n2");	
+		//LevelLoader.SetRound (1	);
 
 		if (LevelLoader.GetRound () == 1)
 		{	
@@ -45,7 +45,7 @@ public class callchar : MonoBehaviour {
 		{
 			roundx=1f;
 		}
-		roundx = shittime;
+		shittime = roundx;
 	}
 	
 	// Update is called once per frame
@@ -63,7 +63,7 @@ public class callchar : MonoBehaviour {
 		//if (startgame) {
 			
 			shittime += Time.deltaTime;
-			if (shittime >= 2) {
+		if (shittime >= roundx) {
 			
 				if (rightx <= 20) {
 					if (random == 1) {
