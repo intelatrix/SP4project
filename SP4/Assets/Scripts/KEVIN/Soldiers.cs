@@ -7,7 +7,6 @@ public class Soldiers : MonoBehaviour {
 	public int randomq;
 	public GameObject soldiers;
 	public GameObject soldierfire;
-	public GameObject soldieridle;
 	public int randomer;
 	public bool stop;
 	public bool check;

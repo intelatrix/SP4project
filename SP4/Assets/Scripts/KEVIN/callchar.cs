@@ -16,7 +16,7 @@ public class callchar : MonoBehaviour {
 	public float StartCount = 3;
 	public int shitcount1;
 	public int shitcount2;
-	public Soldiers swag;
+//	public Soldiers swag;
 	public bool startgame;
 	public float roundx;
 
@@ -31,7 +31,7 @@ public class callchar : MonoBehaviour {
 		shitcount1 = 0;
 		shitcount2 = 0;
 		startgame = false;
-		swag = FindObjectOfType<Soldiers> ();
+	//	swag = FindObjectOfType<Soldiers> ();
 		GameObject.Find ("CountDown").GetComponent<Text> ().text = "Time Left: " + TimeCountDown.ToString ("n2");	
 		//LevelLoader.SetRound (1	);
 		audio.PlayOneShot (Majulah);

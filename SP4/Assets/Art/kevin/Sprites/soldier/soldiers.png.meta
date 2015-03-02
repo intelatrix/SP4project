@@ -1,0 +1,168 @@
+fileFormatVersion: 2
+guid: afa40307630ffa544b315229aeb7f674
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: soldier 2_0
+    21300002: soldier 2_1
+    21300004: soldier 2_2
+    21300006: soldier 2_3
+    21300008: soldier 2_4
+    21300010: soldier 2_5
+    21300012: soldier 2_6
+    21300014: soldier 2_7
+    21300016: soldier 2_8
+    21300018: soldier 2_9
+    21300020: soldier 2_10
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: soldier 2_0
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 769
+        width: 266
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier 2_1
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 777
+        width: 276
+        height: 339
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier 2_2
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 772
+        width: 278
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier 2_3
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 769
+        width: 299
+        height: 335
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier 2_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 404
+        width: 296
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier 2_5
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 402
+        width: 269
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier 2_6
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 404
+        width: 259
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier 2_7
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 394
+        width: 257
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier 2_8
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 3
+        width: 280
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier 2_9
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 1
+        width: 291
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soldier 2_10
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 8
+        width: 269
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

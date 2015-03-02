@@ -1,0 +1,35 @@
+Initialize engine version: 4.6.2f1 (bd99309c2ad7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 750M   (ID=0xfe4)
+    Vendor:   NVIDIA
+    VRAM:     1985 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\SBM\Desktop\SP4project\SP4\aa_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\SBM\Desktop\SP4project\SP4\aa_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\SBM\Desktop\SP4project\SP4\aa_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\SBM\Desktop\SP4project\SP4\aa_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\SBM\Desktop\SP4project\SP4\aa_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\SBM\Desktop\SP4project\SP4\aa_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\SBM\Desktop\SP4project\SP4\aa_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\SBM\Desktop\SP4project\SP4\aa_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.103 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\SBM\Desktop\SP4project\SP4\aa_Data\Managed\System.Core.dll (this message is harmless)
+WARNING: Shader Unsupported: 'Outlined/Diffuse' - Pass 'OUTLINE' shader state not supported
+Platform assembly: C:\Users\SBM\Desktop\SP4project\SP4\aa_Data\Managed\System.dll (this message is harmless)
+UnloadTime: 2.682974 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 179.
+Total: 0.617075 ms (FindLiveObjects: 0.006414 ms CreateObjectMapping: 0.006842 ms MarkObjects: 0.104342 ms  DeleteObjects: 0.002993 ms)
+
+UnloadTime: 0.300198 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 177.
+Total: 0.580726 ms (FindLiveObjects: 0.007269 ms CreateObjectMapping: 0.007269 ms MarkObjects: 0.101349 ms  DeleteObjects: 0.006842 ms)
+
