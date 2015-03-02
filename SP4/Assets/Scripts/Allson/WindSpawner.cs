@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class WindSpawner : MonoBehaviour {
 
@@ -7,6 +8,34 @@ public class WindSpawner : MonoBehaviour {
 	public GameObject Wind;
 	private float SpawnInterval = 0;
 	private float IntervalCounter = 0;
+	
+	List<string> ListOfRandomness = new List<string> { 
+	"LEO",
+	"YOG",
+	"WIND",
+	"FIRE",
+	"SG50",
+	"MERLY", 
+	"TORCH",
+	"LIGHT",
+	"YOUTH",
+	"NANYANG",
+	"MERLION",
+	"ARCHERY",
+	"CYCLING",
+	"FENCING",
+	"FOOTBALL",
+	"OLYMPICS",
+	"TAEKWANDO",
+	"BADMINTON",
+	"WRESTLING",
+	"SINGAPORE",
+	"VOLLEYBALL",
+	"BASKETBALL",
+	"LEEKUANYEW",
+	"POLYTECHNICS",
+	"WEIGHTLIFTING",
+	}; 
 	bool StartUp = false;
 	
 	void Start () 
@@ -24,12 +53,14 @@ public class WindSpawner : MonoBehaviour {
 		else
 		{
 			IntervalCounter += Time.deltaTime;
-			if(IntervalCounter >= SpawnInterval)
+			if(IntervalCounter >= SpawnInterval && Vector3.Distance(GameObject.Find("RunningMan").transform.position, GameObject.Find("Flag").transform.position- new Vector3(7,0,0)) > 20.59f)
 			{
 				IntervalCounter = 0;
 				NewInterval();
 				Vector3 RunningManPosition = GameObject.Find("RunningMan").transform.position;
-				Instantiate(Wind, RunningManPosition, Quaternion.identity);
+				GameObject NewWind= Instantiate(Wind, RunningManPosition + new Vector3(15,Random.Range(0,5)*2,0), Quaternion.identity) as GameObject;
+				NewWind.GetComponent<Wind>().SetCurrentWord(RandomWord());
+				NewWind.GetComponent<Wind>().SetSpeed(Random.Range(0.2f, 1f));
 			}
 		}
 	
@@ -42,6 +73,11 @@ public class WindSpawner : MonoBehaviour {
 	
 	void NewInterval()
 	{
-		SpawnInterval = Random.Range(0f,4f);
+		SpawnInterval = Random.Range(2f,4f);
+	}
+	
+	string RandomWord()
+	{
+		return ListOfRandomness[Random.Range(0, ListOfRandomness.Count)];
 	}
 }
