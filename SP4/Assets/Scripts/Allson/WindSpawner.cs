@@ -75,7 +75,7 @@ public class WindSpawner : MonoBehaviour {
 				Vector3 RunningManPosition = GameObject.Find("RunningMan").transform.position;
 				GameObject NewWind= Instantiate(Wind, RunningManPosition + new Vector3(15,Random.Range(0,5)*2,0), Quaternion.identity) as GameObject;
 				NewWind.GetComponent<Wind>().SetCurrentWord(RandomWord());
-				NewWind.GetComponent<Wind>().SetSpeed(Random.Range(0.2f, 1f)+ (LevelLoader.GetRound()-1)*0.5f);
+				NewWind.GetComponent<Wind>().SetSpeed(Random.Range(0.7f, 1f)+ (LevelLoader.GetRound()-1)*0.5f);
 			}
 		}
 	
@@ -88,7 +88,7 @@ public class WindSpawner : MonoBehaviour {
 	
 	void NewInterval()
 	{
-		SpawnInterval = Random.Range(2f,4f) - (LevelLoader.GetRound()-1)*0.5f;
+		SpawnInterval = Random.Range(1.5f,3f) - (LevelLoader.GetRound()-1)*0.5f;
 	}
 	
 	string RandomWord()

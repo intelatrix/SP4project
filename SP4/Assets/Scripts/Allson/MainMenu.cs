@@ -13,8 +13,13 @@ public class MainMenu : MonoBehaviour {
 	
 	}
 	
-	public void ButtonPressed()
+	public void StartPressed()
 	{
 		LevelLoader.NewGame();
+	}
+	
+	public void QuitPressed()
+	{
+		Application.Quit();
 	}
 }

@@ -34,16 +34,7 @@ public class LevelLoader : MonoBehaviour
 	static public void LoseLevel()
 	{
 		--Lives;
-		if(Lives == 0)
-		{
-			//Lose Game - Load Lose Screen
-			Application.LoadLevel("LoseGame");
-			
-		}
-		else
-		{
-			Application.LoadLevel("LoseLevel");
-		}
+		Application.LoadLevel("LoseLevel");
 	}
 	
 	static public void NewGame()
