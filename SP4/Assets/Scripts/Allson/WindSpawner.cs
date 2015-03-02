@@ -40,7 +40,7 @@ public class WindSpawner : MonoBehaviour {
 	"FOOTBALL",
 	"OLYMPICS",
 	"AUSTRALIA",
-	"TAEKWANDO",
+	"TAEKWONDO",
 	"BADMINTON",
 	"WRESTLING",
 	"SINGAPORE",
