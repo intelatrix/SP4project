@@ -23,8 +23,7 @@ public class CheckOutOfBound : MonoBehaviour {
 	void Start() {
 		if (LevelLoader.GetRound() == 1) {
 			numOfCorrect = 2;
-		}
-		else if (LevelLoader.GetRound() == 2) {
+		} else if (LevelLoader.GetRound() == 2) {
 			numOfCorrect = 3;
 		} else if (LevelLoader.GetRound () >= 3) {
 			numOfCorrect = 4;

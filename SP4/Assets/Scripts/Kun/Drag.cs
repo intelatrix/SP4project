@@ -11,6 +11,7 @@ public class Drag : MonoBehaviour {
 	public Texture2D cursorTexture2;
 	private CursorMode cursorMode = CursorMode.Auto;
 	private Vector2 hotspot = Vector2.zero;
+	//private bool drag = false;
 
 	void Update() {
 		if (transform.position.z < -5.0f && GameObject.Find("Spawner").GetComponent<Spawner>().control == true) {
@@ -32,8 +33,13 @@ public class Drag : MonoBehaviour {
         {
 			Cursor.SetCursor (cursorTexture2, hotspot, cursorMode);
             offset = transform.position - GetHitPos();
+			//drag = true;
         }
     }
+
+	void OnMouseUp() {
+		//drag = false;
+	}
 
     void OnMouseDrag()
     {
