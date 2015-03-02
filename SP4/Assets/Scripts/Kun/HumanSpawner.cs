@@ -86,9 +86,11 @@ public class HumanSpawner : MonoBehaviour {
 		if ((yourPrice - 20.0f) >= totalPrice || (yourPrice + 20.0f) <= totalPrice || yourPrice == totalPrice) {
 			Debug.Log (totalPrice.ToString ());
 			Debug.Log ("Win");
+			LevelLoader.WinLevel();
 		} else {
 			Debug.Log (totalPrice.ToString ());
 			Debug.Log ("Lose");
+			LevelLoader.LoseLevel();
 		}
 	}
 

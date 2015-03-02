@@ -10,6 +10,7 @@ public class LevelLoader : MonoBehaviour
 		GAME_ULA,
 		GAME_BURN,
 		GAME_BIRDSHIT,
+		GAME_HOSPITAL,
 		GAME_TOTAL
 	} ;
 	
@@ -104,6 +105,9 @@ public class LevelLoader : MonoBehaviour
 			break;
 		case Games.GAME_BIRDSHIT:
 			Application.LoadLevel("raiseflagsplash");
+			break;
+		case Games.GAME_HOSPITAL:
+			Application.LoadLevel("Hospital");
 			break;
 		default:
 			break;
