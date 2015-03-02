@@ -7,15 +7,17 @@ public class YOGControls : MonoBehaviour {
 	bool StartUp = false;
 	public GameObject RunningMan;
 	public GameObject StandingMan;
+	public GameObject Flag;
 	private GameObject Torch;
 	private float StartCount = 3;
+	private int NumberOfBackgrounds;
+	private GameObject DestroyingWind;
+	bool CrossLast = false;
 	// Use this for initialization
 	void Start () 
 	{
 		StandingMan.SetActive(false);
 		Torch = GameObject.Find("Torch");
-		
-		
 	}
 	
 	// Update is called once per frame
@@ -47,15 +49,68 @@ public class YOGControls : MonoBehaviour {
 					Torch.transform.Rotate(new Vector3(0,0,340));
 					
 					GameObject.Find("WindSpawner").GetComponent<WindSpawner>().StartSpawning();
+					GameObject.Find("RunningBackground").GetComponent<BackgroundStart>().StartScrolling();
 				}
 			}
 		}
 		else
 		{
 			
-			RunningMan.transform.position += new Vector3(10,0,0) * Time.deltaTime*0.1f;
-			Camera.main.transform.position = new Vector3(RunningMan.transform.position.x+5, 4f, -10);
+			RunningMan.transform.position = Vector3.MoveTowards(RunningMan.transform.position, Flag.transform.position,Time.deltaTime*1f) ;
+			if(RunningMan.transform.position.x >= Flag.transform.position.x)
+			{
+				LevelLoader.WinLevel();
+			}
+			
+			if(Vector3.Distance(RunningMan.transform.position, Flag.transform.position - new Vector3(7,0,0)) > 10.295f - 5f && !CrossLast)
+			{
+				Camera.main.transform.position = new Vector3(RunningMan.transform.position.x+5, 4f, -10);
+			}
+			else
+			{
+				CrossLast = true;
+			}
+			
+			if(CrossLast)
+			{
+				Camera.main.transform.position = new Vector3(Flag.transform.position.x-7, 4f, -10);
+			}
+				
+			foreach (char c in Input.inputString) 
+			{
+				foreach(GameObject Wind in GameObject.FindGameObjectsWithTag("Wind"))
+				{
+					if(Wind.GetComponent<Wind>().CheckNextLetter(c))	
+					{
+						if(DestroyingWind == null || Wind.transform.position.x < DestroyingWind.transform.position.x)
+						DestroyingWind = Wind;
+					}
+				}
+				if(DestroyingWind != null)
+				{
+					Destroy(DestroyingWind);
+					ResetWords();
+				}
+			}
 		}
 		
+	}
+	
+	public void SetNumberOfBG(int BG)
+	{
+		NumberOfBackgrounds = BG;
+	}
+	
+	void ResetWords()
+	{
+		foreach(GameObject Wind in GameObject.FindGameObjectsWithTag("Wind"))
+		{
+			Wind.GetComponent<Wind>().ResetWord();
+		}
+	}
+	
+	public bool CrossedLast()
+	{
+		return CrossLast;
 	}
 }

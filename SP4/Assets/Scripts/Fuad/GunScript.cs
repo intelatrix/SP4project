@@ -30,9 +30,11 @@ public class GunScript : MonoBehaviour {
 
 	
 	int enemyMask;
+	int civiMask;
 	
 	void Awake(){
 		enemyMask = LayerMask.GetMask ("Enemy");
+		civiMask = LayerMask.GetMask ("Civi");
 
 	}
 	
@@ -71,6 +73,10 @@ public class GunScript : MonoBehaviour {
 											
 						}
 					}
+					else if (Physics.Raycast (ray, out hit, 100.0f, civiMask)) {
+						LevelLoader.LoseLevel();
+					}
+
 
 					waitTillFire = 1;
 				}
