@@ -2,7 +2,6 @@
 using System.Collections;
 using UnityEngine.UI;
 
-
 public class callchar : MonoBehaviour {
 	int leftx=0;
 	int rightx=0;
@@ -20,6 +19,9 @@ public class callchar : MonoBehaviour {
 	public Soldiers swag;
 	public bool startgame;
 	public float roundx;
+
+	public AudioClip Majulah;
+
 	// Use this for initialization
 	void Start () {
 		Instantiate (charater1, new Vector3 (18.8f, -10.9f, 0), Quaternion.identity).name = "character1(Clone)";
@@ -32,7 +34,7 @@ public class callchar : MonoBehaviour {
 		swag = FindObjectOfType<Soldiers> ();
 		GameObject.Find ("CountDown").GetComponent<Text> ().text = "Time Left: " + TimeCountDown.ToString ("n2");	
 		//LevelLoader.SetRound (1	);
-
+		audio.PlayOneShot (Majulah);
 		if (LevelLoader.GetRound () == 1)
 		{	
 			roundx=2f;
