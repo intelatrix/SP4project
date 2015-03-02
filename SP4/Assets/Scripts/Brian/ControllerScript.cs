@@ -19,6 +19,7 @@ public class ControllerScript : MonoBehaviour {
 	private bool dead = false;
 	public uint people = 0;
 	float groundRadius = 0.2f;
+	bool isStart = false;
 
 	bool doubleJump = false;
 
@@ -58,7 +59,7 @@ public class ControllerScript : MonoBehaviour {
 	void CollectPeople(Collider2D peopleCollider)
 	{
 		people++;
-		Destroy (peopleCollider);
+		Destroy (peopleCollider.gameObject);
 
 	}
 
@@ -80,9 +81,9 @@ public class ControllerScript : MonoBehaviour {
 	{
 		if
 		(collider.gameObject.CompareTag("Citizen") == true) {
-			Destroy (this.gameObject);
 			dead = false;
 			people++;
+			DestroyImmediate (this.gameObject, true);
 		}
 	}
 
@@ -93,8 +94,11 @@ public class ControllerScript : MonoBehaviour {
 			anim.SetBool ("Ground", false);
 			rigidbody2D.AddForce(new Vector2(0, jumpForce*0.7f));
 
+
+
 			if(!doubleJump && !grounded)
 				doubleJump = true;
+				jumpForce = jumpForce * 1f;
 		}
 
 		TimeCountDown = Mathf.MoveTowards(TimeCountDown, 0, Time.deltaTime);
@@ -103,8 +107,11 @@ public class ControllerScript : MonoBehaviour {
 		} else if (people == 2f) {
 			LevelLoader.WinLevel ();
 		}
+
 		GameObject.Find("CountDown").GetComponent<Text>().text = "Time Left: " + TimeCountDown.ToString("n2");
 		//GameObject.Find ("People Remain").GetComponent<Text> ().text = "People Remaining: " + ControllerScript.PickupPeople ("n2");
+
+
 	}
 
 	void Flip()
