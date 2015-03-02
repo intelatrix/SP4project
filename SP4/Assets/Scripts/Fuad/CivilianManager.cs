@@ -22,6 +22,7 @@ public class CivilianManager : MonoBehaviour
 		
 		spawnCheck = new int[100];
 
+		LevelLoader.SetRound (2);
 
 		int multiplier = LevelLoader.GetRound ();
 
