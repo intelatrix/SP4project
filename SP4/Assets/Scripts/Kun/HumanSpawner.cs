@@ -25,7 +25,7 @@ public class HumanSpawner : MonoBehaviour {
 		yourPrice = 0.0f;
 		timer = 20.0f;
 
-		if (LevelLoader.GetRound () >= -1 || LevelLoader.GetRound() == 1) {
+		if (LevelLoader.GetRound() == 1) {
 			numOfHumans = 8;
 		} else if (LevelLoader.GetRound () == 2) {
 			numOfHumans = 10;
@@ -83,7 +83,7 @@ public class HumanSpawner : MonoBehaviour {
 			checkPrice = true;
 		}
 
-		if ((yourPrice - 20.0f) >= totalPrice || (yourPrice + 20.0f) <= totalPrice || yourPrice == totalPrice) {
+		if ((yourPrice >= (totalPrice - 20.0f) && yourPrice <= (totalPrice + 20.0f)) || yourPrice == totalPrice) {
 			Debug.Log (totalPrice.ToString ());
 			Debug.Log ("Win");
 			LevelLoader.WinLevel();
