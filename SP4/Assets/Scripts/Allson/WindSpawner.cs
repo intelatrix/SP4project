@@ -12,6 +12,8 @@ public class WindSpawner : MonoBehaviour {
 	List<string> ListOfRandomness = new List<string> { 
 	"LEO",
 	"YOG",
+	"CUBA",
+	"FUAD",
 	"WIND",
 	"FIRE",
 	"SG50",
@@ -19,17 +21,30 @@ public class WindSpawner : MonoBehaviour {
 	"TORCH",
 	"LIGHT",
 	"YOUTH",
+	"KEVIN",
+	"BRIAN",
+	"CHINA",
+	"JAPAN",
+	"ITALY",
+	"RUSSIA",
+	"FRANCE",
+	"ALLSON",
+	"WEIKUN",	
 	"NANYANG",
 	"MERLION",
+	"UKRAINE",
 	"ARCHERY",
+	"HUNGARY",
 	"CYCLING",
 	"FENCING",
 	"FOOTBALL",
 	"OLYMPICS",
+	"AUSTRALIA",
 	"TAEKWANDO",
 	"BADMINTON",
 	"WRESTLING",
 	"SINGAPORE",
+	"SOUTHKOREA",
 	"VOLLEYBALL",
 	"BASKETBALL",
 	"LEEKUANYEW",
@@ -60,7 +75,7 @@ public class WindSpawner : MonoBehaviour {
 				Vector3 RunningManPosition = GameObject.Find("RunningMan").transform.position;
 				GameObject NewWind= Instantiate(Wind, RunningManPosition + new Vector3(15,Random.Range(0,5)*2,0), Quaternion.identity) as GameObject;
 				NewWind.GetComponent<Wind>().SetCurrentWord(RandomWord());
-				NewWind.GetComponent<Wind>().SetSpeed(Random.Range(0.2f, 1f));
+				NewWind.GetComponent<Wind>().SetSpeed(Random.Range(0.2f, 1f)+ (LevelLoader.GetRound()-1)*0.5f);
 			}
 		}
 	
@@ -73,7 +88,7 @@ public class WindSpawner : MonoBehaviour {
 	
 	void NewInterval()
 	{
-		SpawnInterval = Random.Range(2f,4f);
+		SpawnInterval = Random.Range(2f,4f) - (LevelLoader.GetRound()-1)*0.5f;
 	}
 	
 	string RandomWord()

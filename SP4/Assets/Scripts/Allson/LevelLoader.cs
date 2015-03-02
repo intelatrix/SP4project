@@ -11,6 +11,7 @@ public class LevelLoader : MonoBehaviour
 		GAME_BURN,
 		GAME_BIRDSHIT,
 		GAME_HOSPITAL,
+		GAME_YOG,
 		GAME_TOTAL
 	} ;
 	
@@ -108,6 +109,9 @@ public class LevelLoader : MonoBehaviour
 			break;
 		case Games.GAME_HOSPITAL:
 			Application.LoadLevel("Hospital");
+			break;
+		case Games.GAME_YOG:
+			Application.LoadLevel("YOG_Splash");
 			break;
 		default:
 			break;
