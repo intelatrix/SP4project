@@ -17,7 +17,7 @@ public class Soldiers : MonoBehaviour {
 	void Start () {
 		stop = false;
 		swag = FindObjectOfType<callchar> ();
-
+		
 		if (LevelLoader.GetRound () == 1)
 		{	
 			randomer = Random.Range (1, 200);	
@@ -31,7 +31,6 @@ public class Soldiers : MonoBehaviour {
 			randomer = Random.Range (1, 30);	
 		}
 		randomq = randomer;
-		//LevelLoader.SetRound (1);
 	}
 	
 	// Update is called once per frame
