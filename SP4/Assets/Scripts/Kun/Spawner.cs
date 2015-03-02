@@ -15,7 +15,15 @@ public class Spawner : MonoBehaviour {
 	public GameObject obj5;
 	//Chest
 	public GameObject obj6;
-	//More obj on the way
+	//
+	public GameObject obj7;
+	//
+	public GameObject obj8;
+	//
+	public GameObject obj9;
+	//
+	public GameObject obj10;
+
 
     public GameObject dirLeft;
     public GameObject dirRight;
@@ -63,7 +71,7 @@ public class Spawner : MonoBehaviour {
 		Waves_s.mute = true;
 		BGM_s.mute = true;
 
-		 if (LevelLoader.GetRound() >= -1 || LevelLoader.GetRound() == 1) {
+		 if (LevelLoader.GetRound() == 1) {
 			setCorrectNo = 2;
 			numOfObj = 6;
 		}
@@ -182,9 +190,21 @@ public class Spawner : MonoBehaviour {
 			}  else if (i == 4) {
 				arrayList[i] = Instantiate(obj5, new Vector3(posX, 1.0f, posZ), Quaternion.identity) as GameObject;
 				holder[i] = 5;
-			}  else if (i >= 5) {
+			}  else if (i == 5) {
 				arrayList[i] = Instantiate(obj6, new Vector3(posX, 1.0f, posZ), Quaternion.identity) as GameObject;
 				holder[i] = 6;
+			}  else if (i == 6) {
+				arrayList[i] = Instantiate(obj7, new Vector3(posX, 1.0f, posZ), Quaternion.identity) as GameObject;
+				holder[i] = 7;
+			}  else if (i == 7) {
+				arrayList[i] = Instantiate(obj8, new Vector3(posX, 1.0f, posZ), Quaternion.identity) as GameObject;
+				holder[i] = 8;
+			}  else if (i == 8) {
+				arrayList[i] = Instantiate(obj9, new Vector3(posX, 1.0f, posZ), Quaternion.identity) as GameObject;
+				holder[i] = 9;
+			}  else if (i == 9) {
+				arrayList[i] = Instantiate(obj10, new Vector3(posX, 1.0f, posZ), Quaternion.identity) as GameObject;
+				holder[i] = 10;
 			}
             arrayList[i].tag = "Obj";
         }
@@ -257,6 +277,26 @@ public class Spawner : MonoBehaviour {
 			} else if (script.getType() == 6)
 			{
 				display = Instantiate(obj6, new Vector3(pos.x-8.0f, pos.y, pos.z), Quaternion.identity) as GameObject;
+				display.transform.Rotate(new Vector3(0.0f, 1.0f, 0.0f), 90.0f);
+				audio.PlayOneShot(spawn_sound);
+			} else if (script.getType() == 7)
+			{
+				display = Instantiate(obj7, new Vector3(pos.x-8.0f, pos.y, pos.z), Quaternion.identity) as GameObject;
+				display.transform.Rotate(new Vector3(0.0f, 1.0f, 0.0f), 90.0f);
+				audio.PlayOneShot(spawn_sound);
+			} else if (script.getType() == 8)
+			{
+				display = Instantiate(obj8, new Vector3(pos.x-8.0f, pos.y, pos.z), Quaternion.identity) as GameObject;
+				display.transform.Rotate(new Vector3(0.0f, 1.0f, 0.0f), 90.0f);
+				audio.PlayOneShot(spawn_sound);
+			} else if (script.getType() == 9)
+			{
+				display = Instantiate(obj9, new Vector3(pos.x-8.0f, pos.y, pos.z), Quaternion.identity) as GameObject;
+				display.transform.Rotate(new Vector3(0.0f, 1.0f, 0.0f), 90.0f);
+				audio.PlayOneShot(spawn_sound);
+			} else if (script.getType() == 10)
+			{
+				display = Instantiate(obj10, new Vector3(pos.x-8.0f, pos.y, pos.z), Quaternion.identity) as GameObject;
 				display.transform.Rotate(new Vector3(0.0f, 1.0f, 0.0f), 90.0f);
 				audio.PlayOneShot(spawn_sound);
 			}

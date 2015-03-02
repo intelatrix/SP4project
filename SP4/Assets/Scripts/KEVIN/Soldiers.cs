@@ -8,15 +8,30 @@ public class Soldiers : MonoBehaviour {
 	public GameObject soldiers;
 	public GameObject soldierfire;
 	public GameObject soldieridle;
+	public int randomer;
 	public bool stop;
 	public bool check;
 	public callchar swag;
+	public int firingtime;
+
 	// Use this for initialization
 	void Start () {
 		stop = false;
 		swag = FindObjectOfType<callchar> ();
 
-	
+		if (LevelLoader.GetRound () == 1)
+		{	
+			random = Random.Range (1, 100);	
+		}
+		if (LevelLoader.GetRound () == 2) 
+		{
+			random = Random.Range (1, 80);	
+		} 
+		else if (LevelLoader.GetRound () >= 3) 
+		{
+			random = Random.Range (1, 30);	
+		}
+
 	}
 	
 	// Update is called once per frame
@@ -37,7 +52,7 @@ public class Soldiers : MonoBehaviour {
 					}
 				}
 			} else {
-				random = Random.Range (1, 100);	
+			random = Random.Range (1, 100);	
 				check = false;
 			}
 			if (Input.GetKeyDown ("space")) {
@@ -54,14 +69,16 @@ public class Soldiers : MonoBehaviour {
 				}
 			}
 
-
+		if (swag.TimeCountDown <= 0)
+		{
+			swag.TimeCountDown=0;
+		}
 		 
 		if (x >= 13.5)
 		{
 			GameObject.Destroy (GameObject.Find ("soldiers(Clone)"));
-
 			Instantiate (soldierfire, new Vector3 (13.9f, -9.9f, 0), Quaternion.identity).name = "soldierfire";
-			LevelLoader.LoseLevel();
+		
 		}
 		transform.position = new Vector3 (x, -9.9f, 0);
 	}
