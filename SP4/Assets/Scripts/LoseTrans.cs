@@ -7,6 +7,7 @@ public class LoseTrans : MonoBehaviour {
 	private GameObject BurstingMerlion;
 	public GameObject Burst;
 	private float TimeCount = 0;
+	public AudioClip Explode;
 	void Start () {
 		Screen.showCursor = true;
 		for(int i = 0; i <  LevelLoader.GetLives()+1; i++)
@@ -29,6 +30,7 @@ public class LoseTrans : MonoBehaviour {
 		if(TimeCount >= 1 && BurstingMerlion != null) 
 		{
 			Instantiate(Burst,BurstingMerlion.transform.position, Quaternion.identity);
+			audio.PlayOneShot(Explode);
 			Destroy(BurstingMerlion);
 		}
 		if (!audio.isPlaying && TimeCount >= 2) 
