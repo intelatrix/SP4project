@@ -2,23 +2,16 @@
 using System.Collections;
 
 public class HumanSetting : MonoBehaviour {	
-	
-	public GameObject text;
-	private GameObject text2;
-	private Transform target;
-	private Transform newTransform;
 
-	private int Type;
+	public GameObject waypoint1;
+	public GameObject dental;
+
 	private float timer;
-	private float setDirectionTimer;
-	
-	public bool movement;
+
 	private bool switchDirection;
 	private bool scenarioStuff;
 	private bool scenarioTimerReset;
 	private bool done;
-	public float price = 100.0f;
-	private TextMesh theText;
 
 	private float currentTime;
 	private float randomX;
@@ -28,60 +21,36 @@ public class HumanSetting : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		done = false;
-		movement = false;
-		text2 = Instantiate (text, new Vector3 (GetComponent<Transform>().transform.position.x, GetComponent<Transform>().transform.position.y - 0.5f, GetComponent<Transform>().transform.position.z), Quaternion.identity) as GameObject;
-		theText = text2.GetComponent<TextMesh>();
-		currentTime = Time.time;
-		RandomMovement ();
+		scenarioStuff = false;
+		randomX = waypoint1.GetComponent<Transform> ().transform.position.x;
+		randomY = waypoint1.GetComponent<Transform> ().transform.position.y;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (movement == false) {
-			//updates the position of the price according to the human, also updates the price
-			theText.text = "Price: $" + price.ToString ();
-			text2.transform.position = new Vector3 (GetComponent<Transform> ().transform.position.x, GetComponent<Transform> ().transform.position.y - 0.5f, GetComponent<Transform> ().transform.position.z);
+		if (done == false) {
+			GetComponent<Transform>().transform.position = Vector3.MoveTowards(GetComponent<Transform>().transform.position, new Vector3(randomX, randomY, 6.2f), 1.2f*Time.deltaTime);
+		}
 
-			if (Time.time >= currentTime) {
-				RandomMovement ();
-				currentTime = Time.time + Random.Range (0.5f, 1.5f);
-			}
-
-			//make the ai moves within the set area
-			if (GetComponent<Transform> ().transform.position.x > -8.3f && GetComponent<Transform> ().transform.position.x < 8.3f
-				&& GetComponent<Transform> ().transform.position.y > -3.0f && GetComponent<Transform> ().transform.position.y < 4.85f) {
-				GetComponent<Transform> ().transform.position = Vector3.MoveTowards (GetComponent<Transform> ().transform.position, waypoint, 0.05f);
-			} else {
-				RandomMovement ();
-			}
+		if (scenarioStuff && timer < Time.time) {
+			randomX = dental.GetComponent<Transform>().transform.position.x;
+			randomY = dental.GetComponent<Transform>().transform.position.y;
+			scenarioStuff = false;
 		}
 	}
 
-	void RandomMovement() {
-		randomX = Random.Range(-8.0f, 8.0f);
-		randomY = Random.Range(-2.8f, 4.8f);
-		waypoint = new Vector3(randomX, randomY, 6.2f);
-
-		if (waypoint.x < GetComponent<Transform>().transform.position.x) {
-			setDirection(3);
-		} else if (waypoint.x >= GetComponent<Transform>().transform.position.x) {
-			setDirection(2);
-		} else if (waypoint.y > GetComponent<Transform>().transform.position.y) {
-			setDirection(1);
-		} else if (waypoint.y <= GetComponent<Transform>().transform.position.y) {
-			setDirection(0);
+	void OnTriggerStay2D(Collider2D col) {
+		if (col.gameObject.name == "Dentist_Waypoint") {
+			//done = true;
+			if (scenarioStuff == false) {
+				timer = Time.time + 0.5f;
+			}
+			scenarioStuff = true;
 		}
-	}
-
-	void OnTriggerEnter2D(Collider2D other) {
-		Debug.Log("Collided");
-		if (tag == "elderly" && other.tag == "man" && other.GetComponent<HumanSetting>().done == false && done == false) {
-			//they collided, do the scenario random chance here if it happens change price and set it to done, random their position agn
-			Debug.Log("Price dropped");
-			price = 50.0f;
-			other.GetComponent<HumanSetting>().price = other.GetComponent<HumanSetting>().price - 20.0f;
-			done = true;
-			other.GetComponent<HumanSetting>().done = true;
+		if (col.gameObject.name == "dentist") {
+			GetComponent<Transform>().transform.position = new Vector3(GetComponent<Transform>().transform.position.x, GetComponent<Transform>().transform.position.y, GetComponent<Transform>().transform.position.z + 0.1f);
+			randomX = dental.GetComponent<Transform>().transform.position.x;
+			randomY = dental.GetComponent<Transform>().transform.position.y;
 		}
 	}
 	
