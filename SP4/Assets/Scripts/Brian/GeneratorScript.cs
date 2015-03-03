@@ -94,7 +94,7 @@ public class GeneratorScript : MonoBehaviour {
 		foreach(var room in roomsToRemove)
 		{
 			currentRooms.Remove(room);
-			DestroyImmediate(room);            
+			DestroyImmediate(room, true);            
 		}
 		
 		//12

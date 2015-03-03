@@ -7,7 +7,7 @@ public class RockShip : MonoBehaviour {
 
 	private int startRotate = 0;
 	private float randomChance = 0.0f;
-	private float angle = 0.06f;
+	private float angle = 2.0f;
 	private bool turn = false;
 
 	//Play ship rocking sound if possible
@@ -36,11 +36,11 @@ public class RockShip : MonoBehaviour {
 		}
 
 		if (startRotate == 1 && turn) {
-			transform.Rotate(new Vector3 (0.0f, 0.0f, 1.0f), angle);
+			transform.Rotate(new Vector3 (0.0f, 0.0f, 1.0f), angle*Time.deltaTime);
 		}
 
 		if (startRotate == 2 && turn) {
-			transform.Rotate(new Vector3 (0.0f, 0.0f, 1.0f), -angle);
+			transform.Rotate(new Vector3 (0.0f, 0.0f, 1.0f), -angle*Time.deltaTime);
 		}
 	}
 }

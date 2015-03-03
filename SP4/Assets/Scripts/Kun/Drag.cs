@@ -32,21 +32,20 @@ public class Drag : MonoBehaviour {
         if (GameObject.Find("Spawner").GetComponent<Spawner>().control == true)
         {
 			Cursor.SetCursor (cursorTexture2, hotspot, cursorMode);
-            offset = transform.position - GetHitPos();
-			//drag = true;
+            //offset = transform.position - GetHitPos();
         }
     }
 
 	void OnMouseUp() {
-		//drag = false;
+		Cursor.SetCursor (cursorTexture, hotspot, cursorMode);
 	}
 
     void OnMouseDrag()
     {
         if (GameObject.Find("Spawner").GetComponent<Spawner>().control == true)
         {
-            rigidbody.velocity = Vector3.zero;
-            transform.position = new Vector3(GetHitPos().x + offset.x, GetHitPos().y + offset.y, transform.position.z);
+            //rigidbody.velocity = Vector3.zero;
+            //transform.position = new Vector3(GetHitPos().x + offset.x, GetHitPos().y + offset.y, transform.position.z);
         }
     }
 

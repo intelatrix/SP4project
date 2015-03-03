@@ -11,7 +11,7 @@ public class TimeManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		time = 30f;
+		time = 15f;
 
 	int multiplier = LevelLoader.GetRound ();
 
