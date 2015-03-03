@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour {
     public bool phase2 = false;
     private bool skip = false;
 
-    private GameObject[] arrayList;
+    public GameObject[] arrayList;
     private GameObject display = null;
     private int[] holder;
     public int setCorrectNo;

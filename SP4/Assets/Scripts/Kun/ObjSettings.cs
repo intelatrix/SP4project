@@ -5,6 +5,8 @@ public class ObjSettings : MonoBehaviour {
 
     private int leftOrRight = -1;
     private bool isActive = false;
+	private bool isDragged = false;
+	private bool isThrown = false;
     private int type = -1;
 
 	// Use this for initialization
@@ -15,6 +17,22 @@ public class ObjSettings : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void setThrown(bool thrown) {
+		isThrown = thrown;
+	}
+
+	public bool getThrown() {
+		return (isThrown);
+	}
+
+	public void setDragged(bool dragging) {
+		isDragged = dragging;
+	}
+
+	public bool getDragged() {
+		return (isDragged);
 	}
 
     public int getLeftOrRight() {
