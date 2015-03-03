@@ -39,4 +39,14 @@ public class MainMenu : MonoBehaviour {
 	{
 		Application.Quit();
 	}
+	
+	public void StartHover()
+	{
+		
+	}
+	
+	public void QuitHover()
+	{
+		
+	}
 }

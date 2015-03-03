@@ -44,4 +44,19 @@ public class ReturnToMain : MonoBehaviour {
 	{
 		Application.Quit();
 	}
+	
+	public void ResumeHover()
+	{
+		
+	}
+	
+	public void MainMenuHover()
+	{
+		
+	}
+	
+	public void QuitHover()
+	{
+		
+	}
 }
