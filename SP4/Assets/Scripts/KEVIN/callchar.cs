@@ -26,7 +26,7 @@ public class callchar : MonoBehaviour {
 	void Start () {
 		Instantiate (charater1, new Vector3 (18.8f, -10.9f, 0), Quaternion.identity).name = "character1(Clone)";
 		Instantiate (soldiers, new Vector3 (-15.2f, 9.9f, 0), Quaternion.identity);
-		TimeCountDown = 13;
+		TimeCountDown = 18;
 		//shittime = 0;
 		shitcount1 = 0;
 		shitcount2 = 0;

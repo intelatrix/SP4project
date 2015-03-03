@@ -19,7 +19,7 @@ public class StartSplash : MonoBehaviour {
 		if(Temp >= 1)
 			Temp = 1;
 		Image.renderer.material.color = new Color(1,1,1,Temp);
-		if(SplashTime >=SplashLimit)
+		if(SplashTime >=SplashLimit || Input.anyKeyDown)
 		{
 			Application.LoadLevel("MainMenu");
 		}

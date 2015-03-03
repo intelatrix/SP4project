@@ -124,7 +124,7 @@ public class ControllerScript : MonoBehaviour {
 		}
 
 		GameObject.Find("CountDown").GetComponent<Text>().text = "Time Left: " + TimeCountDown.ToString("n2");
-		GameObject.Find("Citizen").GetComponent<Text>().text = "People Left: " + TimeCountDown.ToString("n2");
+		GameObject.Find("People Left").GetComponent<Text>().text = "People Left: " + (LevelLoader.GetRound() + 2 - people);
 		//GameObject.Find ("People Remain").GetComponent<Text> ().text = "People Remaining: " + ControllerScript.PickupPeople ("n2");
 
 
