@@ -108,7 +108,7 @@ public class callchar : MonoBehaviour {
 			TimeCountDown = 0;
 		//	LevelLoader.LoseLevel ();
 		}
-	}
+	
 
 		//	swag.random = Random.Range (1, 30);	
 	
