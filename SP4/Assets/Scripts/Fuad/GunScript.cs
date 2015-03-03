@@ -40,16 +40,17 @@ public class GunScript : MonoBehaviour {
 	void Awake(){
 		enemyMask = LayerMask.GetMask ("Enemy");
 		civiMask = LayerMask.GetMask ("Civi");
+		MuzzleFlash.emit = false;
+		light1.SetActive (false);
+		light2.SetActive (false);
+		light3.SetActive (false);
+
 
 	}
 	
 	// Use this for initialization
 	void Start () {
 	
-		MuzzleFlash.emit = false;
-		light1.SetActive (false);
-		light2.SetActive (false);
-		light3.SetActive (false);
 
 
 	}
