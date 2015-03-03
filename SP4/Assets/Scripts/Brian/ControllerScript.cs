@@ -118,12 +118,13 @@ public class ControllerScript : MonoBehaviour {
 		if (TimeCountDown <= 0 || dead == true) {
 			LevelLoader.LoseLevel ();
 			return;
-		} else if (people == LevelLoader.GetRound() + 1) {
+		} else if (people == LevelLoader.GetRound() + 2) {
 			LevelLoader.WinLevel ();
 			return;
 		}
 
 		GameObject.Find("CountDown").GetComponent<Text>().text = "Time Left: " + TimeCountDown.ToString("n2");
+		GameObject.Find("Citizen").GetComponent<Text>().text = "People Left: " + TimeCountDown.ToString("n2");
 		//GameObject.Find ("People Remain").GetComponent<Text> ().text = "People Remaining: " + ControllerScript.PickupPeople ("n2");
 
 
