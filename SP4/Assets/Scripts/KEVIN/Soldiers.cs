@@ -26,12 +26,12 @@ public class Soldiers : MonoBehaviour {
 		else if (LevelLoader.GetRound () == 2) 
 		{
 			randomer =700;
-			 Random.Range (1,randomer);	
+			Random.Range (1,randomer);	
 		} 
 		else if (LevelLoader.GetRound () >= 3) 
 		{
 			randomer =400;
-			 Random.Range (1, randomer);	
+			Random.Range (1, randomer);	
 		}
 
 	}
@@ -52,7 +52,7 @@ public class Soldiers : MonoBehaviour {
 			{
 				if (x < 13.5f) 
 				{
-					x += 0.15f;
+					x += 10f* Time.deltaTime;
 					check = true;
 				}
 			}
@@ -64,7 +64,7 @@ public class Soldiers : MonoBehaviour {
 		}
 			if (Input.GetKeyDown ("space")) {
 			//	stop = true;
-				x -= 1.5f;
+				x -= 1f;
 				if (check == true)
 				{
 				//stop = false;
@@ -90,6 +90,6 @@ public class Soldiers : MonoBehaviour {
 			Instantiate (soldierfire, new Vector3 (13.9f, -9.9f, 0), Quaternion.identity).name = "soldierfire";
 		
 		}
-		transform.position = new Vector3 (x, -9.9f, 0);
+		transform.position = new Vector3 (x, -9.9f, 0) ;
 	}
 }
