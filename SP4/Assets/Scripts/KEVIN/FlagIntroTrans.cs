@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Hospital_Splash_Script : MonoBehaviour {
-
+public class FlagIntroTrans : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (!audio.isPlaying) {			
-			Application.LoadLevel ("Hospital");
+		if(!audio.isPlaying) 
+		{
+			Application.LoadLevel("raiseflagtutorial");
 		}
 	}
 }

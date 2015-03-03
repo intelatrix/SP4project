@@ -19,8 +19,6 @@ public class GunScript : MonoBehaviour {
 	public float zoomAngle;
 	public float fireRate;
 	public float waitTillFire;
-	float muzzleTimer = 0.0f;
-	float muzzleCooler = 0.0f;
 	public GameObject bullet;
 	public GameObject spawnBullet;
 	public GameObject bulletHole;
