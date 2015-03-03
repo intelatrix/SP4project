@@ -20,15 +20,15 @@ public class Soldiers : MonoBehaviour {
 		
 		if (LevelLoader.GetRound () == 1)
 		{	
-			randomer = Random.Range (1, 200);	
+			randomer = Random.Range (1, 1000);	
 		}
-		if (LevelLoader.GetRound () == 2) 
+		else if (LevelLoader.GetRound () == 2) 
 		{
-			randomer = Random.Range (1, 80);	
+			randomer = Random.Range (1,700);	
 		} 
 		else if (LevelLoader.GetRound () >= 3) 
 		{
-			randomer = Random.Range (1, 30);	
+			randomer = Random.Range (1, 400);	
 		}
 		randomq = randomer;
 	}
