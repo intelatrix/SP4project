@@ -83,7 +83,7 @@ public class LevelLoader : MonoBehaviour
 		}
 		switch(ListOfGames[Level])
 		{	
-		/*case Games.GAME_SARSGANTRY:
+		case Games.GAME_SARSGANTRY:
 			Application.LoadLevel("Sars_Splash");
 			break;
 		case Games.GAME_FUAD:
@@ -94,16 +94,16 @@ public class LevelLoader : MonoBehaviour
 			break;
 		case Games.GAME_BURN:
 			Application.LoadLevel("BriSplash");
-			break;*/
+			break;
 		case Games.GAME_BIRDSHIT:
 			Application.LoadLevel("raiseflagsplash");
-			break;/*
+			break;
 		case Games.GAME_HOSPITAL:
 			Application.LoadLevel("Hospital_Splash");
 			break;
 		case Games.GAME_YOG:
 			Application.LoadLevel("YOG_Splash");
-			break;*/
+			break;
 		default:
 			break;
 		}
