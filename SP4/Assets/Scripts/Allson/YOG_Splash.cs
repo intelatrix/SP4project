@@ -10,8 +10,8 @@ public class YOG_Splash : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		TimeCount += Time.deltaTime;
-		if(TimeCount >= 1) 
+
+		if(audio.isPlaying == false) 
 		{
 			Application.LoadLevel("YOG");
 		}

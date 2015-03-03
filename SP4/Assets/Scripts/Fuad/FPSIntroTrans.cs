@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Sars_Splash : MonoBehaviour {
+public class FPSIntroTrans : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -12,7 +12,7 @@ public class Sars_Splash : MonoBehaviour {
 	void Update () {
 		if(!audio.isPlaying) 
 		{
-			Application.LoadLevel("Sars");
+			Application.LoadLevel("FPS_Tutorial");
 		}
 	}
 }

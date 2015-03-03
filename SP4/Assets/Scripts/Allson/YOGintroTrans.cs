@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Sars_Splash : MonoBehaviour {
+public class YOGintroTrans : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -10,9 +10,11 @@ public class Sars_Splash : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		if(!audio.isPlaying) 
 		{
-			Application.LoadLevel("Sars");
+			Application.LoadLevel("YOG_Tutorial");
 		}
+	
 	}
 }
