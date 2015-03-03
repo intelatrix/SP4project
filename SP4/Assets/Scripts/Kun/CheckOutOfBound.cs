@@ -56,102 +56,59 @@ public class CheckOutOfBound : MonoBehaviour {
 			gameover = true;
 		}
 
-		if (Input.GetMouseButtonDown(0) && GameObject.Find("Spawner").GetComponent<Spawner> ().control == true) {
-			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-			RaycastHit hit = new RaycastHit();
-
-			if (Physics.Raycast (ray, out hit)) {
-				if (hit.transform.gameObject.tag == "Obj") {
-					if (obj == null) {
-						obj = hit.transform.gameObject;
-						Debug.Log ("Already Nulled: " + obj.name);
-					} else {
-						Debug.Log ("Not Nulled: " + obj.name);
-						dragging = false;
-						obj = null;
-						obj = hit.transform.gameObject;
-						Debug.Log ("After nulling: " + obj.name);
-					}
-
-					if (obj != null) {
-						screenPoint = Camera.main.WorldToScreenPoint(obj.transform.position);
-						offset = obj.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
-						dragging = true;
-						Debug.Log ("Object getto: " + obj.name);
+		if (dragging == false) {
+			if (Input.GetMouseButtonDown (0) == true && GameObject.Find ("Spawner").GetComponent<Spawner> ().control == true) {
+				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+				RaycastHit hit = new RaycastHit ();
+			
+				if (Physics.Raycast (ray, out hit)) {
+					if (hit.transform.gameObject.tag == "Obj") {
+						if (obj == null) {
+							obj = hit.transform.gameObject;
+							Debug.Log ("Already Nulled: " + obj.name);
+						} else {
+							Debug.Log ("Not Nulled: " + obj.name);
+							dragging = false;
+							obj = null;
+							obj = hit.transform.gameObject;
+							Debug.Log ("After nulling: " + obj.name);
+						}
+					
+						if (obj != null) {
+							screenPoint = Camera.main.WorldToScreenPoint (obj.transform.position);
+							offset = obj.transform.position - Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+							dragging = true;
+							Debug.Log ("Object getto: " + obj.name);
+						}
 					}
 				}
 			}
-		}
+		} else {
 
-		if (Input.GetMouseButtonUp(0) && GameObject.Find("Spawner").GetComponent<Spawner> ().control == true) {
-			if (dragging) {
-				Debug.Log ("Object dropped: " + obj.name);
-				dragging = false;
+			if (Input.GetMouseButtonDown(1)) {
+				//Debug.Log ("Object dropped: " + obj.name);
 				falling = true;
 			}
-		}
 
-		if (dragging)
-		{
-			Debug.Log ("Object dragged: " + obj.name);
-			Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-			Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
-			if (curPosition.y < 0.0f) {
-				curPosition = new Vector3(curPosition.x, 0.5f, curPosition.z);
-			}
-			obj.transform.position = curPosition;
-			obj.rigidbody.velocity = Vector3.zero;
-		}
-		
-
-			if (falling == true && obj != null && obj.transform.position.y < -1.0f) {
-				Debug.Log ("The check: " + obj.name);
-				Vector3 newVector = rightPlank.transform.position - obj.transform.position;
-				
-				float dotproduct = Vector3.Dot (newVector, rightPlank.transform.position);
-				
-				Vector3 newVector2 = leftPlank.transform.position - obj.transform.position;
-				
-				float dotproduct2 = Vector3.Dot (newVector2, leftPlank.transform.position);
-
-				//Play the splash sound in the next if statement
-
-				if ((dotproduct < 0 || dotproduct2 < 0) && obj.GetComponent<ObjSettings>().getActive ()) {
-					if (dotproduct < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 1) {
-						AddCorrect();
-						UnspawnObj();
-						Debug.Log ("Right");
-					} else if (dotproduct2 < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 2) {
-						AddCorrect();
-						UnspawnObj();
-						Debug.Log ("Left");
-					} else if (dotproduct < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 2) {
-						Debug.Log ("Game Over! Suppose to be Left");
-						UnspawnObj();
-						gameover = true;
-					} else if (dotproduct2 < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 1) {
-						Debug.Log ("Game Over! Suppose to be Right");
-						UnspawnObj();
-						gameover = true;
-					}
-				} else if (((dotproduct < 0 || dotproduct2 < 0) && obj.GetComponent<ObjSettings>().getActive() == false) && obj.transform.position.y < 0.2f) {
-					Debug.Log ("Game Over! Wronng Obj");
-					UnspawnObj();
-					gameover = true;
-				}
-
-				if (dotproduct == 0 || dotproduct2 == 0) {
-					Debug.Log("Nope");
-					falling = false;
-				}
-				if (obj != null) {
-					obj = null;
-				}
+			if (falling == true) {
+				Check();
 			}
 
+			if (dragging == true && falling == false) {
+				Debug.Log ("Object dragged: " + obj.name);
+				Vector3 curScreenPoint = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
+				Vector3 curPosition = Camera.main.ScreenToWorldPoint (curScreenPoint) + offset;
+				if (curPosition.y < 0.0f) {
+					curPosition = new Vector3 (curPosition.x, 0.5f, curPosition.z);
+				}
+				obj.transform.position = curPosition;
+				obj.rigidbody.velocity = Vector3.zero;
+			}
+		}
 
-		//Victory sound?
 		if (numOfCorrect <= 0) {
+			CursorMode cursorMode = CursorMode.Auto;
+			Cursor.SetCursor (null, Vector2.zero, cursorMode);
 			win = true;
 			LevelLoader.WinLevel();
 			Debug.Log ("Victory! Sang Nila Utama has reached Temasek!");
@@ -161,6 +118,59 @@ public class CheckOutOfBound : MonoBehaviour {
 			LevelLoader.LoseLevel();
 			Debug.Log("You Lose!");
 		}
+	}
+	
+	void Check() {
+		if (obj != null) {
+				Debug.Log ("The check: " + obj.name);
+				Vector3 newVector = rightPlank.transform.position - obj.transform.position;
+			
+				float dotproduct = Vector3.Dot (newVector, rightPlank.transform.position);
+			
+				Vector3 newVector2 = leftPlank.transform.position - obj.transform.position;
+			
+				float dotproduct2 = Vector3.Dot (newVector2, leftPlank.transform.position);
+			
+			if ((dotproduct < 0 || dotproduct2 < 0) && obj.GetComponent<ObjSettings> ().getActive () && obj.transform.position.y < -1.0f) {
+					if (dotproduct < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 1) {
+						AddCorrect ();
+						UnspawnObj ();
+						Debug.Log ("Right");
+						falling = false;
+						dragging = false;
+					} else if (dotproduct2 < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 2) {
+						AddCorrect ();
+						UnspawnObj ();
+						Debug.Log ("Left");
+						falling = false;
+						dragging = false;
+					} else if (dotproduct < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 2) {
+						Debug.Log ("Game Over! Suppose to be Left");
+						UnspawnObj ();
+						gameover = true;
+						falling = false;
+						dragging = false;
+					} else if (dotproduct2 < 0 && obj.GetComponent<ObjSettings> ().getLeftOrRight () == 1) {
+						Debug.Log ("Game Over! Suppose to be Right");
+						UnspawnObj ();
+						gameover = true;
+						falling = false;
+						dragging = false;
+					}
+				} else if (((dotproduct < 0 || dotproduct2 < 0) && obj.GetComponent<ObjSettings> ().getActive () == false) && obj.transform.position.y < -1.0f) {
+					Debug.Log ("Game Over! Wronng Obj");
+					UnspawnObj ();
+					gameover = true;
+					falling = false;
+					dragging = false;
+				}
+			
+			if ((dotproduct == 0 || dotproduct2 == 0) || (dotproduct > 0 && dotproduct2 > 0)) {
+					Debug.Log ("Nope, either its still in or either on top");
+					falling = false;
+					dragging = false;
+				}
+			}
 	}
 
 	void UnspawnObj() {

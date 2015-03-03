@@ -37,7 +37,7 @@ public class Drag : MonoBehaviour {
     }
 
 	void OnMouseUp() {
-
+		Cursor.SetCursor (cursorTexture, hotspot, cursorMode);
 	}
 
     void OnMouseDrag()
