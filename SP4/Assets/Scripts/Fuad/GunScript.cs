@@ -19,15 +19,20 @@ public class GunScript : MonoBehaviour {
 	public float zoomAngle;
 	public float fireRate;
 	public float waitTillFire;
+	float muzzleTimer = 0.0f;
+	float muzzleCooler = 0.0f;
 	public GameObject bullet;
 	public GameObject spawnBullet;
 	public GameObject bulletHole;
 	public GameObject cameraObject;	
 	public GameObject BloodSpatter;
+	public ParticleEmitter MuzzleFlash;
 	public AudioClip bang;
 	public AudioClip death;
 
-
+	public GameObject light1;
+	public GameObject light2;
+	public GameObject light3;
 	
 	int enemyMask;
 	int civiMask;
@@ -40,7 +45,13 @@ public class GunScript : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		
+	
+		MuzzleFlash.emit = false;
+		light1.SetActive (false);
+		light2.SetActive (false);
+		light3.SetActive (false);
+
+
 	}
 	
 	// Update is called once per frame
@@ -54,6 +65,11 @@ public class GunScript : MonoBehaviour {
 
 					
 					audio.PlayOneShot (bang);
+
+					MuzzleFlash.emit = true;
+					light1.SetActive (true);
+					light2.SetActive (true);
+					light3.SetActive (true);
 					
 					RaycastHit hit;
 					Ray ray = new Ray (transform.position, transform.forward);
@@ -78,10 +94,23 @@ public class GunScript : MonoBehaviour {
 					}
 
 
+
+
 					waitTillFire = 1;
 				}
+
+				else {
+					MuzzleFlash.emit = false;
+					light1.SetActive (false);
+					light2.SetActive (false);
+					light3.SetActive (false);
+				}
+
+
 			
-			}
+			} 
+
+
 		
 			waitTillFire -= Time.deltaTime * fireRate;
 		
