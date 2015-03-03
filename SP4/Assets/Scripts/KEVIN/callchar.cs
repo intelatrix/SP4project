@@ -57,59 +57,58 @@ public class callchar : MonoBehaviour {
 		//StartCount -=  Time.deltaTime;
 		//GameObject.Find("StartCount").GetComponent<Text>().text = ((int)StartCount+1).ToString();
 	
-	//	if (StartCount <= 0)
-	//	{
+		//	if (StartCount <= 0)
+		//	{
 		//	startgame = true;
 		//	GameObject.Find ("StartCount").SetActive (false);
-	//	}
+		//	}
 		//if (startgame) {
 			
-			shittime += Time.deltaTime;
+		shittime += Time.deltaTime;
 		if (shittime >= roundx) {
 			
-				if (rightx <= 20) {
-					if (random == 1) {
-						shittime = 0;
-						shitcount1++;
-						Instantiate (shit_right, new Vector3 (24.5f, 7f, 0), Quaternion.identity);
-						//transform.position =new Vector2(-2.5f, y);
-						rightx++;
-					} else {
-						random = Random.Range (1, 3);
-					}
-				}
-			
-			
-				if (leftx <= 20) {
-					if (random == 2) {
-						shittime = 0;
-						shitcount2++;	
-						Instantiate (shit_left, new Vector3 (16.3f, 7f, 0), Quaternion.identity);
-						leftx++;
-					} else {
-						random = Random.Range (1, 3);	
-					}
+			if (rightx <= 20) {
+				if (random == 1) {
+					shittime = 0;
+					shitcount1++;
+					Instantiate (shit_right, new Vector3 (24.5f, 7f, 0), Quaternion.identity);
+					//transform.position =new Vector2(-2.5f, y);
+					rightx++;
+				} else {
+					random = Random.Range (1, 3);
 				}
 			}
+			
+			
+			if (leftx <= 20) {
+				if (random == 2) {
+					shittime = 0;
+					shitcount2++;	
+					Instantiate (shit_left, new Vector3 (16.3f, 7f, 0), Quaternion.identity);
+					leftx++;
+				} else {
+					random = Random.Range (1, 3);	
+				}
+			}
+		}
 
-			TimeCountDown = Mathf.MoveTowards (TimeCountDown, 0, Time.deltaTime);
-			GameObject.Find ("CountDown").GetComponent<Text> ().text = "Time Left: " + TimeCountDown.ToString ("n2");
+		TimeCountDown = Mathf.MoveTowards (TimeCountDown, 0, Time.deltaTime);
+		GameObject.Find ("CountDown").GetComponent<Text> ().text = "Time Left: " + TimeCountDown.ToString ("n2");
 		//}
-			if (shitcount2 >= 4) {
-				random = 1;
-				shitcount2 = 0;
-			} else if (shitcount1 >= 4) {
-				random = 2;
-				shitcount1 = 0;
-			}
+		if (shitcount2 >= 4) {
+			random = 1;
+			shitcount2 = 0;
+		} else if (shitcount1 >= 4) {
+			random = 2;
+			shitcount1 = 0;
+		}
 
 		
-			if (TimeCountDown <= 0) 
-			{
-				TimeCountDown=0;
-				LevelLoader.LoseLevel ();
-			}
-		
+		if (TimeCountDown <= 0) {
+			TimeCountDown = 0;
+		//	LevelLoader.LoseLevel ();
+		}
+	
 
 		//	swag.random = Random.Range (1, 30);	
 	

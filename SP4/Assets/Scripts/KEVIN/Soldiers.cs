@@ -8,29 +8,32 @@ public class Soldiers : MonoBehaviour {
 	public GameObject soldiers;
 	public GameObject soldierfire;
 	public int randomer;
-	public bool stop;
+	//public bool stop;
 	public bool check;
 	public callchar swag;
 	public int firingtime;
 
 	// Use this for initialization
 	void Start () {
-		stop = false;
+		//stop = false;
 		swag = FindObjectOfType<callchar> ();
 		
 		if (LevelLoader.GetRound () == 1)
 		{	
-			randomer = Random.Range (1, 1000);	
+			randomer =1000;
+			Random.Range (1, randomer);	
 		}
 		else if (LevelLoader.GetRound () == 2) 
 		{
-			randomer = Random.Range (1,700);	
+			randomer =700;
+			Random.Range (1,randomer);	
 		} 
 		else if (LevelLoader.GetRound () >= 3) 
 		{
-			randomer = Random.Range (1, 400);	
+			randomer =400;
+			Random.Range (1, randomer);	
 		}
-		randomq = randomer;
+
 	}
 	
 	// Update is called once per frame
@@ -43,28 +46,36 @@ public class Soldiers : MonoBehaviour {
 
 			//print (random);
 	
-		if (randomq == 5) {
-				if (stop == false) {
-					if (x < 13.5f) {
-						x += 0.15f;
-						check = true;
-					}
+		if (randomq == 5) 
+		{
+			//if (stop == false)
+			{
+				if (x < 13.5f) 
+				{
+					x += 10f* Time.deltaTime;
+					check = true;
 				}
-			} else {
-			randomq = Random.Range (1, randomer);	
-				check = false;
 			}
+		}
+		else
+		{
+			randomq = Random.Range (1, randomer);	
+			check = false;
+		}
 			if (Input.GetKeyDown ("space")) {
-				stop = true;
-				x -= 1.5f;
-				if (check == true) {
-					stop = false;
-				randomq = 0;
+			//	stop = true;
+				x -= 1f;
+				if (check == true)
+				{
+				//stop = false;
+				randomq = Random.Range (1, randomer);	
 					//Instantiate (soldieridle, new Vector3 (-15.2f, 9.9f, 0), Quaternion.identity);
-				} else {
+				} 
+			else 
+				{
 					swag.TimeCountDown -= 2;
-					stop = false;
-				randomq = 0;
+					//stop = false;
+				randomq = Random.Range (1, randomer);	
 				}
 			}
 
@@ -79,6 +90,6 @@ public class Soldiers : MonoBehaviour {
 			Instantiate (soldierfire, new Vector3 (13.9f, -9.9f, 0), Quaternion.identity).name = "soldierfire";
 		
 		}
-		transform.position = new Vector3 (x, -9.9f, 0);
+		transform.position = new Vector3 (x, -9.9f, 0) ;
 	}
 }
