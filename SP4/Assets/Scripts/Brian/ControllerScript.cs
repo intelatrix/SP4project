@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -17,9 +17,10 @@ public class ControllerScript : MonoBehaviour {
 	public float forwardMovementSpeed = 3.0f;
 	float TimeCountDown;
 	private bool dead = false;
-	public uint people = 0;
+	public float people = 0;
 	float groundRadius = 0.2f;
-	bool isStart = false;
+	//bool isStart = false;
+	//float x = 0;
 
 	bool doubleJump = false;
 
@@ -27,6 +28,18 @@ public class ControllerScript : MonoBehaviour {
 	void Start () {
 		anim = GetComponent<Animator>();
 		TimeCountDown = 15f;
+		/*if (LevelLoader.GetRound () == 1)
+		{	
+			x=1f;
+		}
+		if (LevelLoader.GetRound () == 2) 
+		{
+			x=2f;
+		} 
+		else if (LevelLoader.GetRound () >= 3) 
+		{
+			x=3f;
+		}*/
 	}
 
 	void FixedUpdate () 
@@ -65,7 +78,7 @@ public class ControllerScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider)
 	{
-;
+
 		if (collider.gameObject.CompareTag ("Citizen"))
 			CollectPeople (collider);
 		else
@@ -104,7 +117,7 @@ public class ControllerScript : MonoBehaviour {
 		TimeCountDown = Mathf.MoveTowards(TimeCountDown, 0, Time.deltaTime);
 		if (TimeCountDown <= 0 || dead == true) {
 			LevelLoader.LoseLevel ();
-		} else if (people == 2f) {
+		} else if (people == 3) {
 			LevelLoader.WinLevel ();
 		}
 
