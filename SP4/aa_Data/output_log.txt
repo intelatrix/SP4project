@@ -14,620 +14,76 @@ Platform assembly: C:\Users\SBM\Desktop\SP4project\SP4\aa_Data\Managed\Assembly-
 Loading C:\Users\SBM\Desktop\SP4project\SP4\aa_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\SBM\Desktop\SP4project\SP4\aa_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\SBM\Desktop\SP4project\SP4\aa_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.125 seconds
+- Completed reload, in  0.045 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: C:\Users\SBM\Desktop\SP4project\SP4\aa_Data\Managed\System.Core.dll (this message is harmless)
 WARNING: Shader Unsupported: 'Outlined/Diffuse' - Pass 'OUTLINE' shader state not supported
 Platform assembly: C:\Users\SBM\Desktop\SP4project\SP4\aa_Data\Managed\System.dll (this message is harmless)
-UnloadTime: 6.923820 ms
+UnloadTime: 46.023666 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 179.
-Total: 1.620304 ms (FindLiveObjects: 0.016250 ms CreateObjectMapping: 0.020954 ms MarkObjects: 0.236481 ms  DeleteObjects: 0.007697 ms)
+Total: 0.768458 ms (FindLiveObjects: 0.006842 ms CreateObjectMapping: 0.006842 ms MarkObjects: 0.362205 ms  DeleteObjects: 0.003848 ms)
 
-UnloadTime: 0.607240 ms
+UnloadTime: 0.347666 ms
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 177.
-Total: 1.490731 ms (FindLiveObjects: 0.017105 ms CreateObjectMapping: 0.015822 ms MarkObjects: 0.206119 ms  DeleteObjects: 0.017532 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 184.
+Total: 0.505035 ms (FindLiveObjects: 0.007269 ms CreateObjectMapping: 0.006842 ms MarkObjects: 0.112467 ms  DeleteObjects: 0.008552 ms)
 
-UnloadTime: 0.622634 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 374.
-Total: 1.580534 ms (FindLiveObjects: 0.027796 ms CreateObjectMapping: 0.019243 ms MarkObjects: 0.289080 ms  DeleteObjects: 0.008980 ms)
-
-UnloadTime: 1.781950 ms
+UnloadTime: 0.289080 ms
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 153 unused Assets to reduce memory usage. Loaded Objects now: 185.
-Total: 2.483269 ms (FindLiveObjects: 0.023092 ms CreateObjectMapping: 0.023092 ms MarkObjects: 0.212106 ms  DeleteObjects: 0.941649 ms)
-
-UnloadTime: 0.634181 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 168.
-Total: 1.897411 ms (FindLiveObjects: 0.015822 ms CreateObjectMapping: 0.016250 ms MarkObjects: 0.190724 ms  DeleteObjects: 0.469114 ms)
-
-UnloadTime: 0.543522 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 286.
-Total: 1.770404 ms (FindLiveObjects: 0.022236 ms CreateObjectMapping: 0.017960 ms MarkObjects: 0.245889 ms  DeleteObjects: 0.218520 ms)
-
-UnloadTime: 0.768885 ms
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 91 unused Assets to reduce memory usage. Loaded Objects now: 199.
-Total: 2.486690 ms (FindLiveObjects: 0.026940 ms CreateObjectMapping: 0.051743 ms MarkObjects: 0.245889 ms  DeleteObjects: 0.473390 ms)
-
-UnloadTime: 0.732536 ms
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 184.
-Total: 6.863951 ms (FindLiveObjects: 0.017532 ms CreateObjectMapping: 0.020098 ms MarkObjects: 0.217665 ms  DeleteObjects: 5.241080 ms)
-
-UnloadTime: 0.667964 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 240.
-Total: 1.829417 ms (FindLiveObjects: 0.017105 ms CreateObjectMapping: 0.018815 ms MarkObjects: 0.257007 ms  DeleteObjects: 0.016250 ms)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Price dropped
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Price dropped
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Price dropped
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Collided
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-590
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-Lose
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-UnloadTime: 0.997242 ms
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 57 unused Assets to reduce memory usage. Loaded Objects now: 185.
-Total: 1.742180 ms (FindLiveObjects: 0.016677 ms CreateObjectMapping: 0.019671 ms MarkObjects: 0.234770 ms  DeleteObjects: 0.218948 ms)
-
-UnloadTime: 0.708589 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 166.
-Total: 1.922641 ms (FindLiveObjects: 0.013684 ms CreateObjectMapping: 0.016677 ms MarkObjects: 0.227073 ms  DeleteObjects: 0.461416 ms)
-
-UnloadTime: 0.416943 ms
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 322.
-Total: 1.593363 ms (FindLiveObjects: 0.029079 ms CreateObjectMapping: 0.029934 ms MarkObjects: 0.270692 ms  DeleteObjects: 0.017105 ms)
-
-UnloadTime: 0.919412 ms
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 91 unused Assets to reduce memory usage. Loaded Objects now: 199.
-Total: 2.954094 ms (FindLiveObjects: 0.028223 ms CreateObjectMapping: 0.022664 ms MarkObjects: 0.293356 ms  DeleteObjects: 1.352178 ms)
-
-UnloadTime: 0.743655 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 177.
-Total: 4.222029 ms (FindLiveObjects: 0.020954 ms CreateObjectMapping: 0.017960 ms MarkObjects: 0.245889 ms  DeleteObjects: 2.709060 ms)
-
-UnloadTime: 0.677799 ms
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 756.
-Total: 1.941885 ms (FindLiveObjects: 0.060724 ms CreateObjectMapping: 0.023947 ms MarkObjects: 0.333126 ms  DeleteObjects: 0.226645 ms)
-
-UnloadTime: 1.624581 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 98 unused Assets to reduce memory usage. Loaded Objects now: 200.
-Total: 5.121343 ms (FindLiveObjects: 0.022664 ms CreateObjectMapping: 0.020526 ms MarkObjects: 0.259573 ms  DeleteObjects: 3.565183 ms)
-
-UnloadTime: 0.756911 ms
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 185.
-Total: 10.291436 ms (FindLiveObjects: 0.017105 ms CreateObjectMapping: 0.020954 ms MarkObjects: 0.255297 ms  DeleteObjects: 8.744257 ms)
-
-UnloadTime: 0.880498 ms
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 451.
-Total: 3.152089 ms (FindLiveObjects: 0.043191 ms CreateObjectMapping: 0.038487 ms MarkObjects: 0.598259 ms  DeleteObjects: 0.403686 ms)
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 450.
+Total: 0.642306 ms (FindLiveObjects: 0.014111 ms CreateObjectMapping: 0.008125 ms MarkObjects: 0.141119 ms  DeleteObjects: 0.090230 ms)
 
 Right
  
 (Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
 
-Game Over!
+Right
  
 (Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
 
-You Lose!
+Victory! Sang Nila Utama has reached Temasek!
  
 (Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
 
-UnloadTime: 1.362013 ms
+UnloadTime: 0.647865 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 191 unused Assets to reduce memory usage. Loaded Objects now: 204.
+Total: 1.356454 ms (FindLiveObjects: 0.022236 ms CreateObjectMapping: 0.014539 ms MarkObjects: 0.142402 ms  DeleteObjects: 0.791122 ms)
+
+UnloadTime: 0.357074 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 191 unused Assets to reduce memory usage. Loaded Objects now: 167.
-Total: 10.757130 ms (FindLiveObjects: 0.031644 ms CreateObjectMapping: 0.023947 ms MarkObjects: 0.217238 ms  DeleteObjects: 9.237746 ms)
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 169.
+Total: 10.388937 ms (FindLiveObjects: 0.006414 ms CreateObjectMapping: 0.007269 ms MarkObjects: 0.091513 ms  DeleteObjects: 9.936073 ms)
 
-UnloadTime: 0.409245 ms
+UnloadTime: 0.200560 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 325.
+Total: 0.538391 ms (FindLiveObjects: 0.010263 ms CreateObjectMapping: 0.008125 ms MarkObjects: 0.131711 ms  DeleteObjects: 0.008552 ms)
+
+UnloadTime: 0.623490 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 91 unused Assets to reduce memory usage. Loaded Objects now: 202.
+Total: 1.003229 ms (FindLiveObjects: 0.012401 ms CreateObjectMapping: 0.009835 ms MarkObjects: 0.126579 ms  DeleteObjects: 0.479377 ms)
+
+UnloadTime: 0.341251 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 188.
-Total: 1.493297 ms (FindLiveObjects: 0.016250 ms CreateObjectMapping: 0.020526 ms MarkObjects: 0.244606 ms  DeleteObjects: 0.005986 ms)
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 171.
+Total: 5.407002 ms (FindLiveObjects: 0.006414 ms CreateObjectMapping: 0.007269 ms MarkObjects: 0.100493 ms  DeleteObjects: 4.914368 ms)
 
-UnloadTime: 0.626911 ms
+UnloadTime: 0.231349 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 183.
-Total: 1.527508 ms (FindLiveObjects: 0.017532 ms CreateObjectMapping: 0.019671 ms MarkObjects: 0.260856 ms  DeleteObjects: 0.006414 ms)
-
-UnloadTime: 0.597404 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 172.
-Total: 1.507409 ms (FindLiveObjects: 0.014111 ms CreateObjectMapping: 0.019243 ms MarkObjects: 0.218948 ms  DeleteObjects: 0.015394 ms)
-
-UnloadTime: 0.441745 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 290.
-Total: 1.788364 ms (FindLiveObjects: 0.022236 ms CreateObjectMapping: 0.021809 ms MarkObjects: 0.303192 ms  DeleteObjects: 0.227928 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 289.
+Total: 0.607240 ms (FindLiveObjects: 0.009407 ms CreateObjectMapping: 0.008125 ms MarkObjects: 0.121448 ms  DeleteObjects: 0.103487 ms)
 

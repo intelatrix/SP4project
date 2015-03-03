@@ -106,7 +106,7 @@ public class callchar : MonoBehaviour {
 		
 		if (TimeCountDown <= 0) {
 			TimeCountDown = 0;
-		//	LevelLoader.LoseLevel ();
+			LevelLoader.LoseLevel ();
 		}
 	
 
