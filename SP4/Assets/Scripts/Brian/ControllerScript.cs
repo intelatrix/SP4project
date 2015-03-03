@@ -117,8 +117,10 @@ public class ControllerScript : MonoBehaviour {
 		TimeCountDown = Mathf.MoveTowards(TimeCountDown, 0, Time.deltaTime);
 		if (TimeCountDown <= 0 || dead == true) {
 			LevelLoader.LoseLevel ();
-		} else if (people == 3) {
+			return;
+		} else if (people == LevelLoader.GetRound() + 1) {
 			LevelLoader.WinLevel ();
+			return;
 		}
 
 		GameObject.Find("CountDown").GetComponent<Text>().text = "Time Left: " + TimeCountDown.ToString("n2");

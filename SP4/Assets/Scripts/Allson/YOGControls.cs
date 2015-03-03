@@ -21,7 +21,6 @@ public class YOGControls : MonoBehaviour {
 	{
 		StandingMan.SetActive(false);
 		Torch = GameObject.Find("Torch");
-		LevelLoader.SetRound(3);
 	}
 	
 	// Update is called once per frame
