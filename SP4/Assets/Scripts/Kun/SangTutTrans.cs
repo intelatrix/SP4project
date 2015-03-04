@@ -10,6 +10,9 @@ public class SangTutTrans : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if(!audio.isPlaying|| Input.anyKeyDown) 
+		{
+			Application.LoadLevel("SinkingShip_Splash");
+		}
 	}
 }

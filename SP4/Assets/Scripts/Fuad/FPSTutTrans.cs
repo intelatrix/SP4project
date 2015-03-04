@@ -10,7 +10,7 @@ public class FPSTutTrans : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(!audio.isPlaying) 
+		if(!audio.isPlaying|| Input.anyKeyDown) 
 		{
 			Application.LoadLevel("FPS_Splash");
 		}

@@ -143,8 +143,11 @@ public class GeneratorScript : MonoBehaviour {
 			farthestObjectX = Mathf.Max(farthestObjectX, objX);
 			
 			//5
-			if (objX < removeObjectsX)            
+			if (objX < removeObjectsX)  
+			{          
+				objects.Remove(obj);
 				objectsToRemove.Add(obj);
+			}
 		}
 		
 		//6

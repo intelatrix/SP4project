@@ -10,7 +10,7 @@ public class LevelLoader : MonoBehaviour
 		GAME_ULA,
 		GAME_BURN,
 		GAME_BIRDSHIT,
-		//GAME_HOSPITAL,
+		GAME_HOSPITAL,
 		GAME_YOG,
 		GAME_TOTAL
 	} ;
@@ -81,31 +81,63 @@ public class LevelLoader : MonoBehaviour
 			Application.LoadLevel("NewRound");
 			return;
 		}
-		switch(ListOfGames[Level])
-		{	
-		case Games.GAME_SARSGANTRY:
-			Application.LoadLevel("Sars_Splash");
-			break;
-		case Games.GAME_FUAD:
-			Application.LoadLevel("FPS_Splash");
-			break;
-		case Games.GAME_ULA:
-			Application.LoadLevel("SinkingShip_Splash");
-			break;
-		case Games.GAME_BURN:
-			Application.LoadLevel("BriSplash");
-			break;
-		case Games.GAME_BIRDSHIT:
-			Application.LoadLevel("raiseflagsplash");
-			break;
-//		case Games.GAME_HOSPITAL:
-//			Application.LoadLevel("Hospital_Splash");
-//			break;
-		case Games.GAME_YOG:
-			Application.LoadLevel("YOG_Splash");
-			break;
-		default:
-			break;
+		if(Round == 1)
+		{
+			switch(ListOfGames[Level])
+			{	
+			case Games.GAME_SARSGANTRY:
+				Application.LoadLevel("Sars_Intro");
+				break;
+			case Games.GAME_FUAD:
+				Application.LoadLevel("FPS_Intro");
+				break;
+			case Games.GAME_ULA:
+				Application.LoadLevel("Sang_Intro");
+				break;
+			case Games.GAME_BURN:
+				Application.LoadLevel("NWH_Intro");
+				break;
+			case Games.GAME_BIRDSHIT:
+				Application.LoadLevel("raiseflagintro");
+				break;
+			case Games.GAME_HOSPITAL:
+				Application.LoadLevel("Hospital_Intro");
+				break;
+			case Games.GAME_YOG:
+				Application.LoadLevel("YOG_Intro");
+				break;
+			default:
+				break;
+			}
+		}
+		else
+		{
+			switch(ListOfGames[Level])
+			{	
+			case Games.GAME_SARSGANTRY:
+				Application.LoadLevel("Sars_Splash");
+				break;
+			case Games.GAME_FUAD:
+				Application.LoadLevel("FPS_Splash");
+				break;
+			case Games.GAME_ULA:
+				Application.LoadLevel("SinkingShip_Splash");
+				break;
+			case Games.GAME_BURN:
+				Application.LoadLevel("BriSplash");
+				break;
+			case Games.GAME_BIRDSHIT:
+				Application.LoadLevel("raiseflagsplash");
+				break;
+			case Games.GAME_HOSPITAL:
+				Application.LoadLevel("Hospital_Splash");
+				break;
+			case Games.GAME_YOG:
+				Application.LoadLevel("YOG_Splash");
+				break;
+			default:
+				break;
+			}
 		}
 	}
 	
