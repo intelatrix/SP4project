@@ -4,7 +4,6 @@ using System.Collections;
 public class LoseGame : MonoBehaviour {
 
 	// Use this for initialization
-	private float TimeCount = 0;
 	void Start () {
 	
 	}
@@ -12,8 +11,8 @@ public class LoseGame : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		TimeCount += Time.deltaTime;
-		if(TimeCount >= 1) 
+
+		if(!audio.isPlaying) 
 		{
 			Application.LoadLevel("MainMenu");
 		}
