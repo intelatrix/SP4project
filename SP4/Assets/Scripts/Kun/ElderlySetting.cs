@@ -174,8 +174,7 @@ public class ElderlySetting : MonoBehaviour {
 			if (i == (numOfEvents-1)) {
 				float randomNum = Random.Range(1, 4);
 				if (randomNum == 1) {
-					//Spent more
-					estimatedExpense = actualExpense - 100.0f;
+					//Spent morezualExpense - 100.0f;
 				} else if (randomNum == 2) {
 					//Spent equal
 					estimatedExpense = actualExpense;
@@ -221,18 +220,21 @@ public class ElderlySetting : MonoBehaviour {
 		spentLess = true;
 		spentEqual = false;
 		spentMore = false;
+		Check();
 	}
 
 	public void EqualButton() {
 		spentLess = false;
 		spentEqual = true;
 		spentMore = false;
+		Check();
 	}
 
 	public void MoreButton() {
 		spentLess = false;
 		spentEqual = false;
 		spentMore = true;
+		Check();
 	}
 	
 	void OnTriggerStay2D(Collider2D col) {
