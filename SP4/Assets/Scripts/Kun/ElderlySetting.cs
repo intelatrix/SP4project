@@ -79,6 +79,7 @@ public class ElderlySetting : MonoBehaviour {
 		numOfHospital = 0;
 		numOfMart = 0;
 		numOfChurch = 0;
+		LevelLoader.SetRound (1);
 		Init();
 		timer = 20.0f;
 		currentTime = 0.0f;
@@ -86,6 +87,7 @@ public class ElderlySetting : MonoBehaviour {
 		wayPointX = waypoint1.GetComponent<Transform>().transform.position.x;
 		wayPointY = waypoint1.GetComponent<Transform>().transform.position.y;
 		wayPointZ = 6.2f;
+
 	}
 	
 	// Update is called once per frame
