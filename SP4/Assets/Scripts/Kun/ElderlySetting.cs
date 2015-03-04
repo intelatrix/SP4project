@@ -79,7 +79,6 @@ public class ElderlySetting : MonoBehaviour {
 		numOfHospital = 0;
 		numOfMart = 0;
 		numOfChurch = 0;
-		LevelLoader.SetRound (1);
 		Init();
 		timer = 20.0f;
 		currentTime = 0.0f;
@@ -191,6 +190,8 @@ public class ElderlySetting : MonoBehaviour {
 	}
 
 	void Check() {
+		Debug.Log("Estimated: SGD$" + estimatedExpense.ToString());
+		Debug.Log("Actual: SGD$" + actualExpense.ToString());
 		if (spentLess) {
 			if (estimatedExpense > actualExpense) {
 				LevelLoader.WinLevel();
