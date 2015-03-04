@@ -136,17 +136,20 @@ public class GeneratorScript : MonoBehaviour {
 		
 		foreach (var obj in objects)
 		{
-			//3
-			float objX = obj.transform.position.x;
-			
-			//4
-			farthestObjectX = Mathf.Max(farthestObjectX, objX);
-			
-			//5
-			if (objX < removeObjectsX)  
-			{          
-				objects.Remove(obj);
-				objectsToRemove.Add(obj);
+			if (obj != null)
+			{
+				//3
+				float objX = obj.transform.position.x;
+				
+				//4
+				farthestObjectX = Mathf.Max(farthestObjectX, objX);
+				
+				//5
+				if (objX < removeObjectsX)  
+				{          
+					objects.Remove(obj);
+					objectsToRemove.Add(obj);
+				}
 			}
 		}
 		
@@ -154,7 +157,7 @@ public class GeneratorScript : MonoBehaviour {
 		foreach (var obj in objectsToRemove)
 		{
 			objects.Remove(obj);
-			Destroy(obj);
+			//Destroy(obj);
 		}
 		
 		//7

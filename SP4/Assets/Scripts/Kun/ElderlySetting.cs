@@ -115,7 +115,6 @@ public class ElderlySetting : MonoBehaviour {
 	}
 	
 	void Init() {
-		LevelLoader.SetRound (1);
 		if (LevelLoader.GetRound () == 1) {
 			numOfEvents = 4;
 		} else if (LevelLoader.GetRound () == 2) {
