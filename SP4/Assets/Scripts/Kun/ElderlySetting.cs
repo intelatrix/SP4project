@@ -171,7 +171,7 @@ public class ElderlySetting : MonoBehaviour {
 				actualExpense += costOfEvent[3] - (costOfEvent[3] * (eventDiscount[3] / 100.0f));
 			}
 			
-			if (i == 5) {
+			if (i == (numOfEvents-1)) {
 				float randomNum = Random.Range(1, 4);
 				if (randomNum == 1) {
 					//Spent more
@@ -210,6 +210,10 @@ public class ElderlySetting : MonoBehaviour {
 			} else {
 				LevelLoader.LoseLevel();
 			}
+		}
+
+		if (spentLess == false && spentEqual == false && spentMore == false) {
+			LevelLoader.LoseLevel();
 		}
 	}
 
