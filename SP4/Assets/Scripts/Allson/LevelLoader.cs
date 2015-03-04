@@ -110,6 +110,10 @@ public class LevelLoader : MonoBehaviour
 				break;
 			}
 		}
+		else if(Round >3)
+		{
+			Application.LoadLevel("WinGame");
+		}
 		else
 		{
 			switch(ListOfGames[Level])

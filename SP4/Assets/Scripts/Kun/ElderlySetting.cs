@@ -116,6 +116,7 @@ public class ElderlySetting : MonoBehaviour {
 	}
 	
 	void Init() {
+		LevelLoader.SetRound (1);
 		if (LevelLoader.GetRound () == 1) {
 			numOfEvents = 4;
 		} else if (LevelLoader.GetRound () == 2) {
@@ -174,7 +175,7 @@ public class ElderlySetting : MonoBehaviour {
 			}
 			
 			if (i == (numOfEvents-1)) {
-				float randomNum = Random.Range(1, 4);
+				int randomNum = Random.Range(1, 4);
 				if (randomNum == 1) {
 					//Spent more
 					estimatedExpense = actualExpense - 100.0f;
@@ -223,18 +224,21 @@ public class ElderlySetting : MonoBehaviour {
 		spentLess = true;
 		spentEqual = false;
 		spentMore = false;
+		Check();
 	}
 
 	public void EqualButton() {
 		spentLess = false;
 		spentEqual = true;
 		spentMore = false;
+		Check();
 	}
 
 	public void MoreButton() {
 		spentLess = false;
 		spentEqual = false;
 		spentMore = true;
+		Check();
 	}
 	
 	void OnTriggerStay2D(Collider2D col) {
