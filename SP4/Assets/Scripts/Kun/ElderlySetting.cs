@@ -114,6 +114,7 @@ public class ElderlySetting : MonoBehaviour {
 	}
 	
 	void Init() {
+		LevelLoader.SetRound (1);
 		if (LevelLoader.GetRound () == 1) {
 			numOfEvents = 4;
 		} else if (LevelLoader.GetRound () == 2) {
@@ -172,9 +173,10 @@ public class ElderlySetting : MonoBehaviour {
 			}
 			
 			if (i == (numOfEvents-1)) {
-				float randomNum = Random.Range(1, 4);
+				int randomNum = Random.Range(1, 4);
 				if (randomNum == 1) {
-					//Spent morezualExpense - 100.0f;
+					//Spent more
+					estimatedExpense = actualExpense - 100.0f;
 				} else if (randomNum == 2) {
 					//Spent equal
 					estimatedExpense = actualExpense;
